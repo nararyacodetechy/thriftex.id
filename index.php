@@ -36,6 +36,10 @@
  * @filesource
  */
 
+if(require_once('configuration.php')){
+	$SConfig = new SConfig;
+}
+global $SConfig;
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -53,7 +57,7 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : $SConfig->_app_mode);
 
 /*
  *---------------------------------------------------------------
@@ -178,9 +182,6 @@ switch (ENVIRONMENT)
  */
 	// $assign_to_config['name_of_config_item'] = 'value of config item';
 
-if(require_once('configuration.php')){
-	$SConfig = new SConfig;
-}
 
 
 // --------------------------------------------------------------------
