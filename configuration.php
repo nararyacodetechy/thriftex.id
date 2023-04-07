@@ -19,7 +19,9 @@ class SConfig
     // var $_site_url = 'http://localhost:8000/my/thriftex/';
     // var $_app_mode = 'development';
 
-	var $_app_version = '1.0.1';
+
+    // app version
+	var $_app_version = '1.0.2';
 	// X versi Mayor (Perubahan arsitektur/fitur besar besaran)
 	// Y versi Minor (Penambahan beberapa fitur )
 	// Z versi perbaikan/patch/bugfix. (perbaikan /bugfix,security fix dsb).
