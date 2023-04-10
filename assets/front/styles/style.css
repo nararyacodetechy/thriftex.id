@@ -5122,7 +5122,9 @@ input[type=number] {
 .theme-dark .bg-theme {
   background-color: #0f1117 !important;
 }
-
+.form-control{
+  -webkit-user-select: text !important;
+}
 .theme-dark .form-floating-over > .form-control:focus ~ label,
 .theme-dark .form-floating-over > .form-control:not(:placeholder-shown) ~ label,
 .theme-dark .form-floating-over > .form-select ~ label,

@@ -7,7 +7,7 @@ class SConfig
     var $_document_root = '/home/whitesummerbali/lerocomputer.com';
 	var $_api_url = 'https://rest.thriftex.id/api/';
     var $_site_url = 'https://thriftex.id/';
-    var $_app_mode = 'production';
+    var $_app_mode = 'development';
     // --- mode
     // *     development
     // *     testing

@@ -9,7 +9,7 @@
                     <form action="<?= base_url('auth/login') ?>" method="post">
                         <div class="input-style no-borders has-icon validate-field mb-4">
                             <i class="fa fa-user"></i>
-                            <input type="email" name="email" class="form-control validate-name" id="form1a" placeholder="Email" autocomplete="off">
+                            <input type="email" name="email" class="form-control validate-name myfm" id="form1a" placeholder="Email" autocomplete="off">
                             <label for="form1a" class="color-blue-dark">Email</label>
                             <i class="fa fa-times disabled invalid color-red-dark"></i>
                             <i class="fa fa-check disabled valid color-green-dark"></i>
