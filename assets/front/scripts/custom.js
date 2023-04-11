@@ -1392,6 +1392,11 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'formAjax',
             call: 'jquery.form.min.js',
             trigger: '#jxfm'
+          },
+          {
+            id: 'validation',
+            call: 'jquery.validate.min.js',
+            trigger: '#validation'
           }
         ];
 

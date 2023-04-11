@@ -7067,3 +7067,12 @@ input[type=number] {
 .image_gallerys{
   height: 100px !important;
 }
+
+div#notiflogin p{
+  color: white;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  float: left;
+  display: contents;
+}

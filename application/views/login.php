@@ -1,7 +1,7 @@
 <?php include('include/header.php'); ?>
 <div class="page-content pb-0">
         <div data-card-height="cover" class="card">
-            <div class="card-center">
+            <div class="card-center" id="validation">
             <div id="notiflogin" class="toast toast-tiny toast-top bg-red-dark notif_login" data-bs-delay="1500" data-autohide="true"></div>
                 <div class="ps-5 pe-5">
                     <h1 class="text-center font-800 font-40 mb-1">Login</h1>
@@ -11,16 +11,14 @@
                             <i class="fa fa-user"></i>
                             <input type="email" name="email" class="form-control validate-name myfm" id="form1a" placeholder="Email" autocomplete="off">
                             <label for="form1a" class="color-blue-dark">Email</label>
-                            <i class="fa fa-times disabled invalid color-red-dark"></i>
-                            <i class="fa fa-check disabled valid color-green-dark"></i>
+                            
                             <em>(required)</em>
                         </div>
                         <div class="input-style no-borders has-icon validate-field mb-4">
                             <i class="fa fa-lock"></i>
                             <input type="password" name="password" class="form-control validate-text" id="form3a" placeholder="Password" autocomplete="new-password"> 
                             <label for="form3a" class="color-blue-dark">Password</label>
-                            <i class="fa fa-times disabled invalid color-red-dark"></i>
-                            <i class="fa fa-check disabled valid color-green-dark"></i>
+                            
                             <em>(required)</em>
                         </div>
                         <div class="row">

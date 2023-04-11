@@ -102,7 +102,24 @@ $(document).ready(function(){
             e.preventDefault(0);
             var btn = $(this);
             var form = $(this).closest('form');
+            form.validate({
+                debug: true,
+                errorClass:'error',
+                validClass:'success',
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true
+                    }
+                }
+            });
 
+            if (!form.valid()) {
+                return;
+            }
             btn.attr('disabled', true);
             const spinerloading = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Loading...';
             btn.html(spinerloading);
@@ -121,7 +138,10 @@ $(document).ready(function(){
                         var toastID = document.getElementById('notiflogin');
                         toastID = new bootstrap.Toast(toastID);
                         toastID.show();
-                        $('.notif_login').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','200px');
+                        // if(typeof data.msg === "object" && !Array.isArray(data.msg) && data.msg !== null){
+                        //     console.log(data.msg);
+                        // }
+                        $('.notif_login').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','auto');
                     }
                 }
             });

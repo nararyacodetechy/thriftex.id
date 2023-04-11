@@ -12,34 +12,56 @@ class Auth extends CI_Controller {
     }
 
     public function viewlogin(){
-        $this->load->view('login.php');
+        if($this->session->userdata('login') == false){
+            $this->load->view('login.php');
+        }else{
+            redirect(base_url('profile'));
+        }
     }
 
 	public function login()
 	{
+        if($this->session->userdata('login') == true){
+            redirect(base_url('profile'));
+        }
+        $response = array(
+            'status' => false,
+            'msg'   => 'Server Error'
+        );
         $email = $this->input->post('email');
         $password = $this->input->post('password');
-        $data_login = [
-            'email' => $email,
-            'password'  => $password
-        ];
-		$cek_login = $this->user->cek_login($data_login);
-        if($cek_login['status'] == true){
-            $data_login = array(
-                'login' => true,
-                'uid'   => $cek_login['uid'],
-                'token' => $cek_login['token']
-            );
-            $this->session->set_userdata($data_login);
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_message('required', '{field} tidak boleh kosong!');
+        $this->form_validation->set_error_delimiters('<p>', '</p>');
+        if ($this->form_validation->run() == FALSE){
             $response = array(
-                'status' => true,
-                'redirect_url'  => base_url('profile')
+                'status'   => false,
+                'msg' => form_error('email').' '.form_error('password')
             );
         }else{
-            $response = array(
-                'status' => $cek_login['status'],
-                'msg'   => $cek_login['message']
-            );
+            $data_login = [
+                'email' => $email,
+                'password'  => $password
+            ];
+            $cek_login = $this->user->cek_login($data_login);
+            if($cek_login['status'] == true){
+                $data_login = array(
+                    'login' => true,
+                    'uid'   => $cek_login['uid'],
+                    'token' => $cek_login['token']
+                );
+                $this->session->set_userdata($data_login);
+                $response = array(
+                    'status' => true,
+                    'redirect_url'  => base_url('profile')
+                );
+            }else{
+                $response = array(
+                    'status' => $cek_login['status'],
+                    'msg'   => $cek_login['message']
+                );
+            }
         }
         echo json_encode($response);
 	}
