@@ -7,7 +7,7 @@ class SConfig
     var $_document_root = '/home/whitesummerbali/lerocomputer.com';
 	var $_api_url = 'https://rest.thriftex.id/api/';
     var $_site_url = 'https://thriftex.id/';
-    var $_app_mode = 'development';
+    var $_app_mode = 'production';
     // --- mode
     // *     development
     // *     testing
@@ -21,7 +21,7 @@ class SConfig
 
 
     // app version
-	var $_app_version = '1.0.6';
+	var $_app_version = '1.0.7';
 	// X versi Mayor (Perubahan arsitektur/fitur besar besaran)
 	// Y versi Minor (Penambahan beberapa fitur )
 	// Z versi perbaikan/patch/bugfix. (perbaikan /bugfix,security fix dsb).

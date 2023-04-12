@@ -3,7 +3,7 @@ if($this->session->userdata('login') == false){
 ?>
 <!-- menu-login-1 -->
 <div id="menu-login-1" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="320" data-menu-effect="menu-over">
-    <div class="menu-title mt-n1">
+    <div class="menu-title mt-n1" id="validation">
         <h1>Login</h1>
         <p class="color-theme opacity-50">Please enter your credentials below</p>
         <a href="#" class="close-menu"><i class="fa fa-times"></i></a>
