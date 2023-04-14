@@ -80,3 +80,8 @@ $route['legit/validation'] = 'Legitcheck/validation';
 
 //feedback
 $route['feedback'] = 'Feedback/index';
+
+
+// user list
+$route['user/list'] = 'User/list';
+$route['user-list'] = 'User/listshow';

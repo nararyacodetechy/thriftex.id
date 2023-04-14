@@ -7,7 +7,7 @@
         <?php
         if($this->session->userdata('login') == true){
         ?>
-            <p class="footer-copyright"><a href="#" data-menu="menu-masukan" class=" color-highlight"> Masukan</a></p>
+            <p class="footer-copyright"><a href="#" data-menu="menu-masukan" class=""> Masukan</a></p>
         <?php } ?>
         </div>
         <div class="col-12 col-md-4">
@@ -32,7 +32,7 @@
 <?php if($this->session->userdata('login') == true){ ?>
 <!-- Menu Modal Sheet Cart-->
 <div id="menu-masukan" class="menu menu-box-modal">
-    <div class="menu-title"><h1>Masukan</h1><p class="color-highlight">Silahkan isi form dibawah ini untuk memberi masukan</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
+    <div class="menu-title"><h1>Masukan</h1><p class="">Silahkan isi form dibawah ini untuk memberi masukan</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
     <div class="divider divider-margins"></div>
     <div class="content mb-0">
         <div id="toast-notiff-fdbck" class="toast toast-tiny toast-top bg-green-dark" data-bs-delay="2000" data-autohide="true"><i class="fa fa-check me-3"></i>Terima kasih :)</div>

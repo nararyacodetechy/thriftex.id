@@ -30,7 +30,7 @@ class Feedback_model extends CI_model {
             $response = $th->getResponse();
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
-            return $result;
+            return $jsonBody;
         }
     }
 

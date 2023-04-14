@@ -138,7 +138,7 @@ class Legitcheck extends CI_Controller {
         if(!empty($case_code)){
             $token = $this->session->userdata('token');
             $legit_list = $this->legit->validatorData($token,$case_code);
-            if(isset($legit_list['status']) && $legit_list['status'] == false && $legit_list['message'] == 'Wrong number of segments'){
+            if(isset($legit_list['status']) && $legit_list['status'] == false){
                 redirect(base_url('login'));
             }else{
                 $data = array(

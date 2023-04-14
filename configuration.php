@@ -21,7 +21,7 @@ class SConfig
 
 
     // app version
-	var $_app_version = '1.0.7';
+	var $_app_version = '1.0.8';
 	// X versi Mayor (Perubahan arsitektur/fitur besar besaran)
 	// Y versi Minor (Penambahan beberapa fitur )
 	// Z versi perbaikan/patch/bugfix. (perbaikan /bugfix,security fix dsb).

@@ -1397,6 +1397,13 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'validation',
             call: 'jquery.validate.min.js',
             trigger: '#validation'
+          },
+          {
+            id: 'datatable',
+            plug: 'datatable/datatables.min.js',
+            call: 'module.js',
+            style: 'datatable/datatables.min.css', // the plugin stylesheet
+            trigger: '#datatable'
           }
         ];
 

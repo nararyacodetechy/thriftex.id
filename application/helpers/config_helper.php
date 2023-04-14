@@ -12,4 +12,11 @@ function app_version(){
 	global $SConfig;
 	return $SConfig->_app_version;
 }
+
+function api_url($sub){
+	global $SConfig;
+	$_this =& get_instance();
+	return $SConfig->_api_url.$sub;
+}
+
 ?>

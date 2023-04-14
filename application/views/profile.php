@@ -105,7 +105,7 @@
                 <div class="row mb-n3">
                     <div class="col-6 pe-2">
                         <div class="card card-style mx-0 mb-3">
-                            <a href="#">
+                            <a href="<?= base_url('user/list') ?>">
                                 <div class="p-3">
                                     <h4 class="font-700 text-uppercase font-12 opacity-50 mt-n2">Total User</h4>
                                     <h1 class="font-700 font-34 color-dark-light  mb-0"><?= $dataAdmin['total_user'] ?></h1>
