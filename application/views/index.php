@@ -67,7 +67,7 @@
                             <p class="color-white opacity-60 mb-0">
                                 Cek keaslian barangmu disini
                             </p>
-                            <a href="<?= base_url('legitchcek') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a>
+                            <a href="<?= base_url('legit') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a>
                         </div>
                         <div class="card-overlay bg-gradient opacity-90"></div>
                     </div>
