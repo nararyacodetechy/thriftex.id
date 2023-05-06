@@ -17,7 +17,7 @@
 <input type='hidden' id="version" value="<?= app_version() ?>"/>
 <div id="page">
     <div class="header header-fixed header-logo-center">
-        <a href="<?= base_url() ?>" class="header-title"><img class="logo" src="<?= base_url('assets/logo.jpeg') ?>" alt=""></a>
+        <a href="<?= base_url() ?>" class="header-title"><img class="logo main_logo" id="main_logo" src="<?= base_url('assets/logo.jpeg') ?>" alt=""></a>
         <!-- <a href="#" data-back-button class="header-icon center-xy header-icon-1"><i class="fas fa-arrow-left"></i></a> -->
         <a href="#" data-menu="menu-sidebar-left-6" class="header-icon center-xy header-icon-1"><i class="fa-solid fa-bars font-18 color-gray-dark"></i></a>
         <!-- <a href="#" data-toggle-theme class="header-icon center-xy header-icon-4"><i class="fas fa-lightbulb"></i></a> -->

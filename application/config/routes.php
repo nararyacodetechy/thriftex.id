@@ -57,6 +57,7 @@ $route['index-components'] = 'welcome/page';
 
 $route['profile'] = 'Profile/profile';
 $route['profile/legitchcek'] = 'Profile/profile_legit';
+$route['legit'] = 'Legitcheck/home';
 $route['legitchcek'] = 'Legitcheck/index';
 $route['legitchcek/success'] = 'welcome/legitchcek_send_success';
 $route['legitsend'] = 'Legitcheck/sendlegit';
@@ -77,6 +78,7 @@ $route['legit/newlist'] = 'Legitcheck/newlist';
 $route['legit/completelist'] = 'Legitcheck/completelist';
 $route['legit/check/(:any)'] = 'Legitcheck/check/$1';
 $route['legit/validation'] = 'Legitcheck/validation';
+$route['legit/processlist'] = 'Legitcheck/processlist';
 
 //feedback
 $route['feedback'] = 'Feedback/index';

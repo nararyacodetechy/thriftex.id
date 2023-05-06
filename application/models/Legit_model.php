@@ -164,5 +164,25 @@ class Legit_model extends CI_model {
             return $res;
         }
     }
+
+    public function get_total_legit($token){
+        try {
+            $response = $this->_client->request('GET','legits/totallegit',[
+                // 'debug'   => true,
+                'headers' => [
+                    'Accept'     => 'application/json',
+                    'Content-Type' => 'application/json',
+                    'Authorization' => $token
+                ],
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            return $result;
+        } catch (\Throwable $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+        }
+    }
     
 }

@@ -106,7 +106,8 @@ class Auth extends CI_Controller {
             'password'  => $post['password'],
             'passconf'  => $post['passconf'],
             'role'      => 'validator',
-            'validator_brand_id'    => $post['validator_brand_id']
+            // 'validator_brand_id'    => $post['validator_brand_id']
+            'validator_kategori_id'    => $post['validator_kategori_id']
         ];
         $regis = $this->user->register($data_regis);
         // var_dump($regis);

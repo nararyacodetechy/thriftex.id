@@ -35,13 +35,13 @@
                 </div>
             </div>
         </div>     -->
-        <div class="card bg-13 mb-0" data-card-height="450">
+        <div class="card bg-31 mb-0" data-card-height="450">
             <div class="card-center">
-                <h1 class="color-white text-center mb-2">THRIFTEX</h1>
-                <p class="color-white boxed-text-l text-center opacity-60 mt-n1 mb-3">You can even trigger any menu you want from a caption. Any menu of the page.</p>
-                <div class="text-center">
+                <h1 class="color-white text-center mb-2" style="font-size: 50px;">THRIFTEX</h1>
+                <!-- <p class="color-white boxed-text-l text-center opacity-60 mt-n1 mb-3">You can even trigger any menu you want from a caption. Any menu of the page.</p> -->
+                <!-- <div class="text-center">
                     <img class="logo" src="<?= base_url('assets/logo.png') ?>" alt="" width="100px">
-                </div>
+                </div> -->
                 <p class="text-center mb-0 d-none">
                     <a href="#" data-menu="menu-settings" class="btn btn-m font-900 text-uppercase bg-dark-dark">Cek Sekarang</a>
                 </p>

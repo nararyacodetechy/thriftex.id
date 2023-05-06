@@ -23,10 +23,10 @@
                         </div>
                         <div class="align-self-center">
                             <?php
-                                if($value['check_result'] == 'Process'){
+                                if($value['check_result'] == 'Waiting'){
                                     $badge_color = 'bg-yellow-light';
-                                }elseif($value['check_result'] == 'Checking'){
-                                    $badge_color = 'bg-yellow-dark';
+                                }elseif($value['check_result'] == 'processing'){
+                                    $badge_color = 'bg-blue-dark';
                                 }elseif($value['check_result'] == 'fake'){
                                     $badge_color = 'bg-red-dark';
                                 }else{

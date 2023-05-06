@@ -31,11 +31,11 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" id="login" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-green-dark mt-n2">LOGIN</button>
+                            <button type="submit" id="login" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-dark-dark mt-n2">LOGIN</button>
                         </div>
                     </form>
                     <div class="divider mt-4"></div>
-                    <a href="#" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-red-dark mt-0 mb-4"><i class="fa-brands fa-google"></i> Login dengan Akun Google</a>
+                    <a href="#" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-dark-dark mt-0 mb-4"><i class="fa-brands fa-google"></i> Login dengan Akun Google</a>
                 </div>
             </div>
         </div>

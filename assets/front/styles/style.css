@@ -6572,15 +6572,19 @@ input[type=number] {
 }
 
 .bg-28 {
-  background-image: url(../images/legit.jpeg);
+  background-image: url(../images/thrift/legit.jpeg);
 }
 
 .bg-29 {
-  background-image: url(../images/certif.jpeg);
+  background-image: url(../images/thrift/certif.jpeg);
 }
 
 .bg-30 {
   background-image: url(../images/pictures/30.jpg);
+}
+
+.bg-31 {
+  background-image: url(../images/thrift/mainbg.jpeg);
 }
 
 /*Demo Colors*/

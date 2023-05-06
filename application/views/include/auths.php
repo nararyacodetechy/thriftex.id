@@ -37,7 +37,7 @@ if($this->session->userdata('login') == false){
                 </div>
             </div>
             <div class="d-grid gap-2">
-                <button type="submit" id="login" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-green-dark mt-n2">LOGIN</button>
+                <button type="submit" id="login" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-dark-dark mt-n2">LOGIN</button>
             </div>
         </form>
     </div>
@@ -96,11 +96,11 @@ if($this->session->userdata('login') == false){
                 </div>
             </div>
             <div class="d-grid gap-2">
-                <button type="submit" id="register_submit" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-blue-dark mt-n2">Buat Akun Baru</button>
+                <button type="submit" id="register_submit" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-dark-dark mt-n2">Buat Akun Baru</button>
             </div>
         </form>
-        <p class="text-center mt-2 mb-2">atau</p>
-        <a href="#" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-red-dark mt-0 mb-4"><i class="fa-brands fa-google"></i> Daftar dengan Google</a>
+        <p class="text-center mt-2 mb-2 d-none">atau</p>
+        <a href="#" class="d-none btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-red-dark mt-0 mb-4"><i class="fa-brands fa-google"></i> Daftar dengan Google</a>
     </div>
     <div class="content text-center success_register d-none">
         <i class="fa fa-check-circle scale-box color-green-dark fa-5x pb-3 pt-3"></i>
@@ -137,7 +137,7 @@ if($this->session->userdata('login') == false){
                 <div class="clearfix"></div>
             </div>
         </div>
-        <a href="#" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-red-dark mt-n2">Reset Password</a>
+        <a href="#" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-dark-dark mt-n2">Reset Password</a>
     </div>
 </div>
 <?php } ?>

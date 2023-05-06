@@ -415,12 +415,19 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('theme-light', 'detect-theme');
             for(let i = 0; i < toggleDark.length; i++){toggleDark[i].checked="checked"};
             localStorage.setItem(pwaName+'-Theme', 'dark-mode');
+            localStorage.setItem('main_logo', 'assets/logo.png');
+            var logos = document.getElementById('main_logo');
+            logos.src = baseUrl+'assets/logo.png';
         }
         function activateLightMode(){
             document.body.classList.add('theme-light');
             document.body.classList.remove('theme-dark','detect-theme');
             for(let i = 0; i < toggleDark.length; i++){toggleDark[i].checked=false};
             localStorage.setItem(pwaName+'-Theme', 'light-mode');
+            localStorage.setItem('main_logo', 'assets/logo.jpeg');
+            var logos = document.getElementById('main_logo');
+            logos.src = baseUrl+'assets/logo.jpeg';
+
         }
         function removeTransitions(){var falseTransitions = document.querySelectorAll('.btn, .header, #footer-bar, .menu-box, .menu-active'); for(let i = 0; i < falseTransitions.length; i++) {falseTransitions[i].style.transition = "all 0s ease";}}
         function addTransitions(){var trueTransitions = document.querySelectorAll('.btn, .header, #footer-bar, .menu-box, .menu-active'); for(let i = 0; i < trueTransitions.length; i++) {trueTransitions[i].style.transition = "";}}
@@ -446,6 +453,9 @@ document.addEventListener('DOMContentLoaded', () => {
         //Set Color Based on Remembered Preference.
         if(localStorage.getItem(pwaName+'-Theme') == "dark-mode"){for(let i = 0; i < toggleDark.length; i++){toggleDark[i].checked="checked"};document.body.className = 'theme-dark';}
         if(localStorage.getItem(pwaName+'-Theme') == "light-mode"){document.body.className = 'theme-light';} if(document.body.className == "detect-theme"){setColorScheme();}
+        var baseUrls = document.querySelector('#base_urls').value;
+        if(localStorage.getItem('main_logo')  == 'assets/logo.jpeg'){ document.getElementById('main_logo').src = baseUrls+'assets/logo.jpeg'}
+        if(localStorage.getItem('main_logo') == 'assets/logo.png'){document.getElementById('main_logo').src = baseUrls+'assets/logo.png'}
 
         //Detect Dark/Light Mode
         const darkModeDetect = document.querySelectorAll('.detect-dark-mode');

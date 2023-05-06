@@ -15,7 +15,16 @@ class Legitcheck extends CI_Controller {
         date_default_timezone_set('Asia/Makassar');
 		$this->load->helper(array('config'));
     }
-
+    public function home()
+	{
+		$this->site->is_logged_in();
+        $token = $this->session->userdata('token');
+        $total_legit = $this->legit->get_total_legit($token);
+        $data = array(
+            'total_legit'   => $total_legit['total']
+        );
+		$this->load->view('legit_home.php',$data);
+	}
     public function index()
 	{
 		$this->site->is_logged_in();
@@ -127,6 +136,16 @@ class Legitcheck extends CI_Controller {
     public function newlist(){
         $token = $this->session->userdata('token');
         $legit_list = $this->legit->validator_do($token,'');
+        $data = array(
+            'title' => 'New Legit Check',
+            'list_legit'    => $legit_list['data']
+        );
+        $this->load->view('validator_task_list.php',$data);
+    }
+
+    public function processlist(){
+        $token = $this->session->userdata('token');
+        $legit_list = $this->legit->validator_do($token,'processing');
         $data = array(
             'title' => 'New Legit Check',
             'list_legit'    => $legit_list['data']

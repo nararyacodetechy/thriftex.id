@@ -24,12 +24,12 @@ $(document).ready(function(){
             console.log(albumList.albums);
         });
         const pickJson = [
-            {'id' : '1','name' : 'Exterior Outer'},
-            {'id' : '2','name' : 'Exterior Inner'},
-            {'id' : '3','name' : 'Inside Label'},
-            {'id' : '4','name' : 'Tag Front'},
-            {'id' : '5','name' : 'Tag Back'},
-            {'id' : '6','name' : 'Other'},
+            {'id' : '1','name' : 'Foto 1'},
+            {'id' : '2','name' : 'Foto 2'},
+            {'id' : '3','name' : 'Foto 3'},
+            {'id' : '4','name' : 'Foto 4'},
+            {'id' : '5','name' : 'Foto 5'},
+            {'id' : '6','name' : 'Foto 6'},
         ]
         $.each(pickJson, function(k,v){
             var el =    '<div class="flex-grow-1 align-self-center" style="width:33.333%">'+

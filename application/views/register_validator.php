@@ -45,12 +45,30 @@
                             <em>(required)</em>
                         </div>
                         <div class="valid-feedback color-red-dark field_passconf"></div>
-                        <div class="input-style no-borders no-icon mb-4">
+                        <!-- <div class="input-style no-borders no-icon mb-4">
                             <label for="form5a" class="color-highlight">Pilih Spesialis Brand</label>
                             <select id="form5a" name="validator_brand_id">
                                 <option value="default" disabled selected>Spesialis Brand</option>
                                 <option value="1">Vans</option>
                                 <option value="2">Converse</option>
+                            </select>
+                            <span><i class="fa fa-chevron-down"></i></span>
+                            <i class="fa fa-check disabled valid color-green-dark"></i>
+                            <i class="fa fa-check disabled invalid color-red-dark"></i>
+                            <em></em>
+                        </div> -->
+                        <div class="input-style no-borders no-icon mb-4">
+                            <label for="form5a" class="color-highlight">Pilih Spesialis Kategori</label>
+                            <select id="form5a" name="validator_kategori_id">
+                                <option value="default" disabled selected>Spesialis Kategori</option>
+                                <option value="1">Sepatu</option>
+                                <option value="2">Tas</option>
+                                <option value="3">Baju</option>
+                                <option value="4">Hoodie</option>
+                                <option value="5">Jacket</option>
+                                <option value="6">Topi</option>
+                                <option value="7">Celana</option>
+                                <option value="8">Etc</option>
                             </select>
                             <span><i class="fa fa-chevron-down"></i></span>
                             <i class="fa fa-check disabled valid color-green-dark"></i>

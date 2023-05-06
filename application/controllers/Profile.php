@@ -23,11 +23,12 @@ class Profile extends CI_Controller {
 
 		$token = $this->session->userdata('token');
         $legit_list1 = $this->legit->validator_do($token,'');
+        $legit_list2 = $this->legit->validator_do($token,'processing');
         $legit_list3 = $this->legit->validator_do($token,'complete');
 		$validator_data_summary = array(
-			'total_baru'	=> count($legit_list1['data']),
-			'total_proses'	=> 0,
-			'total_selesai'	=> count($legit_list3['data']),
+			'total_baru'	=> (!empty($legit_list1['data'])) ? count($legit_list1['data']) : 0,
+			'total_proses'	=> (!empty($legit_list2['data'])) ? count($legit_list2['data']) : 0,
+			'total_selesai'	=> (!empty($legit_list3['data'])) ? count($legit_list3['data']) : 0,
 		);
 		$dataAdmin = [];
 
@@ -35,7 +36,11 @@ class Profile extends CI_Controller {
 			$data_summary_admin = $this->legit->get_summary_admin($token)['data'];
 			$dataAdmin['total_user'] = $data_summary_admin['total_user'];
 			$dataAdmin['total_validator'] = $data_summary_admin['total_validator'];
-			$dataAdmin['total_legit_success'] = $data_summary_admin['total_legit_success'];
+			// $dataAdmin['total_legit_success'] = $data_summary_admin['total_legit_success'];
+
+			$token = $this->session->userdata('token');
+        	$total_legit = $this->legit->get_total_legit($token);
+			$dataAdmin['total_legit_success'] = $total_legit['total'];
 		}
 
 

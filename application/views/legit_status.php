@@ -17,12 +17,16 @@
                         <p>Submitted At : <?= $legit_data[0]['submit_time'] ?></p>
                     </div>
                     <?php
-                        if($legit_data[0]['check_result'] == 'Process'){
-                            $badge_color = 'bg-yellow-light';
+                        if($legit_data[0]['check_result'] == 'processing'){
+                            $badge_color = 'bg-blue-light';
                         }elseif($legit_data[0]['check_result'] == 'Checking'){
                             $badge_color ='bg-yellow-dark';
+                        }elseif($legit_data[0]['check_result'] == 'Original'){
+                            $badge_color ='bg-green-dark';
+                        }elseif($legit_data[0]['check_result'] == 'fake'){
+                            $badge_color = 'bg-red-dark';
                         }else{
-                            $badge_color = 'bg-green-light';
+                            $badge_color = 'bg-yellow-light';
                         }
                     ?>
                     <h6 class="<?= $badge_color ?> p-2 rounded-xs d-inline-block font-18 mt-5"><?= $legit_data[0]['check_result'] ?></h6>

@@ -16,6 +16,13 @@
                         <select id="form5" name="kategori" required>
                             <option value="default" disabled selected>Pilih Kategori</option>
                             <option value="1">Sepatu</option>
+                            <option value="2">Tas</option>
+                            <option value="3">Baju</option>
+                            <option value="4">Hoodie</option>
+                            <option value="5">Jacket</option>
+                            <option value="6">Topi</option>
+                            <option value="7">Celana</option>
+                            <option value="8">Etc</option>
                             <!-- <option value="tad">Tas</option>
                             <option value="pakaian">Pakaian</option>
                             <option value="lainnya">Lainnya</option> -->
@@ -49,25 +56,30 @@
                 <div class="d-flex content mb-1">
                     <!-- left side of profile -->
                     <div class="flex-grow-1">
-                        <h5 class="font-600 mb-0 lh-1">Pilih Brand</h5>
+                        <h5 class="font-600 mb-0 lh-1">Masukan Brand</h5>
                     </div>
                 </div>
-                <div class="content">
+                <!-- <div class="content d-none">
                     <div class="input-style has-borders no-icon mb-4">
                         <label for="form6" class="color-highlight">Pilih Brand</label>
                         <select id="form6" name="brand" required>
                             <option value="default" disabled selected>Pilih Brand</option>
-                            <!-- <option value="nike">Nike</option>
-                            <option value="adidas">Adidas</option>
-                            <option value="newbalance">New Balance</option> -->
                             <option value="1">Vans</option>
                             <option value="2">Converse</option>
-                            <!-- <option value="Puma">Puma</option> -->
                         </select>
                         <span><i class="fa fa-chevron-down"></i></span>
                         <i class="fa fa-check disabled valid color-green-dark"></i>
                         <i class="fa fa-check disabled invalid color-red-dark"></i>
                         <em></em>
+                    </div>
+                </div> -->
+                <div class="content">
+                    <div class="input-style has-borders no-icon validate-field mb-4">
+                        <input type="text" class="form-control validate-text" name="brand" id="form4" placeholder="Nama Brand" required>
+                        <label for="form4" class="color-highlight">Nama Brand</label>
+                        <i class="fa fa-times disabled invalid color-red-dark"></i>
+                        <i class="fa fa-check disabled valid color-green-dark"></i>
+                        <em>(required)</em>
                     </div>
                 </div>
                 <div class="d-flex content mb-1">

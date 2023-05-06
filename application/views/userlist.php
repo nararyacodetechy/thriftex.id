@@ -34,40 +34,22 @@
     </div>
 </div>
 
-
-<!-- menu-gdpr -->
-<div id="menu-modal-gdpr" class="menu menu-box-modal menu-box-detached rounded-m" data-menu-height="450">
-    <div class="menu-title mt-n1">
-        <h1>Personal Information</h1>
-        <a href="#" class="close-menu"><i class="fa fa-times"></i></a>
+<!-- Modal -->
+<div class="modal fade" id="DetailUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="DetailUserLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-sm">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="DetailUserLabel">Detail User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+      </div>
     </div>
-    <div class="content mt-2">
-        <div class="divider mb-3"></div>
-        <div class="d-flex pt-1">
-            <div class="align-self-center"><a href="#" class="icon font-12 color-theme  pe-3 ms-2"><i class="fa fa-user"></i></a></div>
-            <div class="align-self-center"><h5 class="mb-1">Personal Information</h5></div>
-        </div>
-        <ul class="px-5 mx-2 line-height-s pt-2 pb-2">
-            <li>Favorite Songs</li>
-            <li>Favorite Albums</li>
-        </ul>
-        <div class="d-flex">
-            <div class="align-self-center"><a href="#" class="icon font-12 color-theme  pe-3 ms-2"><i class="fa fa-chart-pie"></i></a></div>
-            <div class="align-self-center"><h5 class="mb-1">App Usage and Analytics</h5></div>
-        </div>
-        <ul class="px-5 mx-2 line-height-s pt-2 pb-2">
-            <li>Hours Listened</li>
-        </ul>
-        <div class="d-flex">
-            <div class="align-self-center"><a href="#" class="icon font-12 color-theme  pe-3 ms-2"><i class="fa fa-bullseye"></i></a></div>
-            <div class="align-self-center"><h5 class="mb-1">Identifiers</h5></div>
-        </div>
-        <ul class="px-5 mx-2 line-height-s pt-2 pb-3">
-            <li>Hours Listened</li>
-            <li>Media Types Liked</li>
-        </ul>
-        <a href="#" data-menu="menu-gdpe-confirm" class="btn btn-m btn-full bg-blue-dark text-uppercase rounded-sm font-800">Cencel</a>
-    </div>
+  </div>
 </div>
+
     
 <?php include('include/footer.php'); ?>

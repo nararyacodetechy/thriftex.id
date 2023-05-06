@@ -60,8 +60,12 @@
                     <h6>Legit Result :</h6>
                     <div class="mb-3">
                         <input type="hidden" name="legit_id" value="<?= $legit_data[0]['id'] ?>">
+                        <div class="fac fac-radio fac-blue"><span></span>
+                            <input id="box7-fac-radio" type="radio" name="legit_status" value="processing" <?= (isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'processing')?'checked':'' ?>>
+                            <label for="box7-fac-radio">Processing</label>
+                        </div>
                         <div class="fac fac-radio fac-green"><span></span>
-                            <input id="box5-fac-radio" type="radio" name="legit_status" value="real" <?= (isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'real')?'checked':'checked' ?>  >
+                            <input id="box5-fac-radio" type="radio" name="legit_status" value="real" <?= (isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'real')?'checked':'' ?>  >
                             <label for="box5-fac-radio">Original</label>
                         </div>
                         <div class="fac fac-radio fac-red"><span></span>

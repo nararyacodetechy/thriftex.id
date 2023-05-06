@@ -147,7 +147,7 @@
             <a href="<?= base_url('/') ?>">
                 <span>Home</span>
             </a>
-            <a href="<?= base_url('/legitchcek') ?>">
+            <a href="<?= base_url('/legit') ?>">
                 <span>Legit Check</span>
             </a>
             <a href="#">

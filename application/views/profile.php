@@ -76,7 +76,7 @@
                     </div>
                     <div class="col-4 ps-2 pe-2">
                         <div class="card card-style mx-0 mb-3">
-                            <a href="<?= base_url('legit/newlist') ?>">
+                            <a href="<?= base_url('legit/processlist') ?>">
                                 <div class="p-3">
                                     <h4 class="font-700 text-uppercase font-12 opacity-50 mt-n2">Proses</h4>
                                     <h1 class="font-700 font-34 color-blue-dark mb-0"><?= $validator_summary_count['total_proses'] ?></h1>

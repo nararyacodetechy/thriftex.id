@@ -22,14 +22,16 @@
                         </div>
                         <div class="align-self-center">
                             <?php
-                                if($value['check_result'] == 'Process'){
-                                    $badge_color = 'bg-yellow-light';
+                                if($value['check_result'] == 'processing'){
+                                    $badge_color = 'bg-blue-light';
                                 }elseif($value['check_result'] == 'Checking'){
                                     $badge_color = 'bg-yellow-dark';
+                                }elseif($value['check_result'] == 'Original'){
+                                    $badge_color ='bg-green-dark';
                                 }elseif($value['check_result'] == 'fake'){
                                     $badge_color = 'bg-red-dark';
                                 }else{
-                                    $badge_color = 'bg-green-light';
+                                    $badge_color = 'bg-yellow-light';
                                 }
                             ?>
                         <p class="mb-0"><span class="badge ms-1 <?= $badge_color ?> color-white border-0 font-10" style="transform:translateY(-2px);"><?= $value['check_result']?></span></p>

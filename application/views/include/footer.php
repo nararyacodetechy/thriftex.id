@@ -43,7 +43,7 @@
             </div>
             <div class="divider mb-4 mt-n1"></div>
             <div class="d-grid gap-2 mb-3">
-                <button type="submit" class="btn btn-full sendmailbtn btn-m shadow-l rounded-s text-uppercase font-900 bg-green-dark mt-n2">Kirim</button>
+                <button type="submit" class="btn btn-full sendmailbtn btn-m shadow-l rounded-s text-uppercase font-900 bg-dark-dark mt-n2">Kirim</button>
             </div>
         </form>
     </div>

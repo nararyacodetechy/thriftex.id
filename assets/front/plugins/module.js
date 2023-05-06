@@ -136,7 +136,7 @@ $(document).ready(function(){
 
         $(document).on('click','.detailProfile', function(e){
             e.preventDefault(0);
-            menu('menu-modal-gdpr', 'show', 250);
+            $('#DetailUser').modal('show');
         });
     }
 
