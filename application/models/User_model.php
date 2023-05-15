@@ -25,7 +25,11 @@ class User_model extends CI_model {
             $response = $th->getResponse();
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
-            return array('status' => $res->status,'message' => $res->message);
+            if(!empty($res)){
+                return array('status' => $res->status,'message' => $res->message);
+            }else{
+                return $res;
+            }
         }
     }
 

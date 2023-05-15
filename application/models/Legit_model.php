@@ -184,5 +184,17 @@ class Legit_model extends CI_model {
             return $res;
         }
     }
+
+    public function get_legit_publish($token){
+        $response = $this->_client->request('GET','legits/legitpublish',[
+            'headers' => [
+                'Accept'     => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => $token
+            ],
+        ]);
+        $result = json_decode($response->getBody()->getContents(), true);
+        return $result['data'];
+    }
     
 }

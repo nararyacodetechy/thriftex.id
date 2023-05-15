@@ -11,20 +11,20 @@ if($this->session->userdata('login') == false){
     <div id="notiflogin" class="toast toast-tiny toast-top bg-red-dark notif_login" data-bs-delay="1500" data-autohide="true"></div>
     <div class="content mb-0">
         <form action="<?= base_url('auth/login') ?>" method="post">
-            <div class="input-style no-borders has-icon validate-field mb-4">
+            <div class="input-style no-borders has-icon  mb-4">
                 <i class="fa fa-user"></i>
                 <input type="email" name="email" class="form-control validate-name" id="form1a" placeholder="Email" autocomplete="off">
                 <label for="form1a" class="color-blue-dark">Email</label>
-                <i class="fa fa-times disabled invalid color-red-dark"></i>
-                <i class="fa fa-check disabled valid color-green-dark"></i>
+                <!-- <i class="fa fa-times disabled invalid color-red-dark"></i>
+                <i class="fa fa-check disabled valid color-green-dark"></i> -->
                 <em>(required)</em>
             </div>
-            <div class="input-style no-borders has-icon validate-field mb-4">
+            <div class="input-style no-borders has-icon  mb-4">
                 <i class="fa fa-lock"></i>
                 <input type="password" name="password" class="form-control validate-text" id="form3a" placeholder="Password" autocomplete="new-password"> 
                 <label for="form3a" class="color-blue-dark">Password</label>
-                <i class="fa fa-times disabled invalid color-red-dark"></i>
-                <i class="fa fa-check disabled valid color-green-dark"></i>
+                <!-- <i class="fa fa-times disabled invalid color-red-dark"></i>
+                <i class="fa fa-check disabled valid color-green-dark"></i> -->
                 <em>(required)</em>
             </div>
             <div class="row">
@@ -53,7 +53,7 @@ if($this->session->userdata('login') == false){
     <div id="notifs" class="toast toast-tiny toast-top bg-red-dark" data-bs-delay="2000" data-autohide="true"><i class="fa fa-times me-3"></i>Terjadi Kesalahan</div>
     <div class="content mb-0 mt-0 register">
         <form action="<?= base_url('auth/register') ?>" method="post" id="jxfm">
-            <div class="input-style no-borders has-icon validate-field mt-3">
+            <div class="input-style no-borders has-icon validate-field_ mt-3">
                 <i class="fa fa-user"></i>
                 <input type="name" name="nama" class="form-control myinput validate-name" data-iden="nama" id="form1ac" placeholder="Nama lengkap" required>
                 <label for="form1ac" class="color-blue-dark font-10">Nama lengkap</label>
@@ -62,7 +62,7 @@ if($this->session->userdata('login') == false){
                 <em>(required)</em>
             </div>
             <div class="valid-feedback color-red-dark field_nama"></div>
-            <div class="input-style no-borders has-icon validate-field mt-3">
+            <div class="input-style no-borders has-icon validate-field_ mt-3">
                 <i class="fa fa-at"></i>
                 <input type="email" name="email" class="form-control myinput validate-text" data-iden="email" id="form2ac55" placeholder="Email" autocomplete="off" required>
                 <label for="form2ac55" class="color-blue-dark font-10">Email</label>
@@ -71,7 +71,7 @@ if($this->session->userdata('login') == false){
                 <em>(required)</em>
             </div>
             <div class="valid-feedback color-red-dark field_email"></div>
-            <div class="input-style no-borders has-icon validate-field mt-3">
+            <div class="input-style no-borders has-icon validate-field_ mt-3">
                 <i class="fa fa-lock"></i>
                 <input type="password" name="password" class="form-control myinput validate-text " data-iden="password" id="form3ac" placeholder="Password"  autocomplete="new-password" required>
                 <label for="form3ac" class="color-blue-dark font-10">Password</label>
@@ -80,7 +80,7 @@ if($this->session->userdata('login') == false){
                 <em>(required)</em>
             </div>
             <div class="valid-feedback color-red-dark field_password"></div>
-            <div class="input-style no-borders has-icon validate-field mt-3">
+            <div class="input-style no-borders has-icon validate-field_ mt-3">
                 <i class="fa fa-lock"></i>
                 <input type="password" name="passconf" class="form-control myinput validate-text" data-iden="passconf" id="form3a1" placeholder="Ulangi Password" required>
                 <label for="form3a1" class="color-blue-dark font-10 mt-1">Ulangi Password</label>
@@ -120,12 +120,12 @@ if($this->session->userdata('login') == false){
     </div>
 
     <div class="content mb-0 mt-n2">
-        <div class="input-style no-borders has-icon validate-field mb-4">
+        <div class="input-style no-borders has-icon validate-field_ mb-4">
             <i class="fa fa-at"></i>
             <input type="email" class="form-control validate-text" id="form24a" placeholder="Email">
             <label for="form24a" class="color-blue-dark">Email</label>
-            <i class="fa fa-times disabled invalid color-red-dark"></i>
-            <i class="fa fa-check disabled valid color-green-dark"></i>
+            <!-- <i class="fa fa-times disabled invalid color-red-dark"></i>
+            <i class="fa fa-check disabled valid color-green-dark"></i> -->
             <em>(required)</em>
         </div>
         <div class="row">

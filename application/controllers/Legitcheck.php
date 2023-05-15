@@ -20,8 +20,10 @@ class Legitcheck extends CI_Controller {
 		$this->site->is_logged_in();
         $token = $this->session->userdata('token');
         $total_legit = $this->legit->get_total_legit($token);
+        $data_legit = $this->legit->get_legit_publish($token);
         $data = array(
-            'total_legit'   => $total_legit['total']
+            'total_legit'   => $total_legit['total'],
+            'data_legit'    => $data_legit
         );
 		$this->load->view('legit_home.php',$data);
 	}

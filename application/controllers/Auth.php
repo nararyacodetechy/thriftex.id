@@ -45,21 +45,28 @@ class Auth extends CI_Controller {
                 'password'  => $password
             ];
             $cek_login = $this->user->cek_login($data_login);
-            if($cek_login['status'] == true){
-                $data_login = array(
-                    'login' => true,
-                    'uid'   => $cek_login['uid'],
-                    'token' => $cek_login['token']
-                );
-                $this->session->set_userdata($data_login);
-                $response = array(
-                    'status' => true,
-                    'redirect_url'  => base_url('profile')
-                );
+            if(!empty($cek_login)){
+                if($cek_login['status'] == true){
+                    $data_login = array(
+                        'login' => true,
+                        'uid'   => $cek_login['uid'],
+                        'token' => $cek_login['token']
+                    );
+                    $this->session->set_userdata($data_login);
+                    $response = array(
+                        'status' => true,
+                        'redirect_url'  => base_url('profile')
+                    );
+                }else{
+                    $response = array(
+                        'status' => $cek_login['status'],
+                        'msg'   => $cek_login['message']
+                    );
+                }
             }else{
                 $response = array(
-                    'status' => $cek_login['status'],
-                    'msg'   => $cek_login['message']
+                    'status' => false,
+                    'msg'   => 'Server Error!'
                 );
             }
         }
@@ -79,16 +86,23 @@ class Auth extends CI_Controller {
             'passconf'  => $post['passconf'],
         ];
         $regis = $this->user->register($data_regis);
-        if($regis['status'] == true){
-            $response = array(
-                'status' => true,
-                'msg'   => $regis['message']
-            );
+        if(!empty($regis)){
+            if($regis->status == true){
+                $response = array(
+                    'status' => true,
+                    'msg'   => $regis->message
+                );
+            }else{
+                $response = array(
+                    'status' => $regis->status,
+                    'msg'   => $regis->message,
+                    'data'  => $regis->error_data
+                );
+            }
         }else{
             $response = array(
-                'status' => $regis['status'],
-                'msg'   => $regis['message'],
-                'data'  => $regis['error_data']
+                'status' => false,
+                'msg'   => 'Register gagal,terjadi kesalahan sistem'
             );
         }
         echo json_encode($response);

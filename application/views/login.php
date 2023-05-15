@@ -7,14 +7,14 @@
                     <h1 class="text-center font-800 font-40 mb-1">Login</h1>
                     <p class="color-highlight text-center font-12">Masuk dengan akun Anda</p>
                     <form action="<?= base_url('auth/login') ?>" method="post">
-                        <div class="input-style no-borders has-icon validate-field mb-4">
+                        <div class="input-style no-borders has-icon validate-field_ mb-4">
                             <i class="fa fa-user"></i>
                             <input type="email" name="email" class="form-control validate-name myfm" id="form1a" placeholder="Email" autocomplete="off">
                             <label for="form1a" class="color-blue-dark">Email</label>
                             
                             <em>(required)</em>
                         </div>
-                        <div class="input-style no-borders has-icon validate-field mb-4">
+                        <div class="input-style no-borders has-icon validate-field_ mb-4">
                             <i class="fa fa-lock"></i>
                             <input type="password" name="password" class="form-control validate-text" id="form3a" placeholder="Password" autocomplete="new-password"> 
                             <label for="form3a" class="color-blue-dark">Password</label>
