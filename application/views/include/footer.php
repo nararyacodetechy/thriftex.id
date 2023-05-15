@@ -40,6 +40,7 @@
             <div class="input-style has-borders no-icon mb-4">
                 <textarea id="form7" placeholder="Enter your message" name="feedback_txt"></textarea>
                 <label for="form7" class="color-highlight">Enter your Message</label>
+                <em class="mt-n3">(required)</em>
             </div>
             <div class="divider mb-4 mt-n1"></div>
             <div class="d-grid gap-2 mb-3">
