@@ -101,7 +101,7 @@ $(document).ready(function(){
                 [10, 25, 50, "All"]
             ],
             pageLength: 10,
-            dom: '<"top datatable_topm text-start"i>rt<"bottom row mt-3 mb-2"<"col-md-6 text-start"p><"col-md-3 text-end">><"clear">',
+            dom: '<"top datatable_topm text-start"i>rt<"bottom row mt-3 mb-2"<"col-md-12"p>><"clear">',
             ajaxSource: list_url,
             // ajax:{
             //     url: list_url,

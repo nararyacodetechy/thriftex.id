@@ -7087,3 +7087,7 @@ div#notiflogin p{
   float: left;
   display: contents;
 }
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination{
+  justify-content: center !important;
+}
