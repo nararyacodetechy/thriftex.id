@@ -7,6 +7,19 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <meta name="google-site-verification" content="LJQFrrpKjyEj7HfR1mIoog_zfcQbxWGTYCOu08wefDg" />
+    <link rel="apple-touch-icon" sizes="57x57" href="<?= base_url('assets/ico/apple-icon-57x57.png') ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?= base_url('assets/ico/apple-icon-60x60.png') ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?= base_url('assets/ico/apple-icon-72x72.png') ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/ico/apple-icon-76x76.png') ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?= base_url('assets/ico/apple-icon-114x114.png') ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?= base_url('assets/ico/apple-icon-120x120.png') ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?= base_url('assets/ico/apple-icon-144x144.png') ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?= base_url('assets/ico/apple-icon-152x152.png') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/ico/apple-icon-180x180.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?= base_url('assets/ico/android-icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/ico/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?= base_url('assets/ico/favicon-96x96.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/ico/favicon-16x16.png') ?>">
     <link rel="stylesheet" type="text/css" href="<?= get_template_directory_asst('assets/front/styles/bootstrap.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= get_template_directory_asst('assets/front/styles/style.css') ?>">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
@@ -26,11 +39,7 @@
     <div id="page">
         <div class="header header-fixed header-logo-center">
             <a href="<?= base_url() ?>" class="header-title"><img class="logo main_logo" id="main_logo" src="<?= base_url('assets/logo.jpeg') ?>" alt=""></a>
-            <!-- <a href="#" data-back-button class="header-icon center-xy header-icon-1"><i class="fas fa-arrow-left"></i></a> -->
             <a href="#" data-menu="menu-sidebar-left-6" class="header-icon center-xy header-icon-1"><i class="fa-solid fa-bars font-18 color-gray-dark"></i></a>
-            <!-- <a href="#" data-toggle-theme class="header-icon center-xy header-icon-4"><i class="fas fa-lightbulb"></i></a> -->
-            <!-- <i class="fa font-12 fa-home gradient-green rounded-m color-white p-2 "></i> -->
-            <!-- <a href="#" data-menu="menu-register-1" class="header-icon center-xy header-icon-4"><img src="<?= base_url() ?>assets/front/images/pictures/faces/3s.png" width="30" class="rounded-circle mb-n1"></a> -->
             <?php
             if($this->session->userdata('login') == true){
             ?>
@@ -43,13 +52,5 @@
             }
             ?>
         </div>
-
-        <!-- <div id="footer-bar" class="footer-bar-1">
-            <a href="<?= base_url() ?>" class="active-nav"><i class="fa fa-home"></i><span>Home</span></a>
-            <a href="index-components"><i class="fa fa-star"></i><span>Features</span></a>
-            <a href="index-pages.html"><i class="fa fa-heart"></i><span>Pages</span></a>
-            <a href="index-search.html"><i class="fa fa-search"></i><span>Search</span></a>
-            <a href="#" data-menu="menu-settings"><i class="fa fa-cog"></i><span>Settings</span></a>
-        </div> -->
             
         <div class="page-content header-clear-large">

@@ -1,7 +1,6 @@
 <?php
 if($this->session->userdata('login') == false){
 ?>
-<!-- menu-login-1 -->
 <div id="menu-login-1" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="415" data-menu-effect="menu-over">
     <div class="menu-title mt-n1" id="validation">
         <h1>Login</h1>
@@ -15,16 +14,12 @@ if($this->session->userdata('login') == false){
                 <i class="fa fa-user"></i>
                 <input type="email" name="email" class="form-control validate-name" id="form1a" placeholder="Email" autocomplete="off">
                 <label for="form1a" class="color-blue-dark">Email</label>
-                <!-- <i class="fa fa-times disabled invalid color-red-dark"></i>
-                <i class="fa fa-check disabled valid color-green-dark"></i> -->
                 <em>(required)</em>
             </div>
             <div class="input-style no-borders has-icon  mb-4">
                 <i class="fa fa-lock"></i>
                 <input type="password" name="password" class="form-control validate-text" id="form3a" placeholder="Password" autocomplete="new-password"> 
                 <label for="form3a" class="color-blue-dark">Password</label>
-                <!-- <i class="fa fa-times disabled invalid color-red-dark"></i>
-                <i class="fa fa-check disabled valid color-green-dark"></i> -->
                 <em>(required)</em>
             </div>
             <div class="row">
@@ -46,7 +41,7 @@ if($this->session->userdata('login') == false){
         </div>
     </div>
 </div>
-<!-- register -->
+
 <div id="menu-register-1" class="menu menu-box-bottom menu-box-detached rounded-m register-box" data-menu-height="530" data-menu-effect="menu-over">
     <div class="menu-title mt-n1 register">
         <h1>Register</h1>
@@ -117,7 +112,7 @@ if($this->session->userdata('login') == false){
         <a data-menu="menu-login-1" href="#" class="btn btn-full btn-m rounded-m bg-green-dark font-700 text-uppercase mb-4">Login</a>
     </div>
 </div>
-<!-- menu-forgot-1 -->
+
 <div id="menu-forgot-1" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="240" data-menu-effect="menu-over">
     <div class="menu-title mt-n1">
         <h1>Forgot</h1>
@@ -130,8 +125,6 @@ if($this->session->userdata('login') == false){
             <i class="fa fa-at"></i>
             <input type="email" class="form-control validate-text" id="form24a" placeholder="Email">
             <label for="form24a" class="color-blue-dark">Email</label>
-            <!-- <i class="fa fa-times disabled invalid color-red-dark"></i>
-            <i class="fa fa-check disabled valid color-green-dark"></i> -->
             <em>(required)</em>
         </div>
         <div class="row">
