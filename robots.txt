@@ -4,5 +4,4 @@ Disallow: /media
 Disallow: /template
 Disallow: /vendor
 Disallow: /system
-Disallow: /assets
 Disallow: /application
