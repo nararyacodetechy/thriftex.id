@@ -2,7 +2,7 @@
 if($this->session->userdata('login') == false){
 ?>
 <!-- menu-login-1 -->
-<div id="menu-login-1" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="320" data-menu-effect="menu-over">
+<div id="menu-login-1" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="415" data-menu-effect="menu-over">
     <div class="menu-title mt-n1" id="validation">
         <h1>Login</h1>
         <p class="color-theme opacity-50">Please enter your credentials below</p>
@@ -40,8 +40,10 @@ if($this->session->userdata('login') == false){
                 <button type="submit" id="login" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-dark-dark mt-n2">LOGIN</button>
             </div>
         </form>
-        <p class="text-center mt-2 mb-2 d-none">atau</p>
-        <a href="#" class="d-none btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-red-dark mt-0 mb-4"><i class="fa-brands fa-google"></i> Daftar dengan Google</a>
+        <div class="d-flex align-item-center flex-column justify-content-center">
+            <p class="text-center mt-2 mb-2">atau</p>
+            <button type="button" data-href="" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-red-dark mt-0 mb-4 ggl_login_btns"><i class="fa-brands fa-google"></i> Masuk dengan Akun Google</button>
+        </div>
     </div>
 </div>
 <!-- register -->
@@ -101,8 +103,10 @@ if($this->session->userdata('login') == false){
                 <button type="submit" id="register_submit" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-dark-dark mt-n2">Buat Akun Baru</button>
             </div>
         </form>
-        <p class="text-center mt-2 mb-2 d-none">atau</p>
-        <a href="#" class="d-none btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-red-dark mt-0 mb-4"><i class="fa-brands fa-google"></i> Daftar dengan Google</a>
+        <div class="d-flex align-item-center flex-column justify-content-center">
+            <p class="text-center mt-2 mb-2">atau</p>
+            <button type="button" data-href="" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-red-dark mt-0 mb-4 ggl_login_btns"><i class="fa-brands fa-google"></i> Masuk dengan Akun Google</button>
+        </div>
     </div>
     <div class="content text-center success_register d-none">
         <i class="fa fa-check-circle scale-box color-green-dark fa-5x pb-3 pt-3"></i>

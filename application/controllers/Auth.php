@@ -12,11 +12,93 @@ class Auth extends CI_Controller {
     }
 
     public function viewlogin(){
+        $login_button = '';
         if($this->session->userdata('login') == false){
-            $this->load->view('login.php');
+            // $login_button = $google_client->createAuthUrl();
+		    $data['login_button'] = $login_button;
+            $data['google_code_auth'] = '';
+            if(!empty($this->input->get('code'))){
+                $data['google_code_auth'] = $this->input->get('code');
+            }
+            $this->load->view('login.php',$data);
         }else{
             redirect(base_url('profile'));
         }
+    }
+
+    public function getUrlGogelAuth(){
+        $google_client = new Google_Client();
+        $google_client->setClientId('110276130330-7tiasjh4bcpmr34g490q497mp48cd1h7.apps.googleusercontent.com'); //masukkan ClientID anda 
+        $google_client->setClientSecret('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'); //masukkan Client Secret Key anda
+        $google_client->setRedirectUri(base_url().'login'); //Masukkan Redirect Uri anda
+        $google_client->addScope('email');
+        $google_client->addScope('profile');
+        $login_button = $google_client->createAuthUrl();
+        echo json_encode(array('url'=>$login_button));
+    }
+
+    public function googleAuthCheck(){
+        $data_code = $this->input->post('code');
+        if(!empty($data_code)){
+            $google_client = new Google_Client();
+            $google_client->setClientId('110276130330-7tiasjh4bcpmr34g490q497mp48cd1h7.apps.googleusercontent.com'); //masukkan ClientID anda 
+            $google_client->setClientSecret('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'); //masukkan Client Secret Key anda
+            $google_client->setRedirectUri(base_url().'login'); //Masukkan Redirect Uri anda
+            $google_client->addScope('email');
+            $google_client->addScope('profile');
+            $google_client->addScope('ref');
+            
+            $token = $google_client->fetchAccessTokenWithAuthCode($data_code);
+            // var_dump($token);
+            if(!isset($token["error"])){
+                $google_client->setAccessToken($token['access_token']);
+                $this->session->set_userdata('access_token', $token['access_token']);
+                $google_service = new Google_Service_Oauth2($google_client);
+                $data = $google_service->userinfo->get();
+                // var_dump($data);
+                $user_data = array(
+                    'first_name' => $data['given_name'],
+                    'last_name'  => $data['family_name'],
+                    'full_name' => $data['name'],
+                    'email_address' => $data['email'],
+                    'profile_picture'=> $data['picture'],
+                    'gid'       => $data['id']
+                );
+                // kirim datanya 
+                $cek_login = $this->user->googleauth($user_data);
+                if($cek_login['status'] == true){
+                    $data_login = array(
+                        'login' => true,
+                        'uid'   => $cek_login['uid'],
+                        'token' => $cek_login['token']
+                    );
+                    $this->session->set_userdata($data_login);
+                    $response = array(
+                        'status'    => true,
+                        'msg'       => 'Berhasil, mohon tunggu...',
+                        'redirect_url'  => base_url('profile')
+                    );
+                }else{
+                    $response = array(
+                        'status'    => false,
+                        'msg'       => 'Terjadi kesalahan, silahkan coba kembali',
+                    );
+                    // var_dump($cek_login);
+                }
+                // var_dump($send);
+                // $this->session->set_userdata('user_data', $data);
+            }else{
+                $response = array(
+                    'status'    => false,
+                    'error'     => $token["error"],
+                    'error_description'       => $token["error_description"],
+                    'msg'       => 'Gagal Login, silahakn coba kembali'
+                );
+            }
+            // var_dump($token);
+        }	
+        echo json_encode($response);
+        // array(2) { ["error"]=> string(13) "invalid_grant" ["error_description"]=> string(11) "Bad Request" }
     }
 
 	public function login()

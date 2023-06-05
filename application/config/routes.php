@@ -64,6 +64,8 @@ $route['legitsend'] = 'Legitcheck/sendlegit';
 
 //Authentication
 $route['login'] = 'Auth/viewlogin';
+$route['authcheck'] = 'Auth/googleAuthCheck';
+$route['authurl'] = 'Auth/getUrlGogelAuth';
 $route['auth/login'] = 'Auth/login';
 $route['auth/register'] = 'Auth/register';
 $route['logout'] = 'Auth/logout';

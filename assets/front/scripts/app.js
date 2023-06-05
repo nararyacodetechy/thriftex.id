@@ -149,6 +149,7 @@ $(document).ready(function(){
                 }
             });
         });
+        
         $(document).on('click','#register_submit', function(e){
             e.preventDefault(0);
             var btn = $(this);
@@ -195,6 +196,71 @@ $(document).ready(function(){
             e.preventDefault(0);
             var target = $(this).data('iden');
             $('.field_'+target).removeClass('d-block');
+        });
+    }
+    $(document).on('click','.ggl_login_btns', function(e){
+        e.preventDefault(0);
+        var btn = $(this);
+        btn.attr('disabled', true);
+        const spinerloading = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Checking...';
+        btn.html(spinerloading);
+        $.ajax({
+            url: site_data.base_url+'authurl',
+            type: "GET",
+            success: function (response) {
+                var data = jQuery.parseJSON(response);
+                window.location.href = data.url;
+            }
+        });
+
+    });
+    if($('.google-auth-code').length){
+        var btn = $('.ggl_login_btns');
+        btn.attr('disabled', true);
+        const spinerloading = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Checking...';
+        btn.html(spinerloading);
+        $.ajax({
+            url: site_data.base_url+'authcheck',
+            type: "post",
+            data: {
+                code : $('.google-auth-code').val()
+            } ,
+            success: function (response) {
+                // var data = jQuery.parseJSON(response);
+
+                // if(data.status == true){
+                //     $(form).trigger("reset");
+                //     var toastID = document.getElementById('toast-notiff-fdbck');
+                //     toastID = new bootstrap.Toast(toastID);
+                //     toastID.show();
+                //     setTimeout(function() {
+                //         menu('menu-masukan', 'hide', 250);
+                //     }, 2000);
+                // }
+                setTimeout(function() {
+                    btn.attr('disabled', false);
+                    const spinerloading = '<i class="fa-brands fa-google"></i> Login dengan Akun Google';
+                    btn.html(spinerloading);
+                }, 1000);
+                var data = jQuery.parseJSON(response);
+                if (data.status == true) {
+                    var toastID = document.getElementById('successlogin');
+                    toastID = new bootstrap.Toast(toastID);
+                    toastID.show();
+                    $('.notif_login_success').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','auto');
+                    setTimeout(function() {
+                        window.location.href = data.redirect_url;
+                    }, 1000);
+                } else {
+                    var toastID = document.getElementById('notiflogin');
+                    toastID = new bootstrap.Toast(toastID);
+                    toastID.show();
+                    $('.notif_login').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','auto');
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
         });
     }
     if($('#saveLegitcheck').length){

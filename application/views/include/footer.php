@@ -51,6 +51,10 @@
     </div>
 </div>
 <?php } ?>
+<script type="text/javascript">
+<?php $site_data = [ 'base_url' => base_url() ]; ?>
+var site_data = <?php echo json_encode($site_data); ?>;
+</script>
 <script type="text/javascript" src="<?= get_template_directory_asst('assets/front/plugins/jquery-3.6.4.min.js') ?>"></script>
 <script type="text/javascript" src="<?= get_template_directory_asst('assets/front/scripts/bootstrap.min.js') ?>"></script>
 <script type="text/javascript" src="<?= get_template_directory_asst('assets/front/scripts/custom.js') ?>"></script>

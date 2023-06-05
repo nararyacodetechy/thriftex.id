@@ -20,7 +20,8 @@ class User_model extends CI_model {
                 'form_params'   => $data
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
-            return array('status' => $result['status'],'uid' => $result['uid'], 'token' => $result['token']);
+            // return array('status' => $result['status'],'uid' => $result['uid'], 'token' => $result['token']);
+            return $result;
         } catch (\Throwable $th) {
             $response = $th->getResponse();
             $jsonBody = $response->getBody();
@@ -30,6 +31,22 @@ class User_model extends CI_model {
             }else{
                 return $res;
             }
+        }
+    }
+
+    public function googleauth($data){
+        try {
+            $response = $this->_client->request('POST','users/googleauth',[
+                'form_params'   => $data
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            return $result;
+        } catch (\Throwable $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+            // return array('status' => $res->status,'message' => $res->message,'error_data' => $res->error_data);
         }
     }
 
