@@ -87,17 +87,32 @@ class Auth extends CI_Controller {
         ];
         $regis = $this->user->register($data_regis);
         if(!empty($regis)){
-            if($regis->status == true){
-                $response = array(
-                    'status' => true,
-                    'msg'   => $regis->message
-                );
+            if(is_array($regis)){
+                if($regis['status'] == true){
+                    $response = array(
+                        'status' => true,
+                        'msg'   => $regis['message']
+                    );
+                }else{
+                    $response = array(
+                        'status' => $regis['status'],
+                        'msg'   => $regis['message'],
+                        'data'  => $regis['error_data']
+                    );
+                }
             }else{
-                $response = array(
-                    'status' => $regis->status,
-                    'msg'   => $regis->message,
-                    'data'  => $regis->error_data
-                );
+                if($regis->status == true){
+                    $response = array(
+                        'status' => true,
+                        'msg'   => $regis->message
+                    );
+                }else{
+                    $response = array(
+                        'status' => $regis->status,
+                        'msg'   => $regis->message,
+                        'data'  => $regis->error_data
+                    );
+                }
             }
         }else{
             $response = array(

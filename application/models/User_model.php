@@ -44,7 +44,8 @@ class User_model extends CI_model {
             $response = $th->getResponse();
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
-            return array('status' => $res->status,'message' => $res->message,'error_data' => $res->error_data);
+            return $res;
+            // return array('status' => $res->status,'message' => $res->message,'error_data' => $res->error_data);
         }
     }
 

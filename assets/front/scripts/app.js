@@ -126,10 +126,10 @@ $(document).ready(function(){
             form.ajaxSubmit({
                 url: form.attr("action"),
                 success: function(response, status, xhr, $form) {
-                    var data = jQuery.parseJSON(response);
                     btn.attr('disabled', false);
                     const spinerloading = 'Login';
                     btn.html(spinerloading);
+                    var data = jQuery.parseJSON(response);
                     if (data.status == true) {
                         window.location.href = data.redirect_url;
                         // setTimeout(function() {
@@ -143,6 +143,9 @@ $(document).ready(function(){
                         // }
                         $('.notif_login').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','auto');
                     }
+                },
+                error : function(response){
+                    // console.log(response);
                 }
             });
         });
@@ -157,10 +160,10 @@ $(document).ready(function(){
             form.ajaxSubmit({
                 url: form.attr("action"),
                 success: function(response, status, xhr, $form) {
-                    var data = jQuery.parseJSON(response);
                     btn.attr('disabled', false);
                     const spinerloading = 'Buat Akun Baru';
                     btn.html(spinerloading);
+                    var data = jQuery.parseJSON(response);
                     if (data.status == true) {
                         $('.register').fadeOut(300);
                         $('.register').addClass('d-none');
@@ -181,6 +184,9 @@ $(document).ready(function(){
                             });
                         }
                     }
+                },
+                error: function(response, status, xhr, $form) {
+                    console.log(response)
                 }
             });
         });
