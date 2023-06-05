@@ -40,6 +40,8 @@ if($this->session->userdata('login') == false){
                 <button type="submit" id="login" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-dark-dark mt-n2">LOGIN</button>
             </div>
         </form>
+        <p class="text-center mt-2 mb-2 d-none">atau</p>
+        <a href="#" class="d-none btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-red-dark mt-0 mb-4"><i class="fa-brands fa-google"></i> Daftar dengan Google</a>
     </div>
 </div>
 <!-- register -->

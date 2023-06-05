@@ -14,9 +14,10 @@
             <p class="footer-copyright">Copyright &copy; thriftex.id <span id="copyright-year">2023</span>. All Rights Reserved.</p>
         </div>
         <div class="col-12 col-md-4 text-center text-md-end">
-            <a href="#" class="icon icon-xs icon-gray"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="icon icon-xs icon-gray"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="icon icon-xs icon-gray"><i class="fa fa-phone"></i></a>
+            <a href="https://www.instagram.com/thriftexofficial/" target="_blank" class="icon icon-xs icon-gray"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" class="icon icon-xs icon-gray"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank" class="icon icon-xs icon-gray"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:thriftexcs@gmail.com" target="_blank" class="icon icon-xs icon-gray"><i class="fa fa-envelope"></i></a>
         </div>
         
     </div>
