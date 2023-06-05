@@ -1,24 +1,22 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Thriftex.id</title>
+    <title>Thriftex - Legit Check & Authentic</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <meta name="google-site-verification" content="LJQFrrpKjyEj7HfR1mIoog_zfcQbxWGTYCOu08wefDg" />
+    <meta name="description" content="Thriftex - Temukan Keaslian Produk Anda dengan Mudah dan Cepat di Situs Legit Check Kami. Cek Kredibilitas dan Otentisitas Barang Branded Anda sekarang." >
+    <meta property="og:title" content="Thriftex - Legit Check & Authentic"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Thriftex - Temukan Keaslian Produk Anda dengan Mudah dan Cepat di Situs Legit Check Kami. Cek Kredibilitas dan Otentisitas Barang Branded Anda sekarang." />
+    <meta property="og:url" content="<?= base_url() ?>" />
+    <meta property="og:image" content="<?= base_url('assets/logo.jpeg') ?>" />
+
     <link rel="apple-touch-icon" sizes="57x57" href="<?= base_url('assets/ico/apple-icon-57x57.png') ?>">
-    <link rel="apple-touch-icon" sizes="60x60" href="<?= base_url('assets/ico/apple-icon-60x60.png') ?>">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?= base_url('assets/ico/apple-icon-72x72.png') ?>">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/ico/apple-icon-76x76.png') ?>">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?= base_url('assets/ico/apple-icon-114x114.png') ?>">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?= base_url('assets/ico/apple-icon-120x120.png') ?>">
-    <link rel="apple-touch-icon" sizes="144x144" href="<?= base_url('assets/ico/apple-icon-144x144.png') ?>">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?= base_url('assets/ico/apple-icon-152x152.png') ?>">
     <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/ico/apple-icon-180x180.png') ?>">
     <link rel="icon" type="image/png" sizes="192x192"  href="<?= base_url('assets/ico/android-icon-192x192.png') ?>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/ico/favicon-32x32.png') ?>">
-    <link rel="icon" type="image/png" sizes="96x96" href="<?= base_url('assets/ico/favicon-96x96.png') ?>">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/ico/favicon-16x16.png') ?>">
     <link rel="stylesheet" type="text/css" href="<?= get_template_directory_asst('assets/front/styles/bootstrap.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= get_template_directory_asst('assets/front/styles/style.css') ?>">
