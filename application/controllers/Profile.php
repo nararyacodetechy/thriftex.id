@@ -51,17 +51,22 @@ class Profile extends CI_Controller {
 			'usercode'	=> $checkuser['user_code'],
 			'validator_brand_id' => $checkuser['validator_brand_id'],
 			'validator_summary_count' => $validator_data_summary,
-			'dataAdmin' => $dataAdmin
+			'dataAdmin' => $dataAdmin,
+			'page_title'    => "Halaman Profile Pengguna",
+            'description_page'  => 'Halaman Profile Pengguna - Thriftex.id - Legit Check & Authentic'
 		);
 		$this->load->view('profile.php',$data);
 	}
 	
 
 	public function profile_legit(){
+		$this->site->is_logged_in();
         $token = $this->session->userdata('token');
         $legit_list = $this->legit->getLegitList($token);
         $data = array(
-            'list_legit'    => $legit_list
+            'list_legit'    => $legit_list,
+			'page_title'    => "Legit Check Saya",
+            'description_page'  => 'Halaman Profile Pengguna - Thriftex.id - Legit Check & Authentic'
         );
 		$this->load->view('profile_legit.php',$data);
 	}

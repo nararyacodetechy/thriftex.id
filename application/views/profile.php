@@ -1,8 +1,8 @@
 <?php include('include/header.php'); ?>
 
 <div class="row me-0 ms-0 mb-0 mt-3 justify-content-md-center">
-    <div class="col col-lg-4 ms-0 me-0 ps-0 pe-0">
-        <div class="card mb-2">
+    <div class="col col-lg-4 ms-0 me-0 ps-0 pe-0 min-h-1vh">
+        <div class="card mb-2 ">
             <div class="d-flex content mb-1">
                 <!-- left side of profile -->
                 <div class="flex-grow-1">
@@ -160,8 +160,10 @@
                 <div class="list-group list-custom-small">
                     <?php if($role != 'admin'){ ?>
                     <a href="#" data-menu="menu-masukan" ><span>Bantuan & Masukan</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#"><span>Ketentuan & Kebijakan</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#"><span>Kontak ke Email</span><i class="fa fa-angle-right"></i></a>
+                    <a href="<?= base_url('/faq') ?>"><span>FAQ</span><i class="fa fa-angle-right"></i></a>
+                    <a href="<?= base_url('/privacy-policy') ?>"><span>Kebijakan Privasi</span><i class="fa fa-angle-right"></i></a>
+                    <a href="<?= base_url('/term-condition') ?>"><span>Syarat & Ketentuan</span><i class="fa fa-angle-right"></i></a>
+                    <a href="mailto:thriftexcs@gmail.com"><span>Kontak ke Email</span><i class="fa fa-angle-right"></i></a>
                     <?php } ?>
                     <a href="<?= base_url('logout') ?>"><span>Logout</span><i class="fa fa-angle-right"></i></a>
                 </div>

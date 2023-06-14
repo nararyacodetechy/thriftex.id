@@ -45,14 +45,17 @@
             <a href="#">
                 <span>Artikel</span>
             </a>
-            <a href="#">
+            <a href="<?= base_url('/tentang-kami') ?>">
                 <span>Tentang kami</span>
             </a>
-            <a href="#">
-                <span>Privacy Policy</span>
+            <a href="<?= base_url('/faq') ?>">
+                <span>FAQ</span>
             </a>
-            <a href="#">
-                <span>Term & Condition</span>
+            <a href="<?= base_url('/privacy-policy') ?>">
+                <span>Kebijakan Privasi</span>
+            </a>
+            <a href="<?= base_url('/term-condition') ?>">
+                <span>Syarat & Ketentuan</span>
             </a>
         </div>
     </div>

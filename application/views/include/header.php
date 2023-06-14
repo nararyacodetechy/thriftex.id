@@ -1,16 +1,36 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Thriftex - Legit Check & Authentic</title>
+    <?php
+    $title_show = 'Thriftex - Legit Check & Authentic';
+    $description = 'Thriftex - Temukan Keaslian Produk Anda dengan Mudah dan Cepat di Situs Legit Check Kami. Cek Kredibilitas dan Otentisitas Barang Branded Anda sekarang.';
+    $img = base_url('assets/logo.jpeg');
+    if($this->uri->segment(1) == ''){
+        $title_show = 'Thriftex - Legit Check & Authentic';
+        $description = 'Thriftex - Temukan Keaslian Produk Anda dengan Mudah dan Cepat di Situs Legit Check Kami. Cek Kredibilitas dan Otentisitas Barang Branded Anda sekarang.';
+        $img = base_url('assets/logo.jpeg');
+    }else{
+        if(isset($page_title)){
+            $title_show = $page_title.' - Thriftex.id';
+        }
+        if(isset($description_page)){
+            $description = $description_page;
+        }
+        if(isset($img_page)){
+            $img = $img_page;
+        }
+    }
+    ?>
+    <title><?= $title_show ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <meta name="google-site-verification" content="LJQFrrpKjyEj7HfR1mIoog_zfcQbxWGTYCOu08wefDg" />
-    <meta name="description" content="Thriftex - Temukan Keaslian Produk Anda dengan Mudah dan Cepat di Situs Legit Check Kami. Cek Kredibilitas dan Otentisitas Barang Branded Anda sekarang." >
-    <meta property="og:title" content="Thriftex - Legit Check & Authentic"/>
+    <meta name="description" content="<?= $description ?>" >
+    <meta property="og:title" content="<?= $title_show ?>"/>
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Thriftex - Temukan Keaslian Produk Anda dengan Mudah dan Cepat di Situs Legit Check Kami. Cek Kredibilitas dan Otentisitas Barang Branded Anda sekarang." />
+    <meta property="og:description" content="<?= $description ?>" />
     <meta property="og:url" content="<?= base_url() ?>" />
     <meta property="og:image" content="<?= base_url('assets/logo.jpeg') ?>" />
 

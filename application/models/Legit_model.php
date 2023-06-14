@@ -172,7 +172,7 @@ class Legit_model extends CI_model {
                 'headers' => [
                     'Accept'     => 'application/json',
                     'Content-Type' => 'application/json',
-                    'Authorization' => $token
+                    // 'Authorization' => $token
                 ],
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
@@ -190,7 +190,7 @@ class Legit_model extends CI_model {
             'headers' => [
                 'Accept'     => 'application/json',
                 'Content-Type' => 'application/json',
-                'Authorization' => $token
+                // 'Authorization' => $token
             ],
         ]);
         $result = json_decode($response->getBody()->getContents(), true);

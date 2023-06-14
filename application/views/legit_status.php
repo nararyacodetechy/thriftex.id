@@ -12,7 +12,13 @@
                 <div class="divider mb-3"></div>
                 <div class="text-center">
                     <h1>YOUR LEGIT CHECK RESULT</h1>
-                    <h5>Case ID : #<?= $legit_data[0]['case_code'] ?></h5>
+                    <h5>Case ID : </h5>
+                    <div style="display: flex;justify-content: center;">
+                        <div class="form-group copy-text">
+                            <input type="text" value="<?= $legit_data[0]['case_code']?>" class="text_ casecode">
+                            <button id="copycode"><i class="fa fa-clone"></i></button>
+                        </div>
+                    </div>
                     <div class="clear_p font-10">
                         <p>Submitted At : <?= $legit_data[0]['submit_time'] ?></p>
                     </div>
@@ -29,7 +35,8 @@
                             $badge_color = 'bg-yellow-light';
                         }
                     ?>
-                    <h6 class="<?= $badge_color ?> p-2 rounded-xs d-inline-block font-18 mt-5"><?= $legit_data[0]['check_result'] ?></h6>
+                    <label class="mt-5" for="">Status :</label> <br>
+                    <h6 class="<?= $badge_color ?> p-2 rounded-xs d-inline-block font-18"><?= $legit_data[0]['check_result'] ?></h6>
                 </div>
                 <div class="divider mb-3 mt-3"></div>
                 <div class="row text-center row-cols-3 mb-0 mt-4">

@@ -17,20 +17,26 @@ class Legitcheck extends CI_Controller {
     }
     public function home()
 	{
-		$this->site->is_logged_in();
+		// $this->site->is_logged_in();
         $token = $this->session->userdata('token');
         $total_legit = $this->legit->get_total_legit($token);
         $data_legit = $this->legit->get_legit_publish($token);
         $data = array(
             'total_legit'   => $total_legit['total'],
-            'data_legit'    => $data_legit
+            'data_legit'    => $data_legit,
+            'page_title'    => "Legit Check",
+            'description_page'  => 'Temukan keaslian produkmi disini sekarang juga.'
         );
 		$this->load->view('legit_home.php',$data);
 	}
     public function index()
 	{
 		$this->site->is_logged_in();
-		$this->load->view('legitchcek.php');
+        $data = array(
+            'page_title'    => "Legit Checker",
+            'description_page'  => 'Temukan keaslian produkmi disini sekarang juga.'
+        );
+		$this->load->view('legitchcek.php',$data);
 	}
 
     function reArrayFiles(&$file_post) {
@@ -50,6 +56,7 @@ class Legitcheck extends CI_Controller {
 
 	public function sendlegit()
 	{
+        $this->site->is_logged_in();
         $response = array(
             'status'	=> false,
             'msg'		=> 'Terjadi kesalahan'
@@ -62,11 +69,12 @@ class Legitcheck extends CI_Controller {
 
         //file upload destination
         $config['upload_path'] = './media/';
-        $config['allowed_types'] = 'jpg|jpeg|png|webp|image/jpeg';
+        $config['allowed_types'] = 'jpg|jpeg|png|webp|image/jpeg|PNG|JPEG|JPG';
 		$config['overwrite']     = FALSE;
 		$config['max_size'] = '8000';
 		$config['encrypt_name'] = TRUE;
         $this->load->library('upload',$config);
+        $this->upload->initialize($config);
         $data_foto = array();
         for($i = 0; $i < count(array_filter($_FILES['legitimage']['name']));$i++)
         {
@@ -89,7 +97,8 @@ class Legitcheck extends CI_Controller {
                     $error = array('error' => $this->upload->display_errors());
                     $response = array(
                         'status'	=> false,
-                        'msg'		=> 'Foto Gagal di Upload!'
+                        'msg'		=> 'Foto Gagal di Upload!',
+                        // 'eror'  => $error
                     );
                     echo json_encode($response);
                     die;
@@ -119,6 +128,7 @@ class Legitcheck extends CI_Controller {
     //     }
     // }
     public function result($case_code){
+        $this->site->is_logged_in();
         if(!empty($case_code)){
             $token = $this->session->userdata('token');
             $legit_list = $this->legit->legitDetail($token,$case_code);
@@ -126,7 +136,9 @@ class Legitcheck extends CI_Controller {
                 redirect(base_url('login'));
             }else{
                 $data = array(
-                    'legit_data'    => $legit_list['data']
+                    'legit_data'    => $legit_list['data'],
+                    'page_title'    => "Hasil Legit Check",
+                    // 'description_page'  => 'Halaman Profile Pengguna - Thriftex.id - Legit Check & Authentic'
                 );
                 $this->load->view('legit_status.php',$data);
             }
@@ -136,6 +148,7 @@ class Legitcheck extends CI_Controller {
     }
 
     public function newlist(){
+        $this->site->is_logged_in();
         $token = $this->session->userdata('token');
         $legit_list = $this->legit->validator_do($token,'');
         $data = array(
@@ -146,6 +159,7 @@ class Legitcheck extends CI_Controller {
     }
 
     public function processlist(){
+        $this->site->is_logged_in();
         $token = $this->session->userdata('token');
         $legit_list = $this->legit->validator_do($token,'processing');
         $data = array(
@@ -156,6 +170,7 @@ class Legitcheck extends CI_Controller {
     }
 
     public function check($case_code){
+        $this->site->is_logged_in();
         if(!empty($case_code)){
             $token = $this->session->userdata('token');
             $legit_list = $this->legit->validatorData($token,$case_code);
@@ -174,6 +189,7 @@ class Legitcheck extends CI_Controller {
 
 
     public function validation(){
+        $this->site->is_logged_in();
         $token = $this->session->userdata('token');
         $response = array(
             'status' => false,
@@ -204,6 +220,7 @@ class Legitcheck extends CI_Controller {
     }
 
     public function completelist(){
+        $this->site->is_logged_in();
         $token = $this->session->userdata('token');
         $legit_list = $this->legit->validator_do($token,'complete');
         $data = array(

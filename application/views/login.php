@@ -2,7 +2,7 @@
 <div class="page-content pb-0">
         <div data-card-height="cover" class="card">
             <div class="card-center" id="validation">
-                <div id="notiflogin" class="toast toast-tiny toast-top bg-red-dark notif_login" data-bs-delay="2500" data-autohide="true"></div>
+                <div id="notiflogin" class="toast toast-tiny toast-top bg-red-dark notif_login" data-bs-delay="122500" data-autohide="true"></div>
                 <div id="successlogin" class="toast toast-tiny toast-top bg-green-dark notif_login_success" data-bs-delay="4500" data-autohide="true"></div>
                 <div class="ps-5 pe-5">
                     <h1 class="text-center font-800 font-40 mb-1">Login</h1>

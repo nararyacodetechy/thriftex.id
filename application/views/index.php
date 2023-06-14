@@ -20,7 +20,7 @@
                 <div class="divider"></div>
             </div>
             <div class="row me-2 ms-2 mb-0 justify-content-md-center">
-                <div class="col col-lg-4">
+                <div class="col col-lg-4 col-12">
                     <div class="card bg-28" style="height:230px">
                         <div class="card-bottom p-3">
                             <h1 class="color-white mb-n1">Legit Check</h1>
@@ -32,7 +32,7 @@
                         <div class="card-overlay bg-gradient opacity-90"></div>
                     </div>
                 </div>
-                <div class="col col-lg-4">
+                <div class="col col-lg-4 col-12">
                     <div class="card bg-29" style="height:230px">
                         <div class="card-bottom p-3">
                             <h1 class="color-white mb-n1">Sertifikat Check</h1>

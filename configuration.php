@@ -23,7 +23,7 @@ class SConfig
     // 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
 
     // app version
-	var $_app_version = '1.0.17';
+	var $_app_version = '1.1.0';
 	// X versi Mayor (Perubahan arsitektur/fitur besar besaran)
 	// Y versi Minor (Penambahan beberapa fitur )
 	// Z versi perbaikan/patch/bugfix. (perbaikan /bugfix,security fix dsb).

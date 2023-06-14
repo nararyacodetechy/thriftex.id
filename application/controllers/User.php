@@ -17,7 +17,11 @@ class User extends CI_Controller {
 	public function list(){
         $this->site->is_logged_in();
 		$token = $this->session->userdata('token');
-        $this->load->view('userlist.php');
+		$data = array(
+            'page_title'    => "List User Terdaftar",
+            // 'description_page'  => ''
+        );
+        $this->load->view('userlist.php',$data);
     }
 	
 	public function listshow(){

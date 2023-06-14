@@ -8,7 +8,13 @@
                 <div class="mt-3 mb-3">
                     <i class="fa-regular fa-circle-check text-success" style="font-size: 70px;"></i>
                 </div>
-                <h5>Case ID : #<?=$case_id?></h5>
+                <h5>Case ID : </h5>
+                <div style="display: flex;justify-content: center;">
+                    <div class="form-group copy-text">
+                        <input type="text" value="<?=$case_id?>" class="text_ casecode">
+                        <button id="copycode"><i class="fa fa-clone"></i></button>
+                    </div>
+                </div>
                 <p>Legit check yang Anda kirim berhasil kami terima, silahkan menunggu info dari kami selanjutnya terkait hasil pegecekan.</p>
                 <p>Anda bisa memantau hasil legit pada halaman profile</p>
                 <a href="<?= base_url('profile/legitchcek') ?>" class="btn btn-sm btn-dark">Cek Hasil</a>

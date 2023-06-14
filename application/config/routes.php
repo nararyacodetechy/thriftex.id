@@ -89,3 +89,10 @@ $route['feedback'] = 'Feedback/index';
 // user list
 $route['user/list'] = 'User/list';
 $route['user-list'] = 'User/listshow';
+
+
+//page
+$route['term-condition'] = 'Pages/Term_condition';
+$route['privacy-policy'] = 'Pages/Privacy_policy';
+$route['tentang-kami'] = 'Pages/About_us';
+$route['faq'] = 'Pages/Faq';

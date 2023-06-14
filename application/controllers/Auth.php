@@ -20,6 +20,8 @@ class Auth extends CI_Controller {
             if(!empty($this->input->get('code'))){
                 $data['google_code_auth'] = $this->input->get('code');
             }
+            $data['page_title'] = 'Login';
+            $data['description_page']   = '';
             $this->load->view('login.php',$data);
         }else{
             redirect(base_url('profile'));
@@ -244,7 +246,11 @@ class Auth extends CI_Controller {
     }
 
     public function validator_register(){
-        $this->load->view('register_validator.php');
+        $data = array(
+            'page_title'    => "Tambah Data Validator",
+            // 'description_page'  => ''
+        );
+        $this->load->view('register_validator.php',$data);
     }
 
 }

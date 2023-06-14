@@ -1,4 +1,16 @@
 $(document).ready(function(){
+    if($('#copycode').length){
+        $(document).on('click','#copycode',function(e){
+            e.preventDefault(0);
+            var $temp = $(".casecode").select();
+            document.execCommand("copy");
+            $('.copy-text').addClass('active');
+            window.getSelection().removeAllRanges();
+            setTimeout(() => {
+                $('.copy-text').removeClass('active');
+            }, 2500);
+        });
+    }
     if($('.imagepickercontainer').length > 0){
         var albumList = {
             albums: [],
@@ -141,7 +153,7 @@ $(document).ready(function(){
                         // if(typeof data.msg === "object" && !Array.isArray(data.msg) && data.msg !== null){
                         //     console.log(data.msg);
                         // }
-                        $('.notif_login').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','auto');
+                        $('.notif_login').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','max-content');
                     }
                 },
                 error : function(response){
@@ -255,7 +267,7 @@ $(document).ready(function(){
                     var toastID = document.getElementById('notiflogin');
                     toastID = new bootstrap.Toast(toastID);
                     toastID.show();
-                    $('.notif_login').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','auto');
+                    $('.notif_login').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','max-content');
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {

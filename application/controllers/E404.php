@@ -13,7 +13,10 @@ class E404 extends CI_Controller {
     }
 	public function index()
 	{
-		$this->load->view('404');
+        $data = array(
+            'page_title'    => '404 Halaman Tidak Ditemukan'
+        );
+		$this->load->view('404',$data);
 	}
 
 }
