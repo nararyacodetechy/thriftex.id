@@ -14,10 +14,18 @@
                 </div>
                 <div class="card-overlay bg-black opacity-80"></div>
             </div>
-            <div class="search-box search-header bg-theme card-style me-3 ms-3">
-                <i class="fa fa-search"></i>
+            <div class="bg-theme card-style me-3 ms-3" style="border:1px solid #ced4da">
+                <!-- <i class="fa fa-search"></i>
                 <input type="text" class="border-0" placeholder="Masukan Kode Legit Check Anda..." >
-                <a href="#" class="clear-search disabled mt-0"><i class="fa fa-times color-red-dark"></i></a>
+                <a href="#" class="clear-search disabled mt-0"><i class="fa fa-times color-red-dark"></i></a> -->
+                <div class="d-flex">
+                    <form class="d-flex search_legit" method="post" action="<?= base_url('searchlegit') ?>">
+                        <input class="form-control me-1 searchlegit" type="search" name="search_legit" placeholder="Masukan Kode Legit Check Anda..." aria-label="Search">
+                        <button class="btn bg-dark-dark" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
             <div class="card mb-4">
                 <div class="content">

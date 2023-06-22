@@ -12,8 +12,8 @@
                 <div class="divider mb-3"></div>
                 <div class="text-center">
                     <h1>YOUR LEGIT CHECK RESULT</h1>
-                    <h5>Case ID : </h5>
-                    <div style="display: flex;justify-content: center;">
+                    <h5>Case ID : #<?= $legit_data[0]['case_code'] ?></h5>
+                    <div style="display: flex;justify-content: center;" class="d-none">
                         <div class="form-group copy-text">
                             <input type="text" value="<?= $legit_data[0]['case_code']?>" class="text_ casecode">
                             <button id="copycode"><i class="fa fa-clone"></i></button>

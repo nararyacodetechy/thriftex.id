@@ -7151,3 +7151,10 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination{
 .copy-text.active button:after{
   display: block;
 }
+
+.search_legit{
+  width: 100%;
+}
+.search_legit > input{
+  border:0px !important;
+}

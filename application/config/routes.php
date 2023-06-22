@@ -85,6 +85,8 @@ $route['legit/processlist'] = 'Legitcheck/processlist';
 //feedback
 $route['feedback'] = 'Feedback/index';
 
+//search
+$route['searchlegit'] = 'Search/index';
 
 // user list
 $route['user/list'] = 'User/list';

@@ -348,4 +348,35 @@ $(document).ready(function(){
                 });
         });
     }
+    if($('.search_legit').length){
+        $(document).on('submit','.search_legit', function(e){
+            e.preventDefault(0);
+            
+            var formdata = {
+                query : $('.searchlegit').val()
+            };
+            var form = $(this).closest('form');
+            $.ajax({
+                url: form.attr("action"),
+                type: "post",
+                data: formdata ,
+                success: function (response) {
+                    var data = jQuery.parseJSON(response);
+                    console.log(data);
+                    // if(data.status == true){
+                    //     $(form).trigger("reset");
+                    //     var toastID = document.getElementById('toast-notiff-fdbck');
+                    //     toastID = new bootstrap.Toast(toastID);
+                    //     toastID.show();
+                    //     setTimeout(function() {
+                    //         menu('menu-masukan', 'hide', 250);
+                    //     }, 2000);
+                    // }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+        });
+    }
 });

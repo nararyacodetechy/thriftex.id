@@ -196,5 +196,25 @@ class Legit_model extends CI_model {
         $result = json_decode($response->getBody()->getContents(), true);
         return $result['data'];
     }
+
+    public function searchlegit($token,$data){
+        try {
+            $response = $this->_client->request('POST','legits/searchlegit',[
+                'headers' => [
+                    'Accept'     => 'application/json',
+                    'Authorization' => $token
+                ],
+                'form_params' => $data
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            return $result['data'];
+        } catch (\Throwable $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+        }
+    }
+
     
 }
