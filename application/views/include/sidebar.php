@@ -39,7 +39,7 @@
             <a href="<?= base_url('/legit') ?>">
                 <span>Legit Check</span>
             </a>
-            <a href="#">
+            <a href="<?= base_url('sertifikat-check') ?>">
                 <span>Sertifikat Check</span>
             </a>
             <a href="#">

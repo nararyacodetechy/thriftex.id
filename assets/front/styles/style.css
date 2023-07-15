@@ -7158,3 +7158,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination{
 .search_legit > input{
   border:0px !important;
 }
+
+.sertif-register .upload-btn-wrapper{
+  height: 180px;
+}

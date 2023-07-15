@@ -17,7 +17,7 @@
             <a href="https://www.instagram.com/thriftexofficial/" target="_blank" class="icon icon-xs icon-gray"><i class="fab fa-instagram"></i></a>
             <a href="#" target="_blank" class="icon icon-xs icon-gray"><i class="fab fa-whatsapp"></i></a>
             <a href="#" target="_blank" class="icon icon-xs icon-gray"><i class="fab fa-youtube"></i></a>
-            <a href="mailto:thriftexcs@gmail.com" target="_blank" class="icon icon-xs icon-gray"><i class="fa fa-envelope"></i></a>
+            <a href="#" data-mailto="mailto:thriftexcs@gmail.com" target="_blank" class="icon icon-xs icon-gray"><i class="fa fa-envelope"></i></a>
         </div>
         
     </div>

@@ -98,3 +98,9 @@ $route['term-condition'] = 'Pages/Term_condition';
 $route['privacy-policy'] = 'Pages/Privacy_policy';
 $route['tentang-kami'] = 'Pages/About_us';
 $route['faq'] = 'Pages/Faq';
+
+
+// sertifikat check
+$route['sertifikat-check'] = 'Sertif/index';
+$route['sertifikat-scan'] = 'Sertif/scan';
+$route['sertifikat-register'] = 'Sertif/register';

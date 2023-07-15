@@ -163,7 +163,7 @@
                     <a href="<?= base_url('/faq') ?>"><span>FAQ</span><i class="fa fa-angle-right"></i></a>
                     <a href="<?= base_url('/privacy-policy') ?>"><span>Kebijakan Privasi</span><i class="fa fa-angle-right"></i></a>
                     <a href="<?= base_url('/term-condition') ?>"><span>Syarat & Ketentuan</span><i class="fa fa-angle-right"></i></a>
-                    <a href="mailto:thriftexcs@gmail.com"><span>Kontak ke Email</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#" data-mailto="mailto:thriftexcs@gmail.com"><span>Kontak ke Email</span><i class="fa fa-angle-right"></i></a>
                     <?php } ?>
                     <a href="<?= base_url('logout') ?>"><span>Logout</span><i class="fa fa-angle-right"></i></a>
                 </div>

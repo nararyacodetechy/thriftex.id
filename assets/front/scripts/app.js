@@ -1,4 +1,10 @@
 $(document).ready(function(){
+    if($('[data-mailto]').length){
+        $(document).on('click','[data-mailto]', function(e){
+            var mails = $(this).attr('data-mailto');
+            window.location.href = mails;
+        });
+    }
     if($('#copycode').length){
         $(document).on('click','#copycode',function(e){
             e.preventDefault(0);
@@ -59,53 +65,6 @@ $(document).ready(function(){
         });
         // console.log(pickJson);
     }
-
-    const compressImage = async (file, { quality = 1, type = file.type }) => {
-        const imageBitmap = await createImageBitmap(file);
-        const canvas = document.createElement('canvas');
-        canvas.width = imageBitmap.width;
-        canvas.height = imageBitmap.height;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(imageBitmap, 0, 0);
-        const blob = await new Promise((resolve) =>
-            canvas.toBlob(resolve, type, quality)
-        );
-        return new File([blob], file.name, {
-            type: blob.type,
-        });
-    };
-    $(".pickimage").change(async function(e) {
-    // const input = document.querySelector('.pickimage');
-    // input.addEventListener('change', async (e) => {
-        const targetpreview = e.target.attributes[2].value;
-        const { files } = e.target;
-        if (!files.length) return;
-        const dataTransfer = new DataTransfer();
-        for (const file of files) {
-            if (!file.type.startsWith('image')) {
-                dataTransfer.items.add(file);
-                continue;
-            }
-            const compressedFile = await compressImage(file, {
-                quality: 0.5,
-                type: 'image/jpeg',
-            });
-            dataTransfer.items.add(compressedFile);
-        }
-        e.target.files = dataTransfer.files;
-
-        if (e.target.files && e.target.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (b) {
-                // const imagePreviewElement = document.querySelector("#output");
-                // imagePreviewElement.src = b.target.result;
-                $('.image_thumbnails_previews_'+targetpreview).attr('src', b.target.result);
-                $('.image_thumbnails_previews_'+targetpreview).removeClass('d-none');
-            };
-            reader.readAsDataURL(e.target.files[0]);
-        }
-
-    });
 
     if($('#register_submit').length){
         var getUrl = window.location;
@@ -379,4 +338,70 @@ $(document).ready(function(){
             });
         });
     }
+
+    if($('.sertif-register').length > 0){
+        const pickJson = [
+            {'id' : '1','name' : 'Tag in the box'},
+            {'id' : '2','name' : 'Bill From Official Store'},
+            {'id' : '3','name' : 'Shoes Box in Thriftex display'}
+        ]
+        $.each(pickJson, function(k,v){
+            var el =    '<div class="flex-grow-1 align-self-center" style="width:50%">'+
+                            '<h5 class="font-600 mb-0 lh-1">'+(k+1)+'. '+v.name+'</h5>'+
+                            '<div class="upload-btn-wrapper">'+
+                                '<button class="btn">'+
+                                    '<i class="mb-2 fas fa-image"></i>'+
+                                    '<p>'+v.name+'</p>'+
+                                    '<img src="" id="output" class="image_thumbnails_previews_'+v.id+' d-none image_primary ">'+
+                                '</button>'+
+                                '<input type="file" name="legitimage[]" data-pick="'+v.id+'" class="fotoimg pickimage" data-imgtype="primary" accept="capture=camera,image/*"/>'+
+                            '</div>'+
+                        '</div>'
+            $('.sertif-register').append(el);
+        });
+    }
+
+    const compressImage = async (file, { quality = 1, type = file.type }) => {
+        const imageBitmap = await createImageBitmap(file);
+        const canvas = document.createElement('canvas');
+        canvas.width = imageBitmap.width;
+        canvas.height = imageBitmap.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(imageBitmap, 0, 0);
+        const blob = await new Promise((resolve) =>
+            canvas.toBlob(resolve, type, quality)
+        );
+        return new File([blob], file.name, {
+            type: blob.type,
+        });
+    };
+    $(".pickimage").change(async function(e) {
+        const targetpreview = e.target.attributes[2].value;
+        const { files } = e.target;
+        if (!files.length) return;
+        const dataTransfer = new DataTransfer();
+        for (const file of files) {
+            if (!file.type.startsWith('image')) {
+                dataTransfer.items.add(file);
+                continue;
+            }
+            const compressedFile = await compressImage(file, {
+                quality: 0.5,
+                type: 'image/jpeg',
+            });
+            dataTransfer.items.add(compressedFile);
+        }
+        e.target.files = dataTransfer.files;
+
+        if (e.target.files && e.target.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (b) {
+                $('.image_thumbnails_previews_'+targetpreview).attr('src', b.target.result);
+                $('.image_thumbnails_previews_'+targetpreview).removeClass('d-none');
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        }
+
+    });
+
 });

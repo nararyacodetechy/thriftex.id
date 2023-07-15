@@ -1415,6 +1415,12 @@ document.addEventListener('DOMContentLoaded', () => {
             call: 'module.js',
             style: 'datatable/datatables.min.css', // the plugin stylesheet
             trigger: '#datatable'
+          },
+          {
+            id: 'scanner',
+            plug: 'scanner/html5-qrcode.min.js',
+            call: 'scanner/scancamera.js',
+            trigger: '#reader-camera'
           }
         ];
 
