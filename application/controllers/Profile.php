@@ -10,6 +10,8 @@ class Profile extends CI_Controller {
 		$this->load->model('User_model','user');
 		$this->load->model('Legit_model','legit');
 		$this->load->model('Validator_model','validator');
+		$this->load->model('Sertif_model','sertif');
+		$this->load->model('Toko_model','toko');
 		date_default_timezone_set('Asia/Makassar');
 		$this->load->helper(array('config'));
 	}
@@ -52,6 +54,7 @@ class Profile extends CI_Controller {
 			'validator_brand_id' => $checkuser['validator_brand_id'],
 			'validator_summary_count' => $validator_data_summary,
 			'dataAdmin' => $dataAdmin,
+			'total_req_sertif' => $this->sertif->total_pending($token)['total'],
 			'page_title'    => "Halaman Profile Pengguna",
             'description_page'  => 'Halaman Profile Pengguna - Thriftex.id - Legit Check & Authentic'
 		);
@@ -70,4 +73,99 @@ class Profile extends CI_Controller {
         );
 		$this->load->view('profile_legit.php',$data);
 	}
+
+	public function sertifikat(){
+		$this->site->is_logged_in();
+        $token = $this->session->userdata('token');
+        $legit_list = $this->sertif->getSertifList($token);
+        $data = array(
+            'list_sertif'    => $legit_list,
+			'page_title'    => "Sertifikat Saya",
+            'description_page'  => ''
+        );
+		$this->load->view('profile_sertifikat.php',$data);
+	}
+
+	public function sertifcheck(){
+		$this->site->is_logged_in();
+        $token = $this->session->userdata('token');
+        $data = array(
+			'page_title'    => "Sertifikat Saya",
+            'description_page'  => ''
+        );
+		$this->load->view('include/header.php',$data);
+		$this->load->view('sertif-admin/sertif-check.php',$data);
+		$this->load->view('include/footer.php',$data);
+	}
+
+	public function list_sretif_new(){
+		$this->site->is_logged_in();
+		$token = $this->session->userdata('token');
+		$param = $this->input->get();
+		$response = $this->sertif->getSertifListAdmin($token,$param,'new');
+		echo json_encode($response);
+	}
+	public function validatedsave(){
+		$this->site->is_logged_in();
+		$token = $this->session->userdata('token');
+		$response['status'] = false;
+        $response['msg'] = 'Terjadi Kesalahan, silahkan ulangi kembali';
+        $data = $this->input->post();
+        $regis = $this->sertif->sertifupdate($data,$token);
+		// var_dump($regis);
+        if(!empty($regis)){
+            if(is_array($regis)){
+                if($regis['status'] == true){
+                    $response = array(
+                        'status' => true,
+                        'msg'   => $regis['message'],
+                        'data'  => $regis['data']
+                    );
+                }else{
+                    $response = array(
+                        'status' => $regis['status'],
+                        'msg'   => $regis['message'],
+                        'data'  => $regis['error_data']
+                    );
+                }
+            }else{
+                if($regis->status == true){
+                    $response = array(
+                        'status' => true,
+                        'msg'   => $regis->message
+                    );
+                }else{
+                    $response = array(
+                        'status' => $regis->status,
+                        'msg'   => $regis->message,
+                        'data'  => $regis->error_data
+                    );
+                }
+            }
+        }else{
+            $response = array(
+                'status' => false,
+                'msg'   => 'Register gagal,terjadi kesalahan sistem'
+            );
+        }
+        echo json_encode($response);
+	}
+
+	public function data_sertifikat(){
+		$this->site->is_logged_in();
+        $token = $this->session->userdata('token');
+		$param = $this->input->get();
+		$response = $this->toko->getTokoPublic($token,$param,'user');
+		$list_toko = $response['list_toko'];
+        $data = array(
+			'page_title'    => "Sertifikat Saya",
+            'description_page'  => '',
+			'data_toko' => $list_toko
+        );
+		$this->load->view('include/header.php',$data);
+		$this->load->view('sertif-admin/sertif-list.php',$data);
+		$this->load->view('include/footer.php',$data);
+	}
+
+
 }

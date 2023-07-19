@@ -57,6 +57,13 @@ $route['index-components'] = 'welcome/page';
 
 $route['profile'] = 'Profile/profile';
 $route['profile/legitchcek'] = 'Profile/profile_legit';
+$route['profile/sertifikat'] = 'Profile/sertifikat';
+$route['profile/sertifikat/cencel/(:num)'] = 'Sertif/sertifikat_cencel/$1';
+$route['profile/sertif-check'] = 'Profile/sertifcheck';
+$route['sertif-list-newregis'] = 'Profile/list_sretif_new';
+$route['sertif-check/validated'] = 'Profile/validatedsave';
+$route['profile/data-sertifikat'] = 'Profile/data_sertifikat';
+// $route['profile/sertifikat/detail/(:num)'] = 'Profile/sertifikat_detail/$1';
 $route['legit'] = 'Legitcheck/home';
 $route['legitchcek'] = 'Legitcheck/index';
 $route['legitchcek/success'] = 'welcome/legitchcek_send_success';
@@ -91,6 +98,7 @@ $route['searchlegit'] = 'Search/index';
 // user list
 $route['user/list'] = 'User/list';
 $route['user-list'] = 'User/listshow';
+$route['user-list-select'] = 'User/listshowselect';
 
 
 //page
@@ -102,5 +110,15 @@ $route['faq'] = 'Pages/Faq';
 
 // sertifikat check
 $route['sertifikat-check'] = 'Sertif/index';
-$route['sertifikat-scan'] = 'Sertif/scan';
+// $route['sertifikat-scan'] = 'Sertif/scan';
 $route['sertifikat-register'] = 'Sertif/register';
+$route['sertifikat-register/(:any)'] = 'Sertif/registersuccess';
+$route['scan-check'] = 'Sertif/scancheck';
+$route['sertif-send'] = 'Sertif/sertifSubmit';
+
+// admin toko
+$route['akuntoko'] = 'Toko/index';
+$route['save-register-toko'] = 'Toko/saveregister';
+$route['update-register-toko'] = 'Toko/updateregister';
+$route['toko-list'] ='Toko/listtoko';
+$route['hapus-toko'] ='Toko/hapustoko';

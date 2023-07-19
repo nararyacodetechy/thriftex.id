@@ -108,6 +108,29 @@ class User_model extends CI_model {
         }
     }
 
+    public function getUserListSelect($token,$param,$role){
+        try {
+            $response = $this->_client->request('GET','users/userlistselect',[
+                    'headers' => [
+                    'Accept'     => 'application/json',
+                    'Content-Type' => 'application/json',
+                    'Authorization' => $token
+                ],
+                'query'   => [
+                    'select2' => $param,
+                    'role'  => $role
+                ],
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            return $result;
+        } catch (\Throwable $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+        }
+    }
+
     // public function getAllMahasiswa()
     // {   
     //     $response = $this->_client->request('GET','mahasiswa',[

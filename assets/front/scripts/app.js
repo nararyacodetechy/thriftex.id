@@ -354,10 +354,43 @@ $(document).ready(function(){
                                     '<p>'+v.name+'</p>'+
                                     '<img src="" id="output" class="image_thumbnails_previews_'+v.id+' d-none image_primary ">'+
                                 '</button>'+
-                                '<input type="file" name="legitimage[]" data-pick="'+v.id+'" class="fotoimg pickimage" data-imgtype="primary" accept="capture=camera,image/*"/>'+
+                                '<input type="file" name="sertifregis[]" data-pick="'+v.id+'" class="fotoimg pickimage" data-imgtype="primary" accept="capture=camera,image/*"/ required>'+
                             '</div>'+
                         '</div>'
             $('.sertif-register').append(el);
+        });
+
+        $(document).on('submit','#submit-regis-sertif', function(e){
+            e.preventDefault(0);
+            var formData = new FormData(this);
+            var values = $(this).serialize();
+            var form = $(this).closest('form');
+            $.ajax({
+                type:'POST',
+                url: form.attr("action"),
+                data:formData,
+                cache:false,
+                contentType: false,
+                processData: false,
+                success:function(response){
+                    var data = jQuery.parseJSON(response);
+                    if(data.status == true){
+                        window.location.href = site_data.base_url+'sertifikat-register/success';
+                    }else{
+                        alert('Gagal mengirim data, silahkan ulangi kembali');
+                    }
+                },
+                error: function(data){
+                    alert('Terjadi kesalahan, silahkan ulangi kembali');
+                }
+            });
+        });
+    }
+
+    if($('.detail_sertif').length){
+        $(document).on('click','.detail_sertif', function(e){
+            e.preventDefault(0);
+            $('#DetailSertif').modal('show');
         });
     }
 
@@ -403,5 +436,6 @@ $(document).ready(function(){
         }
 
     });
+    
 
 });

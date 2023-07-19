@@ -27,7 +27,7 @@
                             <p class="color-white opacity-60 mb-0">
                                 Cek keaslian barangmu disini
                             </p>
-                            <a href="/legit" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a>
+                            <a href="<?= createurl('legit') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a>
                         </div>
                         <div class="card-overlay bg-gradient opacity-90"></div>
                     </div>
@@ -39,7 +39,7 @@
                             <p class="color-white opacity-60 mb-0">
                                 Cek keaslian barangmu disini
                             </p>
-                            <a href="#" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a>
+                            <a href="<?= createurl('sertifikat-check') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a>
                         </div>
                         <div class="card-overlay bg-gradient opacity-90"></div>
                     </div>

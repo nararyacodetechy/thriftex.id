@@ -19,4 +19,34 @@ function api_url($sub){
 	return $SConfig->_api_url.$sub;
 }
 
+function createurl($url){
+	global $SConfig;
+	// if($SConfig->_app_mode == 'development'){
+	// 	return base_url($url);
+	// }else{
+	// }
+	return $url;
+}
+
+function encr($str){
+	$ciphering = "AES-128-CTR";
+	$iv_length = openssl_cipher_iv_length($ciphering);
+	$options = 0;
+	$encryption_iv = '1234567891011121';
+	$encryption_key = "Thrif2023";
+	
+	$encryption = openssl_encrypt($str, $ciphering,
+				$encryption_key, $options, $encryption_iv);
+	return $encryption;
+}
+function decr($encryption){
+	$ciphering = "AES-128-CTR";
+	$options = 0;
+	$decryption_iv = '1234567891011121';
+	$decryption_key = "Thrif2023";
+	$decryption=openssl_decrypt ($encryption, $ciphering,
+			$decryption_key, $options, $decryption_iv);
+	return $decryption;
+}
+
 ?>

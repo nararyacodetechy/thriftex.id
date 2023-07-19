@@ -31,4 +31,13 @@ class User extends CI_Controller {
 		$response = $this->user->getUserList($token,$param,'user');
 		echo json_encode($response);
 	}
+	public function listshowselect(){
+		$this->site->is_logged_in();
+		$token = $this->session->userdata('token');
+		$param = $this->input->get();
+		// var_dump($param);
+		// die;
+		$response = $this->user->getUserListSelect($token,$param,'user');
+		echo json_encode($response);
+	}
 }

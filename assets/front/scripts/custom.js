@@ -1421,7 +1421,21 @@ document.addEventListener('DOMContentLoaded', () => {
             plug: 'scanner/html5-qrcode.min.js',
             call: 'scanner/scancamera.js',
             trigger: '#reader-camera'
-          }
+          },
+          {
+            id: 'select2',
+            plug: 'select2/js/select2.full.min.js',
+            call: 'select2/select2.js',
+            style: 'select2/css/select2.min.css',
+            trigger: '.select2'
+          },
+          {
+            id: 'niceSelect',
+            plug: 'niceselect/js/jquery.nice-select.min.js',
+            call: 'niceselect/index.js',
+            style: 'niceselect/css/nice-select.css',
+            trigger: '.niceSelect'
+          },
         ];
 
         // var getUrl = window.location;

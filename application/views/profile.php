@@ -33,7 +33,8 @@
             ?>
             <div class="content mb-0 mt-0">
                 <div class="list-group list-custom-small">
-                    <a href="<?= base_url('profile/legitchcek') ?>"><span>Legit Check Saya</span><i class="fa fa-angle-right"></i></a>
+                    <a href="<?= createurl('profile/legitchcek') ?>"><span>Legit Check Saya</span><i class="fa fa-angle-right"></i></a>
+                    <a href="<?= createurl('profile/sertifikat') ?>"><span>Sertifikat</span><i class="fa fa-angle-right"></i></a>
                 </div>
                 <div class="row text-center mb-3 mt-4 mx-n2 d-none">
                     <div class="col-4 d-none">
@@ -43,13 +44,13 @@
                         </a>
                     </div>
                     <div class="col-4" style="position: relative;">
-                        <a href="<?= base_url('profile/legitchcek') ?>" class="text-dark">
+                        <a href="<?= createurl('profile/legitchcek') ?>" class="text-dark">
                             <i class="fa-solid fa-clock-rotate-left text-secondary font-25 mb-3"></i>
                             <span class="font-9 d-block mt-n3">Processing</span>
                         </a>
                     </div>
                     <div class="col-4">
-                        <a href="<?= base_url('profile/legitchcek') ?>" class="text-dark">
+                        <a href="<?= createurl('profile/legitchcek') ?>" class="text-dark">
                             <i class="fa-solid fa-file-contract text-secondary font-25 mb-3"></i>
                             <span class="font-9 d-block mt-n3">Result</span>
                         </a>
@@ -145,6 +146,32 @@
             </div>
             <?php } ?>
         </div>
+        <?php if($role == 'admin'){ ?>
+        <div class="card mb-2">
+            <div class="content mt-3">
+                <p class="mb-3">Sertifikat</p>
+                <div class="row mb-n3">
+                    <div class="col-12 ps-2">
+                        <div class="card card-style mx-0 mb-3">
+                            <a href="<?= base_url('profile/sertif-check') ?>">
+                                <div class="p-3">
+                                    <h4 class="font-700 text-uppercase font-12 opacity-50 mt-n2">Sertifikat Request</h4>
+                                    <h1 class="font-700 font-34 color-dark-light mb-0"><?= $total_req_sertif ?></h1>
+                                    <i class="fa fa-arrow-right float-end mt-n3 opacity-20"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="list-group list-custom-small">
+                        <a href="<?= base_url('profile/data-sertifikat') ?>"><span>Data Sertifikat</span><i class="fa fa-angle-right"></i></a>
+                        <a href="<?= base_url('akuntoko') ?>"><span>Akun Toko Official</span><i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
         <div class="card mb-2">
             <div class="content">
                 <h6 class="text-secondary font-300">Akun Setting</h6>

@@ -56,12 +56,12 @@
     <input type='hidden' id="version" value="<?= app_version() ?>"/>
     <div id="page">
         <div class="header header-fixed header-logo-center">
-            <a href="<?= base_url() ?>" class="header-title"><img class="logo main_logo" id="main_logo" src="<?= base_url('assets/logo.jpeg') ?>" alt=""></a>
+            <a href="<?= createurl('/') ?>" class="header-title"><img class="logo main_logo" id="main_logo" src="<?= base_url('assets/logo.jpeg') ?>" alt=""></a>
             <a href="#" data-menu="menu-sidebar-left-6" class="header-icon center-xy header-icon-1"><i class="fa-solid fa-bars font-18 color-gray-dark"></i></a>
             <?php
             if($this->session->userdata('login') == true){
             ?>
-                <a href="<?= base_url('profile') ?>" class="header-icon center-xy header-icon-4"> <i class="fa-regular fa-circle-user font-25 icon-gray"></i> </a>
+                <a href="<?= createurl('profile') ?>" class="header-icon center-xy header-icon-4"> <i class="fa-regular fa-circle-user font-25 icon-gray"></i> </a>
             <?php
             }else{
                 ?>

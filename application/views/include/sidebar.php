@@ -36,25 +36,25 @@
             <a href="<?= base_url('/') ?>">
                 <span>Home</span>
             </a>
-            <a href="<?= base_url('/legit') ?>">
+            <a href="<?= createurl('legit') ?>">
                 <span>Legit Check</span>
             </a>
-            <a href="<?= base_url('sertifikat-check') ?>">
+            <a href="<?= createurl('sertifikat-check') ?>">
                 <span>Sertifikat Check</span>
             </a>
             <a href="#">
                 <span>Artikel</span>
             </a>
-            <a href="<?= base_url('/tentang-kami') ?>">
+            <a href="<?= createurl('tentang-kami') ?>">
                 <span>Tentang kami</span>
             </a>
-            <a href="<?= base_url('/faq') ?>">
+            <a href="<?= createurl('faq') ?>">
                 <span>FAQ</span>
             </a>
-            <a href="<?= base_url('/privacy-policy') ?>">
+            <a href="<?= createurl('privacy-policy') ?>">
                 <span>Kebijakan Privasi</span>
             </a>
-            <a href="<?= base_url('/term-condition') ?>">
+            <a href="<?= createurl('term-condition') ?>">
                 <span>Syarat & Ketentuan</span>
             </a>
         </div>

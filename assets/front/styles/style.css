@@ -7162,3 +7162,16 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination{
 .sertif-register .upload-btn-wrapper{
   height: 180px;
 }
+
+.nice-select.wide {
+    width: 100%; }
+.nice-select.wide .list {
+left: 0 !important;
+right: 0 !important; }
+
+.certificate-body{
+  background-color: #efefef;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+}
