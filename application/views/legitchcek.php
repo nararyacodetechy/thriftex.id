@@ -14,7 +14,7 @@
                     <div class="input-style has-borders no-icon mb-4">
                         <label for="form5" class="color-highlight">Pilih Kategori</label>
                         <select id="form5" name="kategori" required>
-                            <option value="default" disabled selected>Pilih Kategori</option>
+                            <option value="" disabled selected>Pilih Kategori</option>
                             <option value="1">Sepatu</option>
                             <option value="2">Tas</option>
                             <option value="3">Baju</option>
@@ -59,21 +59,22 @@
                         <h5 class="font-600 mb-0 lh-1">Masukan Brand</h5>
                     </div>
                 </div>
-                <!-- <div class="content d-none">
+                <div class="content">
                     <div class="input-style has-borders no-icon mb-4">
                         <label for="form6" class="color-highlight">Pilih Brand</label>
                         <select id="form6" name="brand" required>
-                            <option value="default" disabled selected>Pilih Brand</option>
-                            <option value="1">Vans</option>
-                            <option value="2">Converse</option>
+                            <option value="" disabled selected>Pilih Brand</option>
+                            <option value="Vans">Vans</option>
+                            <option value="Converse">Converse</option>
+                            <option value="Other Brand">Other Brand</option>
                         </select>
                         <span><i class="fa fa-chevron-down"></i></span>
                         <i class="fa fa-check disabled valid color-green-dark"></i>
                         <i class="fa fa-check disabled invalid color-red-dark"></i>
                         <em></em>
                     </div>
-                </div> -->
-                <div class="content">
+                </div>
+                <!-- <div class="content d-none">
                     <div class="input-style has-borders no-icon validate-field mb-4">
                         <input type="text" class="form-control validate-text" name="brand" id="form4" placeholder="Nama Brand" required>
                         <label for="form4" class="color-highlight">Nama Brand</label>
@@ -81,7 +82,7 @@
                         <i class="fa fa-check disabled valid color-green-dark"></i>
                         <em>(required)</em>
                     </div>
-                </div>
+                </div> -->
                 <div class="d-flex content mb-1">
                     <div class="flex-grow-1">
                         <h5 class="font-600 mb-0 lh-1">Nama Item</h5>

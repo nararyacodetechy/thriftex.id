@@ -16,8 +16,9 @@ class Search extends CI_Controller {
         $post = $this->input->post();
         $this->site->is_logged_in();
 		$token = $this->session->userdata('token');
+		$codesearch = str_replace('#', '', $post['query']);
         $data = array(
-            'query'  => $post['query'],
+            'query'  => $codesearch,
         );
         $response = $this->legit->searchlegit($token,$data);
         echo json_encode($response);

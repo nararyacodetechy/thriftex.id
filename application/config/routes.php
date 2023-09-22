@@ -65,8 +65,8 @@ $route['sertif-check/validated'] = 'Profile/validatedsave';
 $route['profile/data-sertifikat'] = 'Profile/data_sertifikat';
 // $route['profile/sertifikat/detail/(:num)'] = 'Profile/sertifikat_detail/$1';
 $route['legit'] = 'Legitcheck/home';
-$route['legitchcek'] = 'Legitcheck/index';
-$route['legitchcek/success'] = 'welcome/legitchcek_send_success';
+$route['legitcheck'] = 'Legitcheck/index';
+$route['legitcheck/success'] = 'welcome/legitchcek_send_success';
 $route['legitsend'] = 'Legitcheck/sendlegit';
 
 //Authentication

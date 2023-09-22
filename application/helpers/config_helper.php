@@ -22,10 +22,10 @@ function api_url($sub){
 function createurl($url){
 	global $SConfig;
 	// if($SConfig->_app_mode == 'development'){
-	// 	return base_url($url);
 	// }else{
 	// }
-	return $url;
+	return base_url($url);
+	// return $url;
 }
 
 function encr($str){

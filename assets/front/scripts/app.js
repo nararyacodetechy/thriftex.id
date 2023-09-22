@@ -234,30 +234,52 @@ $(document).ready(function(){
             }
         });
     }
-    if($('#saveLegitcheck').length){
-        $(document).on('click','#saveLegitcheck', function(e){
+    if($('#saveLegitcheck').length > 0){
+        $(document).on('submit','#saveLegitcheck', function(e){
             e.preventDefault(0);
-            var btn = $(this);
             var form = $(this).closest('form');
+            var btn = form.find('.saveLegitcheck');
 
             btn.attr('disabled', true);
             const spinerloading = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Loading...';
             btn.html(spinerloading);
-            form.ajaxSubmit({
-                url: form.attr("action"),
-                success: function(response, status, xhr, $form) {
-                    var data = jQuery.parseJSON(response);
+            // form.ajaxSubmit({
+            //     url: form.attr("action"),
+            //     success: function(response, status, xhr, $form) {
+            //         var data = jQuery.parseJSON(response);
+            //         btn.attr('disabled', false);
+            //         const spinerloading = 'SAVE';
+            //         btn.html(spinerloading);
+            //         if (data.status == true) {
+            //            alert('Hasil validasi disimpan');
+            //            window.location.href = data.redirect_url;
+            //         }else{
+            //             alert('Tejadi kesalahan');
+            //         }
+            //     }
+            // });
+            let data = new FormData(this);
+            $.ajax({
+                type: "POST",
+                url: $(this).attr('action'),
+                data: data,
+                dataType: "JSON",
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    // var data = jQuery.parseJSON(response);
+                    var data = response;
                     btn.attr('disabled', false);
                     const spinerloading = 'SAVE';
                     btn.html(spinerloading);
                     if (data.status == true) {
-                       alert('Hasil validasi disimpan');
-                       window.location.href = data.redirect_url;
+                        alert('Hasil validasi disimpan');
+                        window.location.href = data.redirect_url;
                     }else{
                         alert('Tejadi kesalahan');
                     }
                 }
-            });
+            })
         });
     }
     if($('#sendfeedback').length){
@@ -308,9 +330,15 @@ $(document).ready(function(){
         });
     }
     if($('.search_legit').length){
+        $(document).on('input','.searchlegit', function() {
+            var inputValue = $(this).val();
+            if (inputValue === '') {
+                $('.default_result').removeClass('d-none');
+                $('.result_search').empty();
+            }
+        });
         $(document).on('submit','.search_legit', function(e){
             e.preventDefault(0);
-            
             var formdata = {
                 query : $('.searchlegit').val()
             };
@@ -321,16 +349,46 @@ $(document).ready(function(){
                 data: formdata ,
                 success: function (response) {
                     var data = jQuery.parseJSON(response);
-                    console.log(data);
-                    // if(data.status == true){
-                    //     $(form).trigger("reset");
-                    //     var toastID = document.getElementById('toast-notiff-fdbck');
-                    //     toastID = new bootstrap.Toast(toastID);
-                    //     toastID.show();
-                    //     setTimeout(function() {
-                    //         menu('menu-masukan', 'hide', 250);
-                    //     }, 2000);
-                    // }
+                    $('.default_result').addClass('d-none');
+                    $('.result_search').empty();
+                    if(data.status){
+                        window.scrollTo(0, 250);
+                        var row = data.data[0];
+                        console.log(row);
+                        var img_legit_list = '';
+                        $.each(row.image_list, function(k,v){
+                            img_legit_list += `<a class="col mb-4" data-gallery="gallery-2" href="javascript:;" title="Vynil and Typerwritter">
+                                                <img src="${site_data.base_url+'media/'+v.file_path}" data-src="${site_data.base_url+'media/'+v.file_path}" class="preload-img img-fluid rounded-xs object-fit image_gallerys" alt="img">
+                                            </a>`;
+                        });
+                        var result = `<div class="content mb-0">
+                                        <div class="divider mb-3"></div>
+                                        <div class="text-center">
+                                            <h1>YOUR LEGIT CHECK RESULT</h1>
+                                            <h5>Case ID : #${row.case_code}</h5>
+                                            <div class="clear_p font-10">
+                                                <p>Submitted At : ${row.submit_time}</p>
+                                                <p>Item Name : ${row.nama_item}</p>
+                                                <p>Item Brand : ${row.nama_brand}</p>
+                                            </div>
+                                            <label class="mt-5" for="">Status :</label> <br>
+                                            <h6 class="${row.badge_color} p-2 rounded-xs d-inline-block font-18">${row.check_result}</h6>
+                                        </div>
+                                        <div class="divider mb-3 mt-3"></div>
+                                        <div class="row text-center row-cols-3 mb-0 mt-4 justify-content-center">
+                                            ${img_legit_list}
+                                        </div>
+                                        <div class="divider mb-3 mt-3"></div>
+                                    </div> `;
+                    }else{
+                     result = `<div class="content mb-0">
+                                <div class="divider mb-3"></div>
+                                <div class="text-center">
+                                    <h1>Kode Legit Tidak Ditemukan</h1>
+                                </div>
+                            </div>`;   
+                    }
+                    $('.result_search').append(result);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
@@ -437,5 +495,29 @@ $(document).ready(function(){
 
     });
     
+    if($('.radio_legit_result').length > 0){
+        $(document).on('change','.radio_legit_result', function(e){
+            e.preventDefault(0);
+            var value = $( this ).val();
+            if(value == 'processing'){
+                var processing_mode = `<h6>Processing Mode :</h6>
+                <div class="input-style has-borders no-icon mb-4">
+                    <select id="form5" name="processing_mode" required>
+                        <option value="" disabled selected>Processing Mode</option>
+                        <option value="no_brand_info">NO BRAND INFORMATION</option>
+                        <option value="no_product_info">NO PRODUCT INFORMATION</option>
+                        <option value="no_detail_picture">NO DETAIL PICTURE</option>
+                    </select>
+                        <span><i class="fa fa-chevron-down"></i></span>
+                        <i class="fa fa-check disabled valid color-green-dark"></i>
+                        <i class="fa fa-check disabled invalid color-red-dark"></i>
+                    <em></em>
+                </div>`;
+                $('.processing_mode_option').append(processing_mode);
+            }else{
+                $('.processing_mode_option').empty();
+            }
+        });
+    }
 
 });

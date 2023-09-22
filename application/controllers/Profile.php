@@ -45,7 +45,6 @@ class Profile extends CI_Controller {
 			$dataAdmin['total_legit_success'] = $total_legit['total'];
 		}
 
-
 		$data = array(
 			'nama' => $checkuser['nama'],
 			'username' => $checkuser['username'],
@@ -54,7 +53,7 @@ class Profile extends CI_Controller {
 			'validator_brand_id' => $checkuser['validator_brand_id'],
 			'validator_summary_count' => $validator_data_summary,
 			'dataAdmin' => $dataAdmin,
-			'total_req_sertif' => $this->sertif->total_pending($token)['total'],
+			'total_req_sertif' => (!empty($this->sertif->total_pending($token)['total'])) ? $this->sertif->total_pending($token)['total'] : '0',
 			'page_title'    => "Halaman Profile Pengguna",
             'description_page'  => 'Halaman Profile Pengguna - Thriftex.id - Legit Check & Authentic'
 		);

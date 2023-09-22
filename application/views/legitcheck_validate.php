@@ -56,22 +56,41 @@
            
             <div class="content">
                 <div id="notifLegit" class="toast toast-tiny toast-top bg-red-dark notif_login" data-bs-delay="1500" data-autohide="true"></div>
-                <form action="<?= base_url('legit/validation') ?>" method="post" id="jxfm">
+                <form action="<?= base_url('legit/validation') ?>" method="post" id="saveLegitcheck">
                     <h6>Legit Result :</h6>
                     <div class="mb-3">
                         <input type="hidden" name="legit_id" value="<?= $legit_data[0]['id'] ?>">
                         <div class="fac fac-radio fac-blue"><span></span>
-                            <input id="box7-fac-radio" type="radio" name="legit_status" value="processing" <?= (isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'processing')?'checked':'' ?>>
+                            <input id="box7-fac-radio" type="radio" class="radio_legit_result" name="legit_status" value="processing" <?= (isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'processing')?'checked':'' ?>>
                             <label for="box7-fac-radio">Processing</label>
                         </div>
                         <div class="fac fac-radio fac-green"><span></span>
-                            <input id="box5-fac-radio" type="radio" name="legit_status" value="real" <?= (isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'real')?'checked':'' ?>  >
+                            <input id="box5-fac-radio" type="radio" class="radio_legit_result" name="legit_status" value="real" <?= (isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'real')?'checked':'' ?>  >
                             <label for="box5-fac-radio">Original</label>
                         </div>
                         <div class="fac fac-radio fac-red"><span></span>
-                            <input id="box6-fac-radio" type="radio" name="legit_status" value="fake" <?= (isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'fake')?'checked':'' ?>>
+                            <input id="box6-fac-radio" type="radio" class="radio_legit_result" name="legit_status" value="fake" <?= (isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'fake')?'checked':'' ?> >
                             <label for="box6-fac-radio">Fake</label>
                         </div>
+                    </div>
+                    <div class="processing_mode_option">
+                    <?php if(isset($legit_data[0]['authentic_comment']['check_result']) && $legit_data[0]['authentic_comment']['check_result'] == 'processing' && $legit_data[0]['processing_status'] != 'none'){
+                    ?>
+                    <h6>Processing Mode :</h6>
+                    <div class="input-style has-borders no-icon mb-4">
+                        <select id="form5" name="processing_mode" required>
+                            <option value="" disabled>Processing Mode</option>
+                            <option value="no_brand_info" <?= ($legit_data[0]['processing_status'] == 'no_brand_info')?'selected':'' ?> >NO BRAND INFORMATION</option>
+                            <option value="no_product_info" <?= ($legit_data[0]['processing_status'] == 'no_product_info')?'selected':'' ?>>NO PRODUCT INFORMATION</option>
+                            <option value="no_detail_picture" <?= ($legit_data[0]['processing_status'] == 'no_detail_picture')?'selected':'' ?>>NO DETAIL PICTURE</option>
+                        </select>
+                            <span><i class="fa fa-chevron-down"></i></span>
+                            <i class="fa fa-check disabled valid color-green-dark"></i>
+                            <i class="fa fa-check disabled invalid color-red-dark"></i>
+                        <em></em>
+                    </div>
+                    <?php
+                    }?>
                     </div>
                     <div class="input-style has-borders no-icon mb-4">
                         <textarea id="form7" name="message_validation" placeholder="Enter your message"><?= (isset($legit_data[0]['authentic_comment']['check_result']))? $legit_data[0]['authentic_comment']['check_note'] : ''; ?></textarea>
@@ -79,7 +98,7 @@
                         <em class="mt-n3">(required)</em>
                     </div>
                     <div class="d-grid gap-2">
-                        <button type="submit" id="saveLegitcheck" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-green-dark mt-n2">SAVE</button>
+                        <button type="submit" id="" class="saveLegitcheck btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-green-dark mt-n2">SAVE</button>
                     </div>
                 </form>
             </div>

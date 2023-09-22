@@ -140,7 +140,7 @@ class Legit_model extends CI_model {
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
             return array('status' => $result['status'], 'message' => $result['message']);
-        } catch (\Throwable $th) {
+        } catch (GuzzleHttp\Exception\ClientException $th) {
             $response = $th->getResponse();
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
@@ -207,8 +207,8 @@ class Legit_model extends CI_model {
                 'form_params' => $data
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
-            return $result['data'];
-        } catch (\Throwable $th) {
+            return $result;
+        } catch (GuzzleHttp\Exception\ClientException $th) {
             $response = $th->getResponse();
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);

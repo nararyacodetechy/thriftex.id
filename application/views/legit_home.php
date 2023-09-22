@@ -28,7 +28,8 @@
                 </div>
             </div>
             <div class="card mb-4">
-                <div class="content">
+                <div class="result_search"></div>
+                <div class="content default_result">
                     <div class="row mb-0">
                         <?php
                         $urutan = 1;

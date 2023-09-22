@@ -105,19 +105,26 @@ class Legitcheck extends CI_Controller {
                 }
             }
         }
-        $data_legit = array(
-            'user_id'   => $this->session->userdata('uid'),
-            'kategori'  => $kategori,
-            'brand'     => $brand,
-            'nama_item' => $nama_item,
-            'data_foto' => $data_foto,
-            'catatan'   => $catatan,
-        );
-        // var_dump($data_legit);
-        $kirim = $this->legit->savelegit($data_legit,$this->token);
-        
-        if($kirim['status'] == true){
-		    redirect(base_url('legitchcek/success?caseid='.$kirim['case_id']));
+        if(count($data_foto) > 0){
+            $data_legit = array(
+                'user_id'   => $this->session->userdata('uid'),
+                'kategori'  => $kategori,
+                'brand'     => $brand,
+                'nama_item' => $nama_item,
+                'data_foto' => $data_foto,
+                'catatan'   => $catatan,
+            );
+            // var_dump($data_legit);
+            $kirim = $this->legit->savelegit($data_legit,$this->token);
+            if($kirim['status'] == true){
+                redirect(base_url('legitcheck/success?caseid='.$kirim['case_id']));
+            }
+        }else{
+            $response = array(
+                'status'	=> false,
+                'msg'		=> 'Foto Kosong!',
+            );
+            echo json_encode($response);
         }
         
 	}
@@ -196,9 +203,14 @@ class Legitcheck extends CI_Controller {
             'msg'   => 'Unknow error!'
         );
         $post = $this->input->post();
+        $processing_status='none';
+        if($post['legit_status']=='processing'){
+            $processing_status=$post['processing_mode'];
+        }
         $validation_data = [
             'legit_id'  => $post['legit_id'],
             'check_result'  => $post['legit_status'],
+            'processing_status' => $processing_status,
             'check_note'  => $post['message_validation'],
             'validator_user_id' => $this->session->userdata('uid'),
         ];
