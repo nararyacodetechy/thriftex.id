@@ -66,6 +66,17 @@
                             <option value="" disabled selected>Pilih Brand</option>
                             <option value="Vans">Vans</option>
                             <option value="Converse">Converse</option>
+                            <option value="Nike">Nike</option>
+                            <option value="Adidas">Adidas</option>
+                            <option value="Puma">Puma</option>
+                            <option value="New Balance">New Balance</option>
+                            <option value="Reebok">Reebok</option>
+                            <option value="Dickies">Dickies</option>
+                            <option value="Stussy">Stussy</option>
+                            <option value="Carhartt">Carhartt</option>
+                            <option value="Offwhite">Offwhite</option>
+                            <option value="Supreme">Supreme</option>
+                            <option value="Bape">Bape</option>
                             <option value="Other Brand">Other Brand</option>
                         </select>
                         <span><i class="fa fa-chevron-down"></i></span>
@@ -95,6 +106,39 @@
                         <i class="fa fa-times disabled invalid color-red-dark"></i>
                         <i class="fa fa-check disabled valid color-green-dark"></i>
                         <em>(required)</em>
+                    </div>
+                </div>
+                <div class="d-flex content mb-1">
+                    <div class="flex-grow-1">
+                        <h5 class="font-600 mb-0 lh-1">Nama Toko</h5>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="input-style has-borders no-icon validate-field mb-4">
+                        <input type="text" class="form-control validate-text" name="nama_toko" id="form4" placeholder="Masukan nama toko pembelian produk" >
+                        <label for="form4" class="color-highlight">Nama Item</label>
+                        <i class="fa fa-times disabled invalid color-red-dark"></i>
+                        <i class="fa fa-check disabled valid color-green-dark"></i>
+                        <em>(required)</em>
+                    </div>
+                </div>
+                <div class="d-flex content mb-1">
+                    <div class="flex-grow-1">
+                        <h5 class="font-600 mb-0 lh-1">Kondisi</h5>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="input-style has-borders no-icon mb-4">
+                        <label for="form6" class="color-highlight">Kondisi Barang</label>
+                        <select id="form6" name="kondisi_barang" required>
+                            <option value="" disabled selected>Kondisi Barang</option>
+                            <option value="Bekas">Bekas</option>
+                            <option value="Baru">Baru</option>
+                        </select>
+                        <span><i class="fa fa-chevron-down"></i></span>
+                        <i class="fa fa-check disabled valid color-green-dark"></i>
+                        <i class="fa fa-check disabled invalid color-red-dark"></i>
+                        <em></em>
                     </div>
                 </div>
                 <div class="d-flex content mb-1">

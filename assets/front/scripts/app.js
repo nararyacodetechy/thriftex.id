@@ -519,5 +519,57 @@ $(document).ready(function(){
             }
         });
     }
+    if($('.username_input').length){
+
+        let typingTimer;
+        const doneTypingInterval = 1000;
+        function showResult() {
+            const inputText = $('.username_input').val();
+            $.ajax({
+                type:'POST',
+                url: site_data.base_url+'checkusername',
+                data:{username : $('.username_input').val()},
+                success:function(response){
+                    var data = jQuery.parseJSON(response);
+                    if(data.availability == true){
+                        $('.validated-valid').removeClass('disabled');
+                        $('.validated-invalid').addClass('disabled');
+                        $('.username_input').removeClass('input-invalid')
+                        $('.taken_username').addClass('d-none');
+                        $('.btn-save-profile').removeAttr('disabled');
+                    }else{
+                        $('.btn-save-profile').attr('disabled','disabled');
+                        $('.taken_username').removeClass('d-none');
+                        $('.username_input').addClass('input-invalid')
+                        $('.validated-valid').addClass('disabled');
+                        $('.validated-invalid').removeClass('disabled');
+                    }
+                },
+                error: function(data){
+                    alert('Terjadi kesalahan, silahkan ulangi kembali');
+                }
+            });
+        }
+        $(document).on('input','.username_input', function(e){
+            e.preventDefault(0);
+            clearTimeout(typingTimer);
+            const inputValue = $(this).val();
+            const cleanedValue = inputValue.replace(/[^A-Za-z0-9]/g, '');
+            $(this).val(cleanedValue);
+
+            typingTimer = setTimeout(showResult, doneTypingInterval);  
+        })
+    }
+
+
+    $('.home-banner').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        dots: true,
+        autoplaySpeed: 3000,
+        pauseOnHover:false,
+      });
 
 });

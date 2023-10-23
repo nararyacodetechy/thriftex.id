@@ -3129,12 +3129,12 @@ button:active {
 }
 
 .theme-light input, select, textarea {
-  border-color: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.08) ;
 }
 
 .input-style {
   position: relative;
-  margin-bottom: 15px !important;
+  margin-bottom: 15px ;
 }
 
 .input-style input,
@@ -6318,7 +6318,7 @@ input[type=number] {
 }
 
 .theme-light input:not([type=submit]):not(.focus-color):focus, .theme-light select:focus, .theme-light textarea:active {
-  border-color: rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(0, 0, 0, 0.3) ;
 }
 
 .theme-light [data-card-height=cover] input:not([type=submit]):not(.focus-color):focus, .theme-light [data-card-height=cover] select:focus, .theme-light [data-card-height=cover] textarea:active {
@@ -7174,4 +7174,11 @@ right: 0 !important; }
   padding: 15px;
   border-radius: 10px;
   border: 1px solid #e6e6e6;
+}
+
+.home-banner a img{
+  width: 100% !important;
+}
+.input-invalid{
+  border-color:red !important;
 }

@@ -40,4 +40,21 @@ class User extends CI_Controller {
 		$response = $this->user->getUserListSelect($token,$param,'user');
 		echo json_encode($response);
 	}
+
+	public function validatorlist(){
+		$this->site->is_logged_in();
+		$token = $this->session->userdata('token');
+		$data = array(
+            'page_title'    => "List User Terdaftar",
+        );
+        $this->load->view('validatorlist.php',$data);
+	}
+	public function listshowvalidator(){
+		$this->site->is_logged_in();
+		$token = $this->session->userdata('token');
+		$param = $this->input->get();
+		$response = $this->user->getUserList($token,$param,'validator');
+		echo json_encode($response);
+	}
+
 }

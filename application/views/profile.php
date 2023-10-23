@@ -117,7 +117,7 @@
                     </div>
                     <div class="col-6 ps-2 pe-2">
                         <div class="card card-style mx-0 mb-3">
-                            <a href="#">
+                            <a href="<?= base_url('validator/list') ?>">
                                 <div class="p-3">
                                     <h4 class="font-700 text-uppercase font-12 opacity-50 mt-n2">Total Validator</h4>
                                     <h1 class="font-700 font-34 color-dark-light mb-0"><?= $dataAdmin['total_validator'] ?></h1>
@@ -176,7 +176,7 @@
             <div class="content">
                 <h6 class="text-secondary font-300">Akun Setting</h6>
                 <div class="list-group list-custom-small">
-                    <a href="#"><span>Edit Profile</span><i class="fa fa-angle-right"></i></a>
+                    <a href="<?= createurl('profile/edit') ?>"><span>Edit Profile</span><i class="fa fa-angle-right"></i></a>
                     <a href="#"><span>Ganti Password</span><i class="fa fa-angle-right"></i></a>
                 </div>
             </div>

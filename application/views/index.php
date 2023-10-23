@@ -1,12 +1,17 @@
 <?php include('include/header.php'); ?>
-        <div class="card bg-31 mb-0" data-card-height="450">
+        <div class="card bg-31 mb-0 d-none" data-card-height="450">
             <div class="card-center">
                 <h1 class="color-white text-center mb-2" style="font-size: 50px;">THRIFTEX</h1>
-                <p class="text-center mb-0 d-none">
-                    <a href="#" data-menu="menu-settings" class="btn btn-m font-900 text-uppercase bg-dark-dark">Cek Sekarang</a>
-                </p>
             </div>
             <div class="card-overlay bg-black opacity-30"></div>
+        </div>
+        <div class="card bg-31 mb-0 home-banner">
+            <a href="javascript:;">
+                <img src="<?= base_url('assets/banner/banner2.png') ?>" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="<?= base_url('assets/banner/banner2.png') ?>" alt="">
+            </a>
         </div>
 
         

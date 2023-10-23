@@ -27,12 +27,20 @@ $(document).ready(function(){
                     Detail\
                 </a>\
                 '
+                if (actionJSON.edit != undefined) body += '<a href="' + ((data.edit_url != undefined) ? data.edit_url : "#") + '" class="mb-n2 mt-n1 editValidator" title="" ' + (((actionJSON.edit != undefined) && (actionJSON.edit)) ? '' : 'style="display:none"') + '>\
+                    Edit\
+                </a>\
+                '
                 if (actionJSON.detailregis != undefined) body += '<a href="#" class="mb-n2 mt-n1 detailregis" title="" ' + (((actionJSON.detailregis != undefined) && (actionJSON.detailregis)) ? '' : 'style="display:none"') + '>\
                     Detail Sertif\
                 </a>\
                 '
                 if (actionJSON.delete != undefined) body += '<a href="' + ((data.delete_url != undefined) ? data.delete_url : "#") + '" class="mb-n2 mt-n1" title="" ' + (((actionJSON.delete != undefined) && (actionJSON.delete)) ? '' : 'style="display:none"') + '>\
                     Delete User\
+                </a>\
+                '
+                if (actionJSON.deletevalidator != undefined) body += '<a href="' + ((data.deletevalidator_url != undefined) ? data.deletevalidator_url : "#") + '" class="mb-n2 mt-n1 deletevalidator" title="" ' + (((actionJSON.deletevalidator != undefined) && (actionJSON.deletevalidator)) ? '' : 'style="display:none"') + '>\
+                    Delete\
                 </a>\
                 '
                 if (actionJSON.deletetoko != undefined) body += '<a href="#" class="mb-n2 mt-n1 hapus_toko" title="" ' + (((actionJSON.deletetoko != undefined) && (actionJSON.deletetoko)) ? '' : 'style="display:none"') + '>\
@@ -205,6 +213,47 @@ $(document).ready(function(){
     
             });
         });
+        $(document).on('click','.editValidator', function(e){
+            e.preventDefault(0);
+            $('#EditValidator').modal('show');
+		    var json = $(this).siblings('textarea').val();
+            var data = JSON.parse(json);
+            // console.log(data);
+            $.each(data, function (key, value) {
+                // console.log(key);
+                if(key == 'validator_brand_id'){
+                    $(".validator_validator_brand_id option[value='"+value+"']").prop('selected', true);
+                }else{
+                    $('.validator_' + key).val(value);
+                }
+            });
+        });
+        $(document).on('click','.deletevalidator', function(e){
+            e.preventDefault(0);
+            if (confirm('Yakin ingin mengapus data validator ini?')) {
+                var json = $(this).siblings('textarea').val();
+                var data = JSON.parse(json);
+                $.ajax({
+                    url: site_data.base_url+'/hapusvalidator',
+                    type: "post",
+                    data:{
+                        id_user : data.id,
+                    },
+                    success: function (response) {
+                        var data = jQuery.parseJSON(response);
+                        if(data.status == false){
+                            alert(data.message);
+                        }else{
+                            table.ajax.reload();
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            }
+        })
+
         $(document).on('click','.detailregis', function(e){
             e.preventDefault(0);
             $('#DetailSertif').modal('show');

@@ -64,6 +64,10 @@ $route['sertif-list-newregis'] = 'Profile/list_sretif_new';
 $route['sertif-check/validated'] = 'Profile/validatedsave';
 $route['profile/data-sertifikat'] = 'Profile/data_sertifikat';
 // $route['profile/sertifikat/detail/(:num)'] = 'Profile/sertifikat_detail/$1';
+$route['profile/edit'] = 'Profile/edit';
+$route['profile/saveedit'] = 'Profile/saveeditprofile';
+$route['checkusername'] = 'Profile/checkusername';
+
 $route['legit'] = 'Legitcheck/home';
 $route['legitcheck'] = 'Legitcheck/index';
 $route['legitcheck/success'] = 'welcome/legitchcek_send_success';
@@ -77,6 +81,8 @@ $route['auth/login'] = 'Auth/login';
 $route['auth/register'] = 'Auth/register';
 $route['logout'] = 'Auth/logout';
 $route['registervalidator'] = 'Auth/validator_register';
+$route['updatevalidator'] = 'Auth/validator_update';
+$route['hapusvalidator'] = 'Auth/validator_delete';
 $route['auth/registervalidator'] = 'Auth/register_validator';
 
 // Legit
@@ -99,6 +105,10 @@ $route['searchlegit'] = 'Search/index';
 $route['user/list'] = 'User/list';
 $route['user-list'] = 'User/listshow';
 $route['user-list-select'] = 'User/listshowselect';
+
+//validator list
+$route['validator/list'] = 'User/validatorlist';
+$route['validator-list'] = 'User/listshowvalidator';
 
 
 //page

@@ -42,6 +42,8 @@
     <link rel="stylesheet" type="text/css" href="<?= get_template_directory_asst('assets/front/styles/style.css') ?>">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?= get_template_directory_asst('assets/front/fonts/css/fontawesome-all.min.css') ?>">
+    <link rel="stylesheet" type="text/css" href="https://dev.urbanadventure.co.id/templates/frondend/urban/assets/css/slick.css?v=1.9.9">
+    <link rel="stylesheet" type="text/css" href="https://dev.urbanadventure.co.id/templates/frondend/urban/assets/css/slick-theme.css?v=1.9.9">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZVCXHDPH1"></script>
     <script>
     window.dataLayer = window.dataLayer || [];

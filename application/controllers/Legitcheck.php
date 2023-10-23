@@ -65,6 +65,8 @@ class Legitcheck extends CI_Controller {
         $kategori = $post['kategori'];
         $brand = $post['brand'];
         $nama_item = $post['nama_item'];
+        $nama_toko = $post['nama_toko'];
+        $kondisi_barang = $post['kondisi_barang'];
         $catatan = $post['catatan'];
 
         //file upload destination
@@ -111,10 +113,13 @@ class Legitcheck extends CI_Controller {
                 'kategori'  => $kategori,
                 'brand'     => $brand,
                 'nama_item' => $nama_item,
+                'nama_toko' => $nama_toko,
+                'kondisi_barang' => $kondisi_barang,
                 'data_foto' => $data_foto,
                 'catatan'   => $catatan,
             );
             // var_dump($data_legit);
+            // die;
             $kirim = $this->legit->savelegit($data_legit,$this->token);
             if($kirim['status'] == true){
                 redirect(base_url('legitcheck/success?caseid='.$kirim['case_id']));

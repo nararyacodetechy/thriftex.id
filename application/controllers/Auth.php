@@ -9,6 +9,7 @@ class Auth extends CI_Controller {
         $this->load->model('User_model','user');
         date_default_timezone_set('Asia/Makassar');
 		$this->load->helper(array('config'));
+        $this->load->library(array('Site'));
     }
 
     public function viewlogin(){
@@ -208,6 +209,7 @@ class Auth extends CI_Controller {
     }
 
     public function register_validator(){
+        $this->site->is_logged_in();
         $response = array(
             'status' => false,
             'msg'   => 'Unknow error!'
@@ -219,8 +221,8 @@ class Auth extends CI_Controller {
             'password'  => $post['password'],
             'passconf'  => $post['passconf'],
             'role'      => 'validator',
-            // 'validator_brand_id'    => $post['validator_brand_id']
-            'validator_kategori_id'    => $post['validator_kategori_id']
+            'validator_brand_id'    => $post['validator_brand_id'],
+            // 'validator_kategori_id'    => $post['validator_kategori_id']
         ];
         $regis = $this->user->register($data_regis);
         // var_dump($regis);
@@ -246,11 +248,31 @@ class Auth extends CI_Controller {
     }
 
     public function validator_register(){
+        $this->site->is_logged_in();
         $data = array(
             'page_title'    => "Tambah Data Validator",
             // 'description_page'  => ''
         );
         $this->load->view('register_validator.php',$data);
     }
+
+    public function validator_update(){
+        $this->site->is_logged_in();
+		$data = $this->input->post();
+		$token = $this->session->userdata('token');
+		$send = $this->user->saveValidatoredit($token,$data);
+		if($send['status'] == true){
+			redirect(base_url('validator/list'));
+		}
+    }
+
+    public function validator_delete(){
+        $this->site->is_logged_in();
+		$data = $this->input->post();
+		$token = $this->session->userdata('token');
+		$send = $this->user->deleteValidator($token,$data);
+		echo json_encode($send);
+    }
+
 
 }

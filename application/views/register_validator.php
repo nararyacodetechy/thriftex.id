@@ -45,19 +45,31 @@
                             <em>(required)</em>
                         </div>
                         <div class="valid-feedback color-red-dark field_passconf"></div>
-                        <!-- <div class="input-style no-borders no-icon mb-4">
+                        <div class="input-style no-borders no-icon mb-4">
                             <label for="form5a" class="color-highlight">Pilih Spesialis Brand</label>
                             <select id="form5a" name="validator_brand_id">
-                                <option value="default" disabled selected>Spesialis Brand</option>
+                                <option value="" disabled selected>Pilih Brand</option>
                                 <option value="1">Vans</option>
                                 <option value="2">Converse</option>
+                                <option value="3">Nike</option>
+                                <option value="4">Adidas</option>
+                                <option value="5">Puma</option>
+                                <option value="6">New Balance</option>
+                                <option value="7">Reebok</option>
+                                <option value="8">Dickies</option>
+                                <option value="9">Stussy</option>
+                                <option value="10">Carhartt</option>
+                                <option value="11">Offwhite</option>
+                                <option value="12">Supreme</option>
+                                <option value="13">Bape</option>
+                                <option value="14">Other Brand</option>
                             </select>
                             <span><i class="fa fa-chevron-down"></i></span>
                             <i class="fa fa-check disabled valid color-green-dark"></i>
                             <i class="fa fa-check disabled invalid color-red-dark"></i>
                             <em></em>
-                        </div> -->
-                        <div class="input-style no-borders no-icon mb-4">
+                        </div>
+                        <!-- <div class="input-style no-borders no-icon mb-4">
                             <label for="form5a" class="color-highlight">Pilih Spesialis Kategori</label>
                             <select id="form5a" name="validator_kategori_id">
                                 <option value="default" disabled selected>Spesialis Kategori</option>
@@ -74,7 +86,7 @@
                             <i class="fa fa-check disabled valid color-green-dark"></i>
                             <i class="fa fa-check disabled invalid color-red-dark"></i>
                             <em></em>
-                        </div>
+                        </div> -->
                         <div class="d-grid gap-2 mt-4">
                             <button type="submit" id="register_submit" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-blue-dark mt-n2">Buat Akun Baru</button>
                         </div>

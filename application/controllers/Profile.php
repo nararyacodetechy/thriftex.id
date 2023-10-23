@@ -1,4 +1,7 @@
 <?php
+
+use Google\Service\HangoutsChat\GoogleAppsCardV1Column;
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Profile extends CI_Controller {
@@ -22,8 +25,6 @@ class Profile extends CI_Controller {
 		$token = $this->session->userdata('token');
 		$checkuser = $this->user->checkuser($token)['data'];
 		// $validator_data_summary = $this->validator->summaryData($token,$checkuser['validator_brand_id']);
-
-		$token = $this->session->userdata('token');
         $legit_list1 = $this->legit->validator_do($token,'');
         $legit_list2 = $this->legit->validator_do($token,'processing');
         $legit_list3 = $this->legit->validator_do($token,'complete');
@@ -40,7 +41,6 @@ class Profile extends CI_Controller {
 			$dataAdmin['total_validator'] = $data_summary_admin['total_validator'];
 			// $dataAdmin['total_legit_success'] = $data_summary_admin['total_legit_success'];
 
-			$token = $this->session->userdata('token');
         	$total_legit = $this->legit->get_total_legit($token);
 			$dataAdmin['total_legit_success'] = $total_legit['total'];
 		}
@@ -164,6 +164,34 @@ class Profile extends CI_Controller {
 		$this->load->view('include/header.php',$data);
 		$this->load->view('sertif-admin/sertif-list.php',$data);
 		$this->load->view('include/footer.php',$data);
+	}
+
+	public function edit(){
+		$this->site->is_logged_in();
+        $token = $this->session->userdata('token');
+		$checkuser = $this->user->checkuser($token)['data'];
+        $data = array(
+			'data_user' => $checkuser,
+			'page_title'    => "Edit Profile",
+            'description_page'  => '',
+        );
+		$this->load->view('profile_edit.php',$data);
+	}
+	public function checkusername(){
+		$this->site->is_logged_in();
+		$data = $this->input->post();
+		$token = $this->session->userdata('token');
+		$checkuser = $this->user->checkusername($token,$data);
+		echo json_encode($checkuser);
+	}
+	public function saveeditprofile(){
+		$this->site->is_logged_in();
+		$data = $this->input->post();
+		$token = $this->session->userdata('token');
+		$send = $this->user->saveProfile($token,$data);
+		if($send['status'] == true){
+			redirect(base_url('profile/edit'));
+		}
 	}
 
 

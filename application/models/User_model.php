@@ -131,6 +131,81 @@ class User_model extends CI_model {
         }
     }
 
+    public function checkusername($token,$username){
+        try {
+            $response = $this->_client->request('POST','users/checkusername',[
+                'headers' => [
+                    'Authorization' => $token
+                ],
+                'form_params'   => $username,
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            // return array('status' => $result['status'], 'message' => $result['message'], 'data' => $result['data']);
+            return $result;
+        } catch (\GuzzleHttp\Exception\ClientException $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+        }
+    }
+
+    public function saveProfile($token,$data){
+        try {
+            $response = $this->_client->request('POST','users/saveuseredit',[
+                'headers' => [
+                    'Authorization' => $token
+                ],
+                'form_params'   => $data
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            // return array('status' => $result['status'], 'message' => $result['message'], 'data' => $result['data']);
+            return $result;
+        } catch (\GuzzleHttp\Exception\ClientException $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+        }
+    }
+
+
+    public function saveValidatoredit($token,$data){
+        try {
+            $response = $this->_client->request('POST','users/validatoredit',[
+                'headers' => [
+                    'Authorization' => $token
+                ],
+                'form_params'   => $data
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            return $result;
+        } catch (\GuzzleHttp\Exception\ClientException $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+        }
+    }
+
+    public function deleteValidator($token,$data){
+        try {
+            $response = $this->_client->request('POST','users/validatordelete',[
+                'headers' => [
+                    'Authorization' => $token
+                ],
+                'form_params'   => $data
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            return $result;
+        } catch (\GuzzleHttp\Exception\ClientException $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+        }
+    }
+
     // public function getAllMahasiswa()
     // {   
     //     $response = $this->_client->request('GET','mahasiswa',[
