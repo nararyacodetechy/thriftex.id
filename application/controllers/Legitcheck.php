@@ -121,6 +121,7 @@ class Legitcheck extends CI_Controller {
             // var_dump($data_legit);
             // die;
             $kirim = $this->legit->savelegit($data_legit,$this->token);
+            // var_dump($kirim);
             if($kirim['status'] == true){
                 redirect(base_url('legitcheck/success?caseid='.$kirim['case_id']));
             }

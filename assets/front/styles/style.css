@@ -2185,7 +2185,18 @@ button {
   right: 0px;
   top: 0px;
 }
-
+.card-menu{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.card-menu .card-bottom{
+  position: relative !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card-bottom {
   z-index: 2;
   position: absolute;
@@ -6595,7 +6606,12 @@ input[type=number] {
 .bg-31 {
   background-image: url(../images/thrift/mainbg.jpeg);
 }
-
+.bg-32{
+  background-image: url(../images/thrift/legit-check.jpeg);
+}
+.bg-33{
+  background-image: url(../images/thrift/barcodex.jpeg);
+}
 /*Demo Colors*/
 .demo-color {
   width: 100%;

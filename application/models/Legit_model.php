@@ -42,7 +42,7 @@ class Legit_model extends CI_model {
             $result = json_decode($response->getBody()->getContents(), true);
             // var_dump($result);
             return $result;
-        } catch (\Throwable $th) {
+        } catch (GuzzleHttp\Exception\ClientException $th) {
             $response = $th->getResponse();
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);

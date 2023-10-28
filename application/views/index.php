@@ -24,27 +24,27 @@
                 </p>
                 <div class="divider"></div>
             </div>
-            <div class="row me-2 ms-2 mb-0 justify-content-md-center">
+            <div class="row me-0 ms-0 me-md-2 ms-md-2 mb-0 justify-content-md-center">
                 <div class="col col-lg-4 col-12">
-                    <div class="card bg-28" style="height:230px">
-                        <div class="card-bottom p-3">
-                            <h1 class="color-white mb-n1">Legit Check</h1>
-                            <p class="color-white opacity-60 mb-0">
-                                Cek keaslian barangmu disini
-                            </p>
-                            <a href="<?= createurl('legit') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a>
-                        </div>
+                    <div class="card bg-32 card-menu" style="height:230px">
+                        <a href="<?= createurl('legit') ?>" class="card-bottom p-3">
+                            <h1 class="color-white mb-n1">LEGIT CHECK</h1>
+                        </a>
+                        <!-- <p class="color-white opacity-60 mb-0">
+                            Cek keaslian barangmu disini
+                        </p> -->
+                        <!-- <a href="<?= createurl('legit') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a> -->
                         <div class="card-overlay bg-gradient opacity-90"></div>
                     </div>
                 </div>
                 <div class="col col-lg-4 col-12">
-                    <div class="card bg-29" style="height:230px">
+                    <div class="card bg-33 card-menu" style="height:230px">
                         <div class="card-bottom p-3">
-                            <h1 class="color-white mb-n1">Sertifikat Check</h1>
-                            <p class="color-white opacity-60 mb-0">
+                            <h1 class="color-white mb-n1">BARCODE X.O</h1>
+                            <!-- <p class="color-white opacity-60 mb-0">
                                 Cek keaslian barangmu disini
-                            </p>
-                            <a href="<?= createurl('sertifikat-check') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a>
+                            </p> -->
+                            <!-- <a href="<?= createurl('sertifikat-check') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a> -->
                         </div>
                         <div class="card-overlay bg-gradient opacity-90"></div>
                     </div>
