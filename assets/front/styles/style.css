@@ -2197,6 +2197,10 @@ button {
   align-items: center;
   justify-content: center;
 }
+.card-menu h2{
+  font-size: 16px;
+  font-weight: 700;
+}
 .card-bottom {
   z-index: 2;
   position: absolute;

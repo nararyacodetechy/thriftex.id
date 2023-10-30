@@ -32,6 +32,20 @@
                 <div class="divider my-2"></div>
                 <a href="" class="default-link d-flex">
                     <div>
+                        <span class="font-11 d-block mb-n1 opacity-50 color-theme">Kondisi</span>
+                        <span class="default-link d-block color-theme font-15 font-400"><?= $legit_data[0]['kondisi'] ?></span>
+                    </div>
+                </a>
+                <div class="divider my-2"></div>
+                <a href="" class="default-link d-flex">
+                    <div>
+                        <span class="font-11 d-block mb-n1 opacity-50 color-theme">Toko Pembelian</span>
+                        <span class="default-link d-block color-theme font-15 font-400"><?= $legit_data[0]['toko_pembelian'] ?></span>
+                    </div>
+                </a>
+                <div class="divider my-2"></div>
+                <a href="" class="default-link d-flex">
+                    <div>
                         <span class="font-11 d-block mb-n1 opacity-50 color-theme">Catatan</span>
                         <span class="default-link d-block color-theme font-15 font-400"><?= $legit_data[0]['catatan'] ?></span>
                     </div>

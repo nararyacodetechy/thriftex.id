@@ -7,10 +7,10 @@
         </div>
         <div class="card bg-31 mb-0 home-banner">
             <a href="javascript:;">
-                <img src="<?= base_url('assets/banner/banner2.png') ?>" alt="">
+                <img src="<?= base_url('assets/banner/banner-new.jpeg') ?>" alt="">
             </a>
             <a href="javascript:;">
-                <img src="<?= base_url('assets/banner/banner2.png') ?>" alt="">
+                <img src="<?= base_url('assets/banner/banner-new.jpeg') ?>" alt="">
             </a>
         </div>
 
@@ -28,25 +28,25 @@
                 <div class="col col-lg-4 col-12">
                     <div class="card bg-32 card-menu" style="height:230px">
                         <a href="<?= createurl('legit') ?>" class="card-bottom p-3">
-                            <h1 class="color-white mb-n1">LEGIT CHECK</h1>
+                            <h2 class="color-white mb-n1">LEGIT CHECK</h2>
                         </a>
                         <!-- <p class="color-white opacity-60 mb-0">
                             Cek keaslian barangmu disini
                         </p> -->
                         <!-- <a href="<?= createurl('legit') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a> -->
-                        <div class="card-overlay bg-gradient opacity-90"></div>
+                        <!-- <div class="card-overlay bg-gradient opacity-90"></div> -->
                     </div>
                 </div>
                 <div class="col col-lg-4 col-12">
                     <div class="card bg-33 card-menu" style="height:230px">
                         <div class="card-bottom p-3">
-                            <h1 class="color-white mb-n1">BARCODE X.O</h1>
+                            <h2 class="color-white mb-n1">BARCODE X.O</h2>
                             <!-- <p class="color-white opacity-60 mb-0">
                                 Cek keaslian barangmu disini
                             </p> -->
                             <!-- <a href="<?= createurl('sertifikat-check') ?>" class="btn btn-m mb-3 rounded-0 text-uppercase font-900 border-dark-dark color-dark-dark bg-theme">Cek Sekarang</a> -->
                         </div>
-                        <div class="card-overlay bg-gradient opacity-90"></div>
+                        <!-- <div class="card-overlay bg-gradient opacity-90"></div> -->
                     </div>
                 </div>
             </div>
