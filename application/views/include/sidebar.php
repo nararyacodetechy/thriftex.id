@@ -42,9 +42,9 @@
             <a href="<?= createurl('sertifikat-check') ?>">
                 <span>Sertifikat Check</span>
             </a>
-            <a href="#">
+            <!-- <a href="#">
                 <span>Artikel</span>
-            </a>
+            </a> -->
             <a href="<?= createurl('tentang-kami') ?>">
                 <span>Tentang kami</span>
             </a>
@@ -71,6 +71,21 @@
                 </div>
                 <i class="fa fa-angle-right"></i>
             </a>
+            <?php
+            if($this->session->userdata('login') == true){
+            ?>
+            <a href="<?= createurl('profile') ?>">
+                <i class="fa font-12 fa-user bg-gray-dark rounded-s"></i>
+                <span>Profile</span>
+                <i class="fa fa-angle-right"></i>
+            </a>
+            <?php }else{ ?>
+            <a href="#" data-menu="menu-login-1">
+                <i class="fa font-12 fa-user bg-gray-dark rounded-s"></i>
+                <span>Profile</span>
+                <i class="fa fa-angle-right"></i>
+            </a>
+            <?php } ?>
         </div>
     </div>
 </div>

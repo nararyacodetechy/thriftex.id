@@ -15,7 +15,7 @@
         </div>
 
         
-        <div class="card mb-0 pt-5">
+        <div class="card mb-0 pt-md-5 pt-2">
             <div class="content mb-0 d-none">
                 <h1 class="text-center mb-0">Packed with Goodies</h1>
                 <p class="text-center color-highlight font-11 mt-n1">The Absolute Best Products & Care for You</p>
@@ -25,8 +25,8 @@
                 <div class="divider"></div>
             </div>
             <div class="row me-0 ms-0 me-md-2 ms-md-2 mb-0 justify-content-md-center">
-                <div class="col col-lg-4 col-12">
-                    <div class="card bg-32 card-menu" style="height:230px">
+                <div class="col col-lg-4 col-12 p-0 p-md-2">
+                    <div class="card bg-32 card-menu mb-2" style="height:230px">
                         <a href="<?= createurl('legit') ?>" class="card-bottom p-3">
                             <h2 class="color-white mb-n1">LEGIT CHECK</h2>
                         </a>
@@ -37,7 +37,7 @@
                         <!-- <div class="card-overlay bg-gradient opacity-90"></div> -->
                     </div>
                 </div>
-                <div class="col col-lg-4 col-12">
+                <div class="col col-lg-4 col-12 p-0 p-md-2">
                     <div class="card bg-33 card-menu" style="height:230px">
                         <div class="card-bottom p-3">
                             <h2 class="color-white mb-n1">BARCODE X.O</h2>
