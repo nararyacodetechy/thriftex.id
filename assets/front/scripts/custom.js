@@ -455,8 +455,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if(localStorage.getItem(pwaName+'-Theme') == "dark-mode"){for(let i = 0; i < toggleDark.length; i++){toggleDark[i].checked="checked"};document.body.className = 'theme-dark';}
         if(localStorage.getItem(pwaName+'-Theme') == "light-mode"){document.body.className = 'theme-light';} if(document.body.className == "detect-theme"){setColorScheme();}
         var baseUrls = document.querySelector('#base_urls').value;
-        if(localStorage.getItem('main_logo')  == 'assets/logo.jpeg'){ document.getElementById('main_logo').src = baseUrls+'assets/logo.jpeg'}
-        if(localStorage.getItem('main_logo') == 'assets/logo.png'){document.getElementById('main_logo').src = baseUrls+'assets/logo.png'}
+        // if(localStorage.getItem('main_logo')  == 'assets/logo.jpeg'){ document.getElementById('main_logo').src = baseUrls+'assets/logo.jpeg'}
+        // if(localStorage.getItem('main_logo') == 'assets/logo.png'){document.getElementById('main_logo').src = baseUrls+'assets/logo.png'}
 
         //Detect Dark/Light Mode
         const darkModeDetect = document.querySelectorAll('.detect-dark-mode');
