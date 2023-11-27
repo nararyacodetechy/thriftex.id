@@ -7202,3 +7202,26 @@ right: 0 !important; }
 .input-invalid{
   border-color:red !important;
 }
+
+
+.store_profile_thumbnail img{
+  width: 100%;
+  max-width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+.store_profile_link-list{margin-top: 20px;}
+.store_profile_link-list ul{display: block;padding:0;margin:0}
+.store_profile_link-list ul li{
+  display: block;
+  margin-bottom: 10px;
+}
+.store_profile_link-list ul li a{
+  padding: 10px;
+  text-align: center;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #ededed;
+  color: #898989;
+  font-size: 13px;
+}

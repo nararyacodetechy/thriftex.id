@@ -43,6 +43,14 @@ $(document).ready(function(){
                     Delete\
                 </a>\
                 '
+                if (actionJSON.terimaQrcode != undefined) body += '<a href="#" class="mb-n2 mt-n1 terimaQrcode" title="" ' + (((actionJSON.terimaQrcode != undefined) && (actionJSON.terimaQrcode)) ? '' : 'style="display:none"') + '>\
+                    Terima Pembayaran\
+                </a>\
+                '
+                if (actionJSON.tolakQrcode != undefined) body += '<a href="#" class="mb-n2 mt-n1 tolakQrcode" title="" ' + (((actionJSON.tolakQrcode != undefined) && (actionJSON.tolakQrcode)) ? '' : 'style="display:none"') + '>\
+                    Tolak Permintaan\
+                </a>\
+                '
                 if (actionJSON.deletetoko != undefined) body += '<a href="#" class="mb-n2 mt-n1 hapus_toko" title="" ' + (((actionJSON.deletetoko != undefined) && (actionJSON.deletetoko)) ? '' : 'style="display:none"') + '>\
                     Hapus Toko\
                 </a>\
@@ -405,6 +413,73 @@ $(document).ready(function(){
                 }
             });
         });
+
+        $(document).on('click','.terimaQrcode',function(e){
+            e.preventDefault(0);
+            if(confirm('Yakin menerima Permintaan & konfirmasi pembayaan?')){
+                var json = $(this).siblings('textarea').val();
+                var data = JSON.parse(json);
+                console.log(data);
+                $.ajax({
+                    url: site_data.base_url+'/konfirmasiqrcode',
+                    type: "post",
+                    data:{
+                        bID : data.barcode_uuid,
+                        aksi : 'paid',
+                    },
+                    success: function (response) {
+                        var data = jQuery.parseJSON(response);
+                        if(data.status == false){
+                            alert('Terjadi kesalahan!');
+                        }else{
+                            var toastID = document.getElementById('notifregis');
+                            toastID = new bootstrap.Toast(toastID);
+                            toastID.show();
+                            $('.notif_regis').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','max-content');
+                            setTimeout(function() {
+                                table.ajax.reload();
+                            }, 1000);
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            }
+        })
+        $(document).on('click','.tolakQrcode',function(e){
+            e.preventDefault(0);
+            if(confirm('Yakin akan menolak Permintaan?')){
+                var json = $(this).siblings('textarea').val();
+                var data = JSON.parse(json);
+                console.log(data);
+                $.ajax({
+                    url: site_data.base_url+'/konfirmasiqrcode',
+                    type: "post",
+                    data:{
+                        bID : data.barcode_uuid,
+                        aksi : 'cencel',
+                    },
+                    success: function (response) {
+                        var data = jQuery.parseJSON(response);
+                        if(data.status == false){
+                            alert('Terjadi kesalahan!');
+                        }else{
+                            var toastID = document.getElementById('notifregis');
+                            toastID = new bootstrap.Toast(toastID);
+                            toastID.show();
+                            $('.notif_regis').html('<i class="fa fa-times me-3"></i>'+data.msg).css('width','max-content');
+                            setTimeout(function() {
+                                table.ajax.reload();
+                            }, 1000);
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            }
+        })
 
 
 

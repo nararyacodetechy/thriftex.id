@@ -14,6 +14,7 @@ class Profile extends CI_Controller {
 		$this->load->model('Legit_model','legit');
 		$this->load->model('Validator_model','validator');
 		$this->load->model('Sertif_model','sertif');
+		$this->load->model('Barcode_model','barcode');
 		$this->load->model('Toko_model','toko');
 		date_default_timezone_set('Asia/Makassar');
 		$this->load->helper(array('config'));
@@ -54,12 +55,43 @@ class Profile extends CI_Controller {
 			'validator_summary_count' => $validator_data_summary,
 			'dataAdmin' => $dataAdmin,
 			'total_req_sertif' => (!empty($this->sertif->total_pending($token)['total'])) ? $this->sertif->total_pending($token)['total'] : '0',
+			'total_req_qrcode' => (!empty($this->barcode->total_pending($token)['total'])) ? $this->barcode->total_pending($token)['total'] : '0',
 			'page_title'    => "Halaman Profile Pengguna",
             'description_page'  => 'Halaman Profile Pengguna - Thriftex.id - Legit Check & Authentic'
 		);
 		$this->load->view('profile.php',$data);
 	}
 	
+
+	public function qrcodecheck(){
+		$this->site->is_logged_in();
+        $token = $this->session->userdata('token');
+        $data = array(
+			'page_title'    => "Sertifikat Saya",
+            'description_page'  => ''
+        );
+		$this->load->view('include/header.php',$data);
+		$this->load->view('qrcode-admin/qrcode-check.php',$data);
+		$this->load->view('include/footer.php',$data);
+	}
+	public function list_qrcode_new(){
+		$this->site->is_logged_in();
+		$token = $this->session->userdata('token');
+		$param = $this->input->get();
+		$response = $this->barcode->getQrcodeListAdmin($token,$param,'pending');
+		echo json_encode($response);
+	}
+	public function konfirmasiqrcode(){
+		$data = $this->input->post();
+		$this->site->is_logged_in();
+		$token = $this->session->userdata('token');
+		$status = [
+			'id_barcode' => $data['bID'],
+			'payment_status' => $data['aksi'],
+		];
+		$response = $this->barcode->updatestatus($token,$status);
+		echo json_encode($response);
+	}
 
 	public function profile_legit(){
 		$this->site->is_logged_in();

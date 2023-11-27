@@ -63,6 +63,12 @@ $route['profile/sertif-check'] = 'Profile/sertifcheck';
 $route['sertif-list-newregis'] = 'Profile/list_sretif_new';
 $route['sertif-check/validated'] = 'Profile/validatedsave';
 $route['profile/data-sertifikat'] = 'Profile/data_sertifikat';
+//qrcode
+$route['profile/qrcode-check'] = 'Profile/qrcodecheck';
+$route['qrcode-list-new'] = 'Profile/list_qrcode_new';
+$route['konfirmasiqrcode'] = 'Profile/konfirmasiqrcode';
+
+
 // $route['profile/sertifikat/detail/(:num)'] = 'Profile/sertifikat_detail/$1';
 $route['profile/edit'] = 'Profile/edit';
 $route['profile/saveedit'] = 'Profile/saveeditprofile';
@@ -132,3 +138,5 @@ $route['save-register-toko'] = 'Toko/saveregister';
 $route['update-register-toko'] = 'Toko/updateregister';
 $route['toko-list'] ='Toko/listtoko';
 $route['hapus-toko'] ='Toko/hapustoko';
+
+$route['(:any)'] = 'Tokoqr/index/$1';

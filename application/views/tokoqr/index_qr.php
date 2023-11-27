@@ -1,0 +1,21 @@
+<div class="row me-0 ms-0 mb-0 justify-content-md-center">
+    <div class="col col-lg-4 ms-0 me-0 ps-0 pe-0">
+        <div class="card mb-2 pb-4 min-h-1vh">
+            <div class="content mb-2 store_profile">
+                <div class="store_profile_thumbnail home-banner">
+                    <img src="<?= base_url('assets/banner/hermosa1.jpeg') ?>" alt="">
+                    <img src="<?= base_url('assets/banner/hermosa2.jpeg') ?>" alt="">
+                    <img src="<?= base_url('assets/banner/hermosa3.jpeg') ?>" alt="">
+                </div>
+                <div class="store_profile_link-list">
+                    <ul>
+                        <li><a href="">Product Detail</a></li>
+                        <li><a href="">Certificate Product</a></li>
+                        <li><a href="">Look Book</a></li>
+                        <li><a href="">Review Product</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

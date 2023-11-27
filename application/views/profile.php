@@ -149,6 +149,30 @@
         <?php if($role == 'admin'){ ?>
         <div class="card mb-2">
             <div class="content mt-3">
+                <p class="mb-3">QR Code</p>
+                <div class="row mb-n3">
+                    <div class="col-12 ps-2">
+                        <div class="card card-style mx-0 mb-3">
+                            <a href="<?= base_url('profile/qrcode-check') ?>">
+                                <div class="p-3">
+                                    <h4 class="font-700 text-uppercase font-12 opacity-50 mt-n2">QR Code Request</h4>
+                                    <h1 class="font-700 font-34 color-dark-light mb-0"><?= $total_req_qrcode ?></h1>
+                                    <i class="fa fa-arrow-right float-end mt-n3 opacity-20"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="list-group list-custom-small">
+                        <a href="<?= base_url('profile/data-sertifikat') ?>"><span>Data Qr Code</span><i class="fa fa-angle-right"></i></a>
+                        <a href="<?= base_url('akuntoko') ?>"><span>Akun Toko Official</span><i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-2">
+            <div class="content mt-3">
                 <p class="mb-3">Sertifikat</p>
                 <div class="row mb-n3">
                     <div class="col-12 ps-2">
