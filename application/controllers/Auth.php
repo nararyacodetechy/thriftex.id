@@ -82,9 +82,6 @@ class Auth extends CI_Controller {
                             'name'   => '_ath',
                             'value'  => $cek_login['token'],
                             'expire' =>  7200,
-                            'domain' => '.thriftex.id', // Opsi ini akan menggantikan konfigurasi 'cookie_domain'
-                            'path'   => '/',  // Opsi ini akan menggantikan konfigurasi 'cookie_path'
-                            'prefix' => '',
                             'secure' => false
                         );
                         $this->input->set_cookie($cookie); 
