@@ -8,6 +8,7 @@ class SConfig
 	var $_api_url = 'https://rest.thriftex.id/api/';
     var $_site_url = 'https://thriftex.id/';
     var $_app_mode = 'production';
+    var $_panel_qr = 'https://qr.thriftex.id/';
     // --- mode
     // *     development
     // *     testing
@@ -18,6 +19,7 @@ class SConfig
 	// var $_api_url = 'http://localhost:8000/my/ci3api/api/';
     // var $_site_url = 'http://localhost:8000/my/thriftex/';
     // var $_app_mode = 'development';
+    // var $_panel_qr = 'http://localhost:8000/my/thriftex_barcode/';
 
     // 110276130330-7tiasjh4bcpmr34g490q497mp48cd1h7.apps.googleusercontent.com
     // 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
