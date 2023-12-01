@@ -196,6 +196,16 @@
             </div>
         </div>
         <?php } ?>
+        <?php if($role == 'toko'){ ?>
+        <div class="card mb-2">
+            <div class="content">
+                <h6 class="text-secondary font-300">Toko</h6>
+                <div class="list-group list-custom-small">
+                    <a target="_blank" href="http://localhost:8000/my/thriftex_barcode/"><span>QR Code Panel</span><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
         <div class="card mb-2">
             <div class="content">
                 <h6 class="text-secondary font-300">Akun Setting</h6>

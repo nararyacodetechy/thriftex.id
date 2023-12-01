@@ -138,6 +138,16 @@ class Auth extends CI_Controller {
                         'token' => $cek_login['token']
                     );
                     $this->session->set_userdata($data_login);
+                    $checkuser = $this->user->checkuser($cek_login['token']);
+                    if($checkuser['data']['role'] == 'toko'){
+                        $cookie = array(
+                            'name'   => '_ath',
+                            'value'  => $cek_login['token'],
+                            'expire' =>  7200,
+                            'secure' => false
+                        );
+                        $this->input->set_cookie($cookie); 
+                    }
                     $response = array(
                         'status' => true,
                         'redirect_url'  => base_url('profile')
@@ -244,6 +254,7 @@ class Auth extends CI_Controller {
 
     public function logout(){
         $this->session->sess_destroy();
+        delete_cookie('_ath');
 		redirect(base_url());
     }
 
