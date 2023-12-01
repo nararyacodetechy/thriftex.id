@@ -86,7 +86,6 @@ class Auth extends CI_Controller {
                         );
                         $this->input->set_cookie($cookie); 
                     }
-                    die;
                     $response = array(
                         'status'    => true,
                         'msg'       => 'Berhasil, mohon tunggu...',
