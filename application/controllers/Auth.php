@@ -269,8 +269,8 @@ class Auth extends CI_Controller {
     }
 
     public function logout(){
+        delete_cookie('_ath','.thriftex.id','/','');
         $this->session->sess_destroy();
-        delete_cookie('_ath');
 		redirect(base_url());
     }
 

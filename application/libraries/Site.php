@@ -12,7 +12,7 @@ class Site{
         $token = @$user_session['token'];
 		$cek_login = $_this->user->checkuser($token);
         if(!isset($user_session['login']) && $cek_login['status'] == false){
-            $_this->session->sess_destroy();
+            $_this->session->();
             redirect(base_url('login'));
         }
 
