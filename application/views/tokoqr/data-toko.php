@@ -5,8 +5,8 @@
         <div class="card mb-2 pb-4 min-h-1vh">
             <div class="content mb-2">
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-4">
-                    <h3>Data Toko Partner</h3>
-                    <button type="button" class="btn btn-sm rounded-s bordered btn-m mb-3 rounded-0 text-uppercase font-600 shadow-s bg-dark-light tokoadd">Tambah Data Toko</button>
+                    <h3>Data Akun Brand</h3>
+                    <button type="button" class="btn btn-sm rounded-s bordered btn-m mb-3 rounded-0 text-uppercase font-600 shadow-s bg-dark-light tokoadd">Register akun Brand</button>
                 </div>
                 <div class="search-box search-header bg-theme card-style me-0 ms-0 mb-2">
                     <i class="fa fa-search"></i>
@@ -15,10 +15,10 @@
                 </div>
                 <div id="notifdelete" class="toast toast-tiny toast-top bg-green-dark notif_regis" data-bs-delay="1500" data-autohide="true"></div>
                 <!-- datatable requirement -->
-                <input type="hidden" id="list_url" value="<?= base_url('toko-list') ?>" name="">
+                <input type="hidden" id="list_url" value="<?= base_url('tokoqr-list') ?>" name="">
                 <div style="display: none;" id="table_column">[{"data":"data_nama"}]</div>
                 <div style="display: none;" id="table_columnDef">[{"className":"p-3","targets":[0]},{"className":"text-end","targets":[1]}]</div>
-                <div style="display: none;" data-style="dropdown" id="table_action">{"detail":true,"deletetoko":true}</div>
+                <div style="display: none;" data-style="dropdown" id="table_action">{"detail":false,"deletetoko":false}</div>
                 <!-- END datatable requirement -->
                 <table class="table table-hover rounded-s shadow-l datatable" style="overflow: hidden;" table-jx id="datatable">
                     <thead>
@@ -78,7 +78,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content rounded-sm">
     <div id="notifregis" class="toast toast-tiny toast-top bg-green-dark notif_regis" data-bs-delay="1500" data-autohide="true"></div>
-    <form action="<?= base_url('save-register-toko') ?>" method="post" id="post_register">
+    <form action="<?= base_url('save-register-brand') ?>" method="post" id="post_register">
         <div class="modal-header">
             <h1 class="modal-title fs-5" id="AddTokoLabel">Tambah Data Toko</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -86,12 +86,12 @@
         <div class="modal-body">
                 <div class="d-flex content mb-1">
                     <div class="flex-grow-1">
-                        <h5 class="font-600 mb-0 lh-1">Nama Toko</h5>
+                        <h5 class="font-600 mb-0 lh-1">Nama Brand</h5>
                     </div>
                 </div>
                 <div class="content">
                     <div class="input-style has-borders no-icon validate-field mb-4">
-                        <input type="text" class="form-control validate-text" name="nama_toko" id="form4" placeholder="Nama Toko" required>
+                        <input type="text" class="form-control validate-text" name="nama_brand" id="form4" placeholder="Nama Toko" required>
                         <label for="form4" class="color-highlight">Nama Toko</label>
                         <i class="fa fa-times disabled invalid color-red-dark"></i>
                         <i class="fa fa-check disabled valid color-green-dark"></i>
@@ -100,25 +100,11 @@
                 </div>
                 <div class="d-flex content mb-1">
                     <div class="flex-grow-1">
-                        <h5 class="font-600 mb-0 lh-1">Alamat</h5>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="input-style has-borders no-icon mb-4">
-                        <textarea id="form7" name="alamat" placeholder="Masukan alamat" required></textarea>
-                        <label for="form7" class="color-highlight">Masukan alamat</label>
-                        <i class="fa fa-times disabled invalid color-red-dark"></i>
-                        <i class="fa fa-check disabled valid color-green-dark"></i>
-                        <em>(required)</em>
-                    </div>
-                </div>
-                <div class="d-flex content mb-1">
-                    <div class="flex-grow-1">
-                        <h5 class="font-600 mb-0 lh-1">Pilih Akun Toko</h5>
+                        <h5 class="font-600 mb-0 lh-1">Pilih Akun</h5>
                     </div>
                 </div>
                 <div class="content has-borders no-icon mb-4">
-                    <select id="form5" name="id_user" class="select2 select2_toko form-select" required>
+                    <select id="form5" name="id_user" class="select2 select2_brand form-select" required>
                         <option value="default" disabled selected>Pilih Akun</option>
                     </select>
                 </div>

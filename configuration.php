@@ -9,6 +9,8 @@ class SConfig
     var $_site_url = 'https://thriftex.id/';
     var $_app_mode = 'development';
     var $_panel_qr = 'https://qr.thriftex.id/';
+    var $_domain = '.thriftex.id';
+    
     // --- mode
     // *     development
     // *     testing
@@ -20,12 +22,13 @@ class SConfig
     // var $_site_url = 'http://localhost:8000/my/thriftex/';
     // var $_app_mode = 'development';
     // var $_panel_qr = 'http://localhost:8000/my/thriftex_barcode/';
+    // var $_domain = 'localhost';
 
     // 110276130330-7tiasjh4bcpmr34g490q497mp48cd1h7.apps.googleusercontent.com
     // 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
 
     // app version
-	var $_app_version = '1.2.7';
+	var $_app_version = '1.2.8';
 	// X versi Mayor (Perubahan arsitektur/fitur besar besaran)
 	// Y versi Minor (Penambahan beberapa fitur )
 	// Z versi perbaikan/patch/bugfix. (perbaikan /bugfix,security fix dsb).

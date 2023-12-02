@@ -8,14 +8,23 @@ class Tokoqr extends CI_Controller {
 		parent::__construct();
 		$this->load->library(array('Site'));
 		$this->load->model('Toko_model','toko');
+		$this->load->model('Barcode_model','barcode');
 		date_default_timezone_set('Asia/Makassar');
 		$this->load->helper(array('config'));
 	}
 
-    public function index($url_toko){
-        if($url_toko == 'hermosa'){
+    public function index($url_toko,$kode_qr){
+        // echo 'asdsa';
+        // $cek_toko = $this->barcode->cek_url_toko($url_toko);
+        // var_dump($cek_toko);
+        $code = $kode_qr;
+        $cek_url_toko = $this->barcode->barcode_profile_cek_url($url_toko,$code);
+        // var_dump($cek_url_toko);
+        // die;
+        if(isset($cek_url_toko['status']) && $cek_url_toko['status'] == true){
             $data = array(
-                'page_title'    => "Hermosa",
+                'page_title'    => $cek_url_toko['data']['profile']['nama_brand'],
+                'page_data'     => $cek_url_toko['data'],
                 'description_page'  => ''
             );
             $this->load->view('include/header_qr.php',$data);
@@ -24,6 +33,73 @@ class Tokoqr extends CI_Controller {
         }else{
             $this->load->view('404');
         }
+    }
+
+
+    public function akun(){
+        $data = array(
+			'page_title'    => "List Akun Brand",
+            'description_page'  => ''
+		);
+		$this->load->view('include/header.php',$data);
+		$this->load->view('tokoqr/data-toko.php',$data);
+		$this->load->view('include/footer.php',$data);
+    }
+
+    public function listtoko_brand(){
+        $this->site->is_logged_in();
+		$token = $this->session->userdata('token');
+		$param = $this->input->get();
+		$response = $this->barcode->getTokolist($token,$param);
+		echo json_encode($response);
+    }
+
+    public function saveregister(){
+        $response['status'] = false;
+        $response['msg'] = 'Terjadi Kesalahan, silahkan ulangi kembali';
+        $data = $this->input->post();
+        if(!empty($data['id_user'])){
+            $regis = $this->barcode->register($data);
+            if(!empty($regis)){
+                if(is_array($regis)){
+                    if($regis['status'] == true){
+                        $response = array(
+                            'status' => true,
+                            'msg'   => $regis['message'],
+                            // 'data'  => $regis['data']
+                        );
+                    }else{
+                        $response = array(
+                            'status' => $regis['status'],
+                            'msg'   => $regis['message'],
+                            // 'data'  => $regis['error_data']
+                        );
+                    }
+                }else{
+                    if($regis->status == true){
+                        $response = array(
+                            'status' => true,
+                            'msg'   => $regis->message
+                        );
+                    }else{
+                        $response = array(
+                            'status' => $regis->status,
+                            'msg'   => $regis->message,
+                            // 'data'  => $regis->error_data
+                        );
+                    }
+                }
+            }else{
+                $response = array(
+                    'status' => false,
+                    'msg'   => 'Register gagal,terjadi kesalahan sistem'
+                );
+            }
+        }else{
+            $response['status'] = false;
+            $response['msg'] = 'Mohon Pilih Akun Toko!';
+        }
+        echo json_encode($response);
     }
 
 	

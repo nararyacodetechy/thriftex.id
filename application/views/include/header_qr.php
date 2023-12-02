@@ -60,7 +60,7 @@
         <div class="header header-fixed header-logo-center center-xy">
             <!-- <a href="<?= createurl('/') ?>" class="header-title"><img class="logo main_logo" id="main_logo" src="<?= base_url('assets/logo.jpeg') ?>" alt=""></a> -->
             <!-- <a href="#" data-menu="menu-sidebar-left-6" class="header-icon center-xy header-icon-1"><i class="fa-solid fa-bars font-18 color-gray-dark"></i></a> -->
-            <a href="<?= createurl('/') ?>" class=" center-xy header-icon-4" style="width: auto;right: 13px;"><h1 style="font-size: 20px;">Hermosa</h1></a>
+            <a href="<?= createurl('/') ?>" class=" center-xy header-icon-4" style="width: auto;right: 13px;"><h1 style="font-size: 20px;"><?= $page_title ?></h1></a>
         </div>
             
         <div class="page-content " style="padding-top: 80px;">

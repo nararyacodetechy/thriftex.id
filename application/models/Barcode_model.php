@@ -77,4 +77,63 @@ class Barcode_model extends CI_model {
         }
     }
 
+
+    public function getTokolist($token,$param){
+        try {
+            $response = $this->_client->request('GET','barcode/listakunqr',[
+                    'headers' => [
+                    'Accept'     => 'application/json',
+                    'Content-Type' => 'application/json',
+                    'Authorization' => $token
+                ],
+                'query'   => [
+                    'datatable' => $param,
+                ],
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            return $result;
+        } catch (\GuzzleHttp\Exception\ClientException $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+        }
+    }
+
+    public function register($data){
+        try {
+            $response = $this->_client->request('POST','barcode/registerbrand',[
+                'form_params'   => $data
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            return array('status' => $result['status'], 'message' => $result['message'], 'data' => $result['data']);
+        } catch (\GuzzleHttp\Exception\ClientException $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+            // return array('status' => $res->status,'message' => $res->message,'error_data' => $res->error_data);
+        }
+    }
+    public function barcode_profile_cek_url($url,$code){
+        try {
+            $response = $this->_client->request('GET','barcode/cekurl',[
+                // 'debug'   => true,
+                'headers' => [
+                    'Accept'     => 'application/json',
+                    'Content-Type' => 'application/json',
+                    // 'Authorization' => $token
+                ],
+                'query' => ['url' => $url,'code' => $code ]
+            ]);
+            $result = json_decode($response->getBody()->getContents(), true);
+            return $result;
+        } catch (\GuzzleHttp\Exception\ClientException $th) {
+            $response = $th->getResponse();
+            $jsonBody = $response->getBody();
+            $res = json_decode($jsonBody);
+            return $res;
+        }
+    }
+
 }

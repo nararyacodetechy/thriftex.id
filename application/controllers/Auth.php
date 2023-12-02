@@ -42,6 +42,7 @@ class Auth extends CI_Controller {
 
     public function googleAuthCheck(){
         $data_code = $this->input->post('code');
+        global $SConfig;
         if(!empty($data_code)){
             $google_client = new Google_Client();
             $google_client->setClientId('110276130330-7tiasjh4bcpmr34g490q497mp48cd1h7.apps.googleusercontent.com'); //masukkan ClientID anda 
@@ -82,7 +83,7 @@ class Auth extends CI_Controller {
                             'name'   => '_ath',
                             'value'  => $cek_login['token'],
                             'expire' =>  7200,
-                            'domain' => '.thriftex.id', // Opsi ini akan menggantikan konfigurasi 'cookie_domain'
+                            'domain' => $SConfig->_domain, // Opsi ini akan menggantikan konfigurasi 'cookie_domain'
                             'path'   => '/',  // Opsi ini akan menggantikan konfigurasi 'cookie_path'
                             'prefix' => '',
                             'secure' => FALSE,
@@ -119,6 +120,7 @@ class Auth extends CI_Controller {
 
 	public function login()
 	{
+        global $SConfig;
         if($this->session->userdata('login') == true){
             redirect(base_url('profile'));
         }
@@ -157,7 +159,7 @@ class Auth extends CI_Controller {
                             'name'   => '_ath',
                             'value'  => $cek_login['token'],
                             'expire' =>  7200,
-                            'domain' => '.thriftex.id', // Opsi ini akan menggantikan konfigurasi 'cookie_domain'
+                            'domain' => $SConfig->_domain, // Opsi ini akan menggantikan konfigurasi 'cookie_domain'
                             'path'   => '/',  // Opsi ini akan menggantikan konfigurasi 'cookie_path'
                             'prefix' => '',
                             'secure' => false
@@ -269,7 +271,8 @@ class Auth extends CI_Controller {
     }
 
     public function logout(){
-        delete_cookie('_ath','.thriftex.id','/','');
+        global $SConfig;
+        delete_cookie('_ath',$SConfig->_domain,'/','');
         $this->session->sess_destroy();
 		redirect(base_url());
     }

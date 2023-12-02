@@ -165,8 +165,8 @@
                 </div>
                 <div class="mt-3">
                     <div class="list-group list-custom-small">
-                        <a href="<?= base_url('profile/data-sertifikat') ?>"><span>Data Qr Code</span><i class="fa fa-angle-right"></i></a>
-                        <a href="<?= base_url('akuntoko') ?>"><span>Akun Toko Official</span><i class="fa fa-angle-right"></i></a>
+                        <!-- <a href="<?= base_url('profile/data-sertifikat') ?>"><span>Data Qr Code</span><i class="fa fa-angle-right"></i></a> -->
+                        <a href="<?= base_url('akunbrand') ?>"><span>Akun Brand</span><i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>

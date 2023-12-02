@@ -111,6 +111,7 @@ $route['searchlegit'] = 'Search/index';
 $route['user/list'] = 'User/list';
 $route['user-list'] = 'User/listshow';
 $route['user-list-select'] = 'User/listshowselect';
+// $route['user-list-select-toko'] = 'User/listshowselecttoko';
 
 //validator list
 $route['validator/list'] = 'User/validatorlist';
@@ -139,4 +140,8 @@ $route['update-register-toko'] = 'Toko/updateregister';
 $route['toko-list'] ='Toko/listtoko';
 $route['hapus-toko'] ='Toko/hapustoko';
 
-$route['(:any)'] = 'Tokoqr/index/$1';
+$route['akunbrand'] = 'Tokoqr/akun';
+$route['save-register-brand'] = 'Tokoqr/saveregister';
+$route['tokoqr-list'] ='Tokoqr/listtoko_brand';
+
+$route['(:any)/(:any)'] = 'Tokoqr/index/$1/$2';
