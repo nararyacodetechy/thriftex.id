@@ -10,8 +10,8 @@
                 </div>
                 <div class="store_profile_link-list">
                     <ul>
-                        <li><a href="">Product Detail</a></li>
-                        <li><a href="">Certificate Product</a></li>
+                        <li><a href="<?= $page_full_url.'/detail' ?>">Product Detail</a></li>
+                        <li><a href="<?= $page_full_url.'/certificate' ?>">Certificate Product</a></li>
                         <li><a href="#">Look Book</a></li>
                         <li><a href="#">Review Product</a></li>
                     </ul>

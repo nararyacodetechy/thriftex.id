@@ -25,6 +25,8 @@ class Tokoqr extends CI_Controller {
             $data = array(
                 'page_title'    => $cek_url_toko['data']['profile']['nama_brand'],
                 'page_data'     => $cek_url_toko['data'],
+                'page_full_url' => base_url($url_toko.'/'.$kode_qr),
+                'is_home'       => true,
                 'description_page'  => ''
             );
             $this->load->view('include/header_qr.php',$data);
@@ -100,6 +102,58 @@ class Tokoqr extends CI_Controller {
             $response['msg'] = 'Mohon Pilih Akun Toko!';
         }
         echo json_encode($response);
+    }
+
+    public function produk_detail($url_toko,$kode_qr){
+        // echo 'asdsa';
+        // $cek_toko = $this->barcode->cek_url_toko($url_toko);
+        // var_dump($cek_toko);
+        $code = $kode_qr;
+        $cek_url_toko = $this->barcode->barcode_profile_cek_url($url_toko,$code);
+        // var_dump($cek_url_toko);
+        // die;
+        if(isset($cek_url_toko['status']) && $cek_url_toko['status'] == true){
+            $data = array(
+                'page_title'    => $cek_url_toko['data']['profile']['nama_brand'],
+                'page_data'     => $cek_url_toko['data'],
+                'page_full_url' => base_url($url_toko.'/'.$kode_qr),
+                'is_home'       => false,
+                'description_page'  => ''
+            );
+            // echo '<pre>';
+            // var_dump($data['page_data']['barcode_info']);
+            // echo '</pre>';
+            // die;
+            $this->load->view('include/header_qr.php',$data);
+            $this->load->view('tokoqr/detail-produk.php',$data);
+            $this->load->view('include/footer_qr.php',$data);
+        }else{
+            $this->load->view('404');
+        }
+    }
+
+    public function produk_certificate($url_toko,$kode_qr){
+        $code = $kode_qr;
+        $cek_url_toko = $this->barcode->barcode_profile_cek_url($url_toko,$code);
+        if(isset($cek_url_toko['status']) && $cek_url_toko['status'] == true){
+            $data = array(
+                'page_title'    => $cek_url_toko['data']['profile']['nama_brand'],
+                'page_data'     => $cek_url_toko['data'],
+                'page_full_url' => base_url($url_toko.'/'.$kode_qr),
+                'is_home'       => false,
+                'description_page'  => '',
+                'kode_qr'   => $kode_qr
+            );
+            // echo '<pre>';
+            // var_dump($data['page_data']);
+            // echo '</pre>';
+            // die;
+            $this->load->view('include/header_qr.php',$data);
+            $this->load->view('tokoqr/certificate-produk.php',$data);
+            $this->load->view('include/footer_qr.php',$data);
+        }else{
+            $this->load->view('404');
+        }
     }
 
 	

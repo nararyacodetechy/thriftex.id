@@ -60,6 +60,10 @@
         <div class="header header-fixed header-logo-center center-xy">
             <!-- <a href="<?= createurl('/') ?>" class="header-title"><img class="logo main_logo" id="main_logo" src="<?= base_url('assets/logo.jpeg') ?>" alt=""></a> -->
             <!-- <a href="#" data-menu="menu-sidebar-left-6" class="header-icon center-xy header-icon-1"><i class="fa-solid fa-bars font-18 color-gray-dark"></i></a> -->
+            <?php
+            if($is_home == false){ ?>
+                <a href="<?= $page_full_url ?>" class="header-icon center-xy header-icon-1"><svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" fill="white"/><path d="M18 12L6 12M6 12L11 17M6 12L11 7" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <?php } ?>
             <a href="<?= createurl('/') ?>" class=" center-xy header-icon-4" style="width: auto;right: 13px;"><h1 style="font-size: 20px;"><?= $page_title ?></h1></a>
         </div>
             
