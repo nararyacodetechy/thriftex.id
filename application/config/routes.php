@@ -147,3 +147,4 @@ $route['tokoqr-list'] ='Tokoqr/listtoko_brand';
 $route['(:any)/(:any)'] = 'Tokoqr/index/$1/$2';
 $route['(:any)/(:any)/detail'] = 'Tokoqr/produk_detail/$1/$2';
 $route['(:any)/(:any)/certificate'] = 'Tokoqr/produk_certificate/$1/$2';
+$route['(:any)/(:any)/lookbook'] = 'Tokoqr/produk_lookbook/$1/$2';
