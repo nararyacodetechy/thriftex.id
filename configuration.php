@@ -18,7 +18,7 @@ class SConfig
 
     // offlien
     var $_document_root = 'C:/xampp/htdocs/verifex';
-    var $_api_url = 'http://localhost:8000/my/ci3api/api/';
+    var $_api_url = 'http://localhost/verifex/rest.thriftex.id/api/';
     var $_site_url = 'http://localhost/verifex/thriftex.id/';
     var $_app_mode = 'development';
     var $_panel_qr = 'http://localhost/verifex/thriftex_barcode/';
