@@ -21,8 +21,8 @@ class Legit_model extends CI_model {
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
             return array('status' => $result['status'], 'message' => $result['message']);
-        } catch (\Throwable $th) {
-            $response = $th->getResponse();
+        } catch (\GuzzleHttp\Exception\RequestException $th) {
+            $response = $th->getResponse() ?: $th;
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
             return array('status' => $res->status,'message' => $res->message,'error_data' => $res->error_data);
@@ -43,7 +43,7 @@ class Legit_model extends CI_model {
             // var_dump($result);
             return $result;
         } catch (GuzzleHttp\Exception\ClientException $th) {
-            $response = $th->getResponse();
+            $response = $th->getResponse() ?: $th;
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
             return $res;
@@ -80,8 +80,8 @@ class Legit_model extends CI_model {
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
             return $result;
-        } catch (\Throwable $th) {
-            $response = $th->getResponse();
+        } catch (\GuzzleHttp\Exception\RequestException $th) {
+            $response = $th->getResponse() ?: $th;
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
             return $res;
@@ -101,8 +101,8 @@ class Legit_model extends CI_model {
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
             return $result;
-        } catch (\Throwable $th) {
-            $response = $th->getResponse();
+        } catch (\GuzzleHttp\Exception\RequestException $th) {
+            $response = $th->getResponse() ?: $th;
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
             return $res;
@@ -122,8 +122,8 @@ class Legit_model extends CI_model {
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
             return $result;
-        } catch (\Throwable $th) {
-            $response = $th->getResponse();
+        } catch (\GuzzleHttp\Exception\RequestException $th) {
+            $response = $th->getResponse() ?: $th;
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
             return $res;
@@ -141,7 +141,7 @@ class Legit_model extends CI_model {
             $result = json_decode($response->getBody()->getContents(), true);
             return array('status' => $result['status'], 'message' => $result['message']);
         } catch (GuzzleHttp\Exception\ClientException $th) {
-            $response = $th->getResponse();
+            $response = $th->getResponse() ?: $th;
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
             return $res;
@@ -157,8 +157,8 @@ class Legit_model extends CI_model {
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
             return $result;
-        } catch (\Throwable $th) {
-            $response = $th->getResponse();
+        } catch (\GuzzleHttp\Exception\RequestException $th) {
+            $response = $th->getResponse() ?: $th;
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
             return $res;
@@ -177,8 +177,8 @@ class Legit_model extends CI_model {
             ]);
             $result = json_decode($response->getBody()->getContents(), true);
             return $result;
-        } catch (\Throwable $th) {
-            $response = $th->getResponse();
+        } catch (\GuzzleHttp\Exception\RequestException $th) {
+            $response = $th->getResponse() ?: $th;
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
             return $res;
@@ -209,7 +209,7 @@ class Legit_model extends CI_model {
             $result = json_decode($response->getBody()->getContents(), true);
             return $result;
         } catch (GuzzleHttp\Exception\ClientException $th) {
-            $response = $th->getResponse();
+            $response = $th->getResponse() ?: $th;
             $jsonBody = $response->getBody();
             $res = json_decode($jsonBody);
             return $res;
