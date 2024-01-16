@@ -25,7 +25,7 @@ class Legitcheck extends CI_Controller {
             'total_legit'   => $total_legit['total'],
             'data_legit'    => $data_legit,
             'page_title'    => "Legit Check",
-            'description_page'  => 'Temukan keaslian produkmi disini sekarang juga.'
+            'description_page'  => 'Temukan keaslian produk kami disini sekarang juga.'
         );
 		$this->load->view('legit_home.php',$data);
 	}
